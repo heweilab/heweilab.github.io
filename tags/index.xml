@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on My blog</title>
-    <link>https://example.com/tags/</link>
+    <link>https://www.heweilab.com/tags/</link>
     <description>Recent content in Tags on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://example.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 23 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Index</title>
-      <link>https://example.com/tags/index/</link>
+      <link>https://www.heweilab.com/tags/index/</link>
       <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://example.com/tags/index/</guid>
+      <guid>https://www.heweilab.com/tags/index/</guid>
       
         <description></description>
       
