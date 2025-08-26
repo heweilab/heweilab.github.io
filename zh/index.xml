@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>我的博客</title>
+    <link>https://www.heweilab.com/zh/</link>
+    <description>Recent content on 我的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/zh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>这是我的第一篇文章（样例）</title>
+      <link>https://www.heweilab.com/zh/post/math-typesetting/</link>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/math-typesetting/</guid>
+      
+        <description>欢迎大家来到我的主页。</description>
+      
+    </item>
+    
+    <item>
+      <title>简历</title>
+      <link>https://www.heweilab.com/zh/cv/</link>
+      <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/cv/</guid>
+      
+        <description>Wei He</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.heweilab.com/zh/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/about/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;期待为您带来更多丰富的内容。&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;自传&#34;&gt;自传&lt;/h2&gt;
+&lt;p&gt;何为现在是中国石油大学（华东）AITA课题组的一名在读硕士研究生，导师是&lt;a href=&#34;https://computer.upc.edu.cn/_s104/_t1903/2023/0727/c20898a409092/page.psp&#34;&gt;宋弢教授&lt;/a&gt;。他在2024年取得了中国石油大学（华东）的学士学位。他的研究方向为生物信息学。关于他的故事才刚刚开始，我们一起期待！&lt;/p&gt;
+&lt;h2 id=&#34;教育经历&#34;&gt;教育经历&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;&lt;a href=&#34;https://www.upc.edu.cn/&#34;&gt;中国石油大学（华东）&lt;/a&gt; | 青岛, 中国&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;软件工程专业硕士, &lt;em&gt;预计2026年6月毕业&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;计算机科学与技术专业学士, &lt;em&gt;2024年6月&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;从2020年开始接受的是本研一体化（人工智能类）教育培养&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>

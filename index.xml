@@ -6,13 +6,24 @@
     <description>Recent content on My blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 25 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>This is my first article (Draft)</title>
+      <link>https://www.heweilab.com/post/math-typesetting/</link>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/post/math-typesetting/</guid>
+      
+        <description>Good.</description>
+      
+    </item>
+    
     <item>
       <title>Awards</title>
-      <link>https://www.heweilab.com/awards/</link>
+      <link>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/awards/</link>
       <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/awards/</guid>
+      <guid>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/awards/</guid>
       
         <description>Wei He</description>
       
@@ -20,32 +31,21 @@
     
     <item>
       <title>Curriculum Vitae</title>
-      <link>https://www.heweilab.com/about/</link>
+      <link>https://www.heweilab.com/cv/</link>
       <pubDate>Mon, 25 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/about/</guid>
+      <guid>https://www.heweilab.com/cv/</guid>
       
         <description>Wei He</description>
       
     </item>
     
     <item>
-      <title>Math Typesetting</title>
-      <link>https://www.heweilab.com/post/math-typesetting/</link>
-      <pubDate>Sun, 23 Feb 2025 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.heweilab.com/post/math-typesetting/</guid>
-      
-        <description>A brief guide to setup and use KaTeX</description>
-      
-    </item>
-    
-    <item>
       <title>Certifications</title>
-      <link>https://www.heweilab.com/certifications/</link>
+      <link>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/certifications/</link>
       <pubDate>Sun, 10 Apr 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/certifications/</guid>
+      <guid>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/certifications/</guid>
       
         <description>Hugo Certifications</description>
       
@@ -53,10 +53,10 @@
     
     <item>
       <title></title>
-      <link>https://www.heweilab.com/archives/</link>
+      <link>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/archives/</link>
       <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/archives/</guid>
+      <guid>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/archives/</guid>
       
         <description></description>
       
@@ -64,12 +64,26 @@
     
     <item>
       <title>Contact</title>
-      <link>https://www.heweilab.com/contact/</link>
+      <link>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/contact/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/contact/</guid>
+      <guid>https://www.heweilab.com/%E6%A8%A1%E6%9D%BF%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6/contact/</guid>
       
         <description>Contact Page</description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://www.heweilab.com/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/about/</guid>
+      
+        <description>&lt;p&gt;&lt;strong&gt;More to come.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;biography&#34;&gt;Biography&lt;/h2&gt;
+&lt;p&gt;Wei He is currently a master in AITA group of China University of Petroleum (East China) and supervised by &lt;a href=&#34;https://computer.upc.edu.cn/_s104/_t1903/2023/0727/c20898a409092/page.psp&#34;&gt;Prof. Song Tao&lt;/a&gt;. Previously, he obtained a bachelor&amp;rsquo;s degree from China University of Petroleum (East China) in 2024. His research interests mainly focus on bioinformatics. He has just begun his journey in academic research. Let&amp;rsquo;s give him some time, and we can all look forward to what he will accomplish.&lt;/p&gt;</description>
       
     </item>
     
@@ -80,12 +94,10 @@
       
       <guid>https://www.heweilab.com/imprint/</guid>
       
-        <description>&lt;h1 id=&#34;legal-disclosure&#34;&gt;Legal Disclosure&lt;/h1&gt;
-&lt;p&gt;Information in accordance with the applicable law&lt;/p&gt;
-&lt;p&gt;Jane Doe&lt;br&gt;
-Anatole Street 10&lt;br&gt;
-2016 GoHugo&lt;br&gt;
-Germany&lt;/p&gt;</description>
+        <description>&lt;h1 id=&#34;welcome-to-heweilab&#34;&gt;Welcome to HeWeiLab！&lt;/h1&gt;
+&lt;p&gt;Wei He&lt;br&gt;
+&lt;a href=&#34;mailto:heweilab@gmail.com&#34;&gt;heweilab@gmail.com&lt;/a&gt;&lt;br&gt;
+Qingdao China&lt;/p&gt;</description>
       
     </item>
     
