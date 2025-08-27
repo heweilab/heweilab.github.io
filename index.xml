@@ -8,11 +8,22 @@
     <language>en</language>
     <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>This is my first article (Draft)</title>
-      <link>https://www.heweilab.com/post/math-typesetting/</link>
+      <title>Study Materials</title>
+      <link>https://www.heweilab.com/post/learning/</link>
       <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
       
-      <guid>https://www.heweilab.com/post/math-typesetting/</guid>
+      <guid>https://www.heweilab.com/post/learning/</guid>
+      
+        <description>Good.</description>
+      
+    </item>
+    
+    <item>
+      <title>This is my first article (Draft)</title>
+      <link>https://www.heweilab.com/post/first_article/</link>
+      <pubDate>Tue, 26 Aug 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/post/first_article/</guid>
       
         <description>Good.</description>
       
