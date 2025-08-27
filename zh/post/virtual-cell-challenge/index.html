@@ -1,0 +1,531 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        虚拟细胞挑战 |
+      Wei He
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.148.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Wei He" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.b5c4eefa6949f2433cc347906bf4b8505393c3035206c57d5a939c88391a10d8.css" integrity="sha256-tcTu&#43;mlJ8kM8w0eQa/S4UFOTwwNSBsV9WpOciDkaENg=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/virtual-cell-challenge/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="虚拟细胞挑战">
+  <meta name="twitter:description" content="虚拟细胞挑战：迈向虚拟细胞的图灵测试 1美国加州帕洛阿尔托Arc研究所
+2美国加州旧金山加利福尼亚大学旧金山分校
+3美国加州帕洛阿尔托斯坦福大学
+4美国加州伯克利加利福尼亚大学伯克利分校
+Cell 188,2025年6月26日
+挑战的核心目标是：预测细胞对扰动的反应，例如基因敲除或药物作用
+契机：">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/virtual-cell-challenge/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="虚拟细胞挑战">
+  <meta property="og:description" content="虚拟细胞挑战：迈向虚拟细胞的图灵测试 1美国加州帕洛阿尔托Arc研究所
+2美国加州旧金山加利福尼亚大学旧金山分校
+3美国加州帕洛阿尔托斯坦福大学
+4美国加州伯克利加利福尼亚大学伯克利分校
+Cell 188,2025年6月26日
+挑战的核心目标是：预测细胞对扰动的反应，例如基因敲除或药物作用
+契机：">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-07-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-23T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "虚拟细胞挑战",
+        "headline": "虚拟细胞挑战",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003ch1 id=\u0022虚拟细胞挑战迈向虚拟细胞的图灵测试\u0022\u003e虚拟细胞挑战：迈向虚拟细胞的图灵测试\u003c\/h1\u003e\n\u003cp\u003e1美国加州帕洛阿尔托Arc研究所\u003c\/p\u003e\n\u003cp\u003e2美国加州旧金山加利福尼亚大学旧金山分校\u003c\/p\u003e\n\u003cp\u003e3美国加州帕洛阿尔托斯坦福大学\u003c\/p\u003e\n\u003cp\u003e4美国加州伯克利加利福尼亚大学伯克利分校\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022https:\/\/cdn.nlark.com\/yuque\/0\/2025\/png\/38867763\/1753172651053-7adc72ba-2f5e-4bc4-ab14-70ab223a776d.png\u0022 alt=\u0022\u0022\u003e\u003c\/p\u003e\n\u003cp\u003eCell 188,2025年6月26日\u003c\/p\u003e\n\u003chr\u003e\n\u003cp\u003e挑战的核心目标是：预测细胞对扰动的反应，例如基因敲除或药物作用\u003c\/p\u003e\n\u003cp\u003e契机：\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/virtual-cell-challenge\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-07-23T00:00:00.00Z",
+        "datePublished": "2025-07-23T00:00:00.00Z",
+        "dateModified": "2025-07-23T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/virtual-cell-challenge\/",
+        "wordCount" : "118",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Wei He
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>虚拟细胞挑战</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  23/7/2025
+                
+
+              
+            </span>
+          </li>
+          <li class="post__meta-item">
+            <em class="fas fa-stopwatch post__meta-icon"></em>
+            <span class="post__meta-text">One-minute read</span>
+          </li>
+        </ul>
+      <h1 id="虚拟细胞挑战迈向虚拟细胞的图灵测试">虚拟细胞挑战：迈向虚拟细胞的图灵测试</h1>
+<p>1美国加州帕洛阿尔托Arc研究所</p>
+<p>2美国加州旧金山加利福尼亚大学旧金山分校</p>
+<p>3美国加州帕洛阿尔托斯坦福大学</p>
+<p>4美国加州伯克利加利福尼亚大学伯克利分校</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/38867763/1753172651053-7adc72ba-2f5e-4bc4-ab14-70ab223a776d.png" alt=""></p>
+<p>Cell 188,2025年6月26日</p>
+<hr>
+<p>挑战的核心目标是：预测细胞对扰动的反应，例如基因敲除或药物作用</p>
+<p>契机：</p>
+<p>数据多了：单细胞测序技术发展，积累海量单细胞细节数据</p>
+<p>经验多了： 经过多年积累，有了大量关于细胞对扰动做出反应的数据集</p>
+<p>AI的力量：机器学习和深度学习算法的发展</p>
+<p>瓶颈：</p>
+<p>（类似蛋白质casp竞赛）评价标准缺失， 定基准，搭平台</p>
+<p>细胞背景泛化：看模型能不能预测，当一个基因在以前没接触过的新的细胞里，预测其对扰动的反应</p>
+<hr>
+<h2 id="abstract"><font style="color:rgb(0, 0, 0);">Abstract</font></h2>
+<p>虚拟细胞是人工智能与生物学交叉领域的新兴前沿。这类细胞状态模型的核心目标在于预测细胞对扰动的响应机制。为此，虚拟细胞挑战赛应运而生，旨在推动相关研究取得突破性进展。这项由<font style="color:#DF2A3F;">Arc研究所</font>主办的定期性开放基准竞赛，将提供评估框架、专门构建的数据集，并为加速模型开发搭建专业平台。</p>
+<h2 id="introduction"><font style="color:#000000;">Introduction</font></h2>
+<p>单细胞技术与高通量扰动测量的突飞猛进，推动了定量建模细胞行为的新一轮研究热潮。这些“虚拟细胞”有望揭示<font style="color:#DF2A3F;">细胞状态与功能之间的关联</font>，并能预测<font style="color:#DF2A3F;">基因敲除或药物干预等扰动</font>在不同细胞类型和环境中的影响。鉴于细胞行为在基础生物学与转化医学各领域的核心地位，这类模型的影响力将不可估量。上世纪90年代末至21世纪初的早期尝试，试图从第一性原理构建全面的细胞计算模型，却因数据匮乏、假设过于简化及计算能力限制而停滞不前。1-5如今，随着<font style="color:#DF2A3F;">单细胞测量技术的大幅突破、更丰富的扰动实验数据积累以及机器学习技术的进步</font>，该领域正蓄势待发，准备重新审视并实现这些早期的宏伟目标。6</p>
+<p>然而，由于缺乏评估模型质量的标准化基准和评价体系，预测细胞状态建模领域的进展一直受到限制。受CASP（蛋白质结构预测关键评估，<a href="https://predictioncenter.org">https://predictioncenter.org)</a>)竞赛在蛋白质折叠领域取得成功的启发，建立结构化且定期举行的全社区竞赛将有效推动研究进展，并围绕共同目标凝聚力量。需要特别指出的是，细胞行为的预测模型与蛋白质结构预测存在诸多差异。这类模型必须考虑额外复杂因素——包括细胞类型、遗传背景及细胞所处环境等，同时还要考量被测量和预测的细胞表型特征。通过精心设计的评估数据集来衡量研究进展，并制定标准化评价标准，这一社区挑战将有力推动该领域的发展进程。</p>
+<h2 id="open-source-competitions-can-lead--to-rapid-progress">Open-source competitions can lead  to rapid progress</h2>
+<p>尽管近年来针对单细胞扰动响应的预测模型发展迅速，但致力于模拟细胞状态与行为的研究领域，目前仍缺乏能够体现模型在不同扰动和细胞类型间具有生物学意义泛化能力的统一评估框架。现有数据集中的诸多技术性变异因素会影响扰动模型的性能表现，包括基因扰动与单细胞转录组分析耦合过程中引入的实验噪声，以及不同独立实验中扰动效应可重复性不足等问题。7在缺乏标准化基准测试和能实时追踪领域发展的定制化评估数据集的情况下，我们很难判断模型捕捉的是具有普适性的生物学结构，还是仅反映特定数据集的模式特征。</p>
+<p>以往的公开竞赛为评估细胞对扰动的响应预测奠定了重要基础，但仍有关键空白。例如，布罗德研究所的<font style="color:#DF2A3F;">癌症免疫治疗数据科学大挑战赛</font>虽然聚<font style="color:#DF2A3F;">焦于预测T细胞的广泛表型变化</font>，但未评估基因表达层面的响应。8最近，2023年NeurIPS-Kaggle竞赛通过<font style="color:#DF2A3F;">评估免疫细胞对小分子扰动的基因表达变化</font>，推动了该领域的发展。9在这些努力的基础上，该领域现已准备好迎接一项<font style="color:#DF2A3F;">评估基因表达对</font><font style="color:#DF2A3F;background-color:#FBDE28;">遗传扰动</font><font style="color:#DF2A3F;">响应的基准竞赛</font>——这项任务对理解细胞功能至关重要。<font style="color:#DF2A3F;">与小分子不同，</font><font style="color:#DF2A3F;background-color:#FBDE28;">遗传扰动</font><font style="color:#DF2A3F;">具有明确的靶点，使其成为探究基因-功能因果关系的理想工具，尽管由此产生的转录变化往往更为微妙且更难预测。</font></p>
+<p>为弥合这些差距，我们启动了虚拟细胞挑战赛（<a href="https://virtualcellchallenge.org/">https:// virtualcellchallenge.org</a>），这是一项评估细胞响应AI模型的年度竞赛（图1A)。在首届挑战赛中，我们专门构建了一个数据集，用于测量人类胚胎干细胞系（H1 hESC）对扰动的单细胞响应。该扰动集经过精心筛选，覆盖了广泛的表型反应范围，实验参数也经过优化以最大限度提高观察效应的可重复性。为虚拟细胞挑战赛生成的H1 hESC数据集，还为建立可重复性高、质量可控的单细胞功能基因组学（scFG）数据实验标准和质量控制标准做出了贡献。这些标准将推动研究进展，并为整个领域奠定坚实基础。</p>
+<p>这一努力旨在通过提供高质量的基准数据集、公共排行榜和可重复和公平比较的机制，创造一个公平的竞争环境，推动社区参与，并加速进展。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2025/png/38867763/1753173307681-f46abd9d-1f92-469a-9cc4-577e63c20110.png" alt=""></p>
+<p><em>图1.虚拟细胞挑战赛概述</em></p>
+<p><em>(A)在虚拟细胞挑战赛中，参赛者需要开发模型来预测</em>_<font style="color:#DF2A3F;">基因和化学扰动对细胞群体的转录影响</font>__。给定未受干扰的细胞状态后，任务要求推断特定扰动下细胞的基因表达响应。_</p>
+<p><em>(B)细胞环境是检验模型泛化能力的关键维度：当模型</em>_<font style="color:#DF2A3F;">已观察到不同细胞环境中基因扰动的影响，并在新细胞环境(H1人类胚胎干细胞系）中进行一组扰动实验时，能否预测其他扰动对H1细胞的影响</font>__？_</p>
+<p><em>(C)本挑战采用三项指标评估性能：(1)模型</em>_<font style="color:#DF2A3F;">预测</font><strong>特定基因扰动引发</strong><font style="color:#DF2A3F;">差异表达基因的准确性</font><strong>；(2)</strong><font style="color:#DF2A3F;">预测基因表达变化与实验真实值的相似度</font><strong>（相对于其他扰动）；(3)所有基因在扰动后的</strong><font style="color:#DF2A3F;">预测表达值与真实表达值之间的平均绝对误差</font>__。_</p>
+<p><em>(D)数据生成方法示意图：基于包含2500个CRISPR干扰（CRISPRi）扰动的单细胞功能基因组学（scFG）数据集，我们根据扰动强度和响应多样性筛选出300个扰动样本。在最大限度整合现有扰动数据集（这些数据可用于模型训练）的同时，我们还围绕这300种基因扰动生成了高质量竞赛数据集，该数据集具有更高的测序深度，每个扰动对应的细胞数量中位数达到1000个。我们采用10x Genomics Flex化学试剂进行单细胞分析，报告内容包括：每个扰动对应的中位细胞数、单细胞平均读数以及单细胞基因UMI的中位数。竞赛数据集被划分为三个部分：竞赛启动时发布的训练数据、实时排行榜使用的验证数据，以及用于模型最终评分的保留测试数据集。</em></p>
+<h2 id="format-of-the-virtual-cell-challenge-task">Format of the Virtual Cell Challenge Task</h2>
+<p>预测模型可以通过训练在多个维度上进行泛化。两个核心维度是<font style="color:#DF2A3F;">(1)跨生物学背景的泛化能力（例如细胞类型、细胞系、培养条件，甚至体内与体外环境），以及(2)对新型遗传和/或化学扰动的泛化能力</font>，包括它们的组合。</p>
+<p>首届虚拟细胞挑战赛将于2025年启动，聚焦具有高度挑战性的现实任务——上下文泛化：<font style="color:#DF2A3F;">参赛者需预测特定细胞类型（H1人类胚胎干细胞；图1B)中单基因扰动的影响</font>。此前已有至少一个其他细胞环境中的转录组学结果报道了这些基因扰动的影响。这反映了实验中的普遍现实：由于成本问题，无法在所有环境中测试所有扰动，但准确的特定环境预测至关重要，因为反应取决于细胞类型、状态、分化阶段、培养条件和遗传背景等因素。</p>
+<p>鉴于大多数已发表的单细胞基因扰动数据集仅涵盖少数细胞系，对新细胞状态进行真正的零样本泛化可能为时过早。<font style="color:#DF2A3F;">现阶段更合适的策略是少样本适应法</font>，即通过提供新细胞环境中部分扰动数据来指导模型泛化。为此，我们提供了直接在H1人类胚胎干细胞中测量的部分扰动表达谱，使参赛者能在<font style="color:#DF2A3F;">预测同一细胞类型中剩余未见扰动的响应</font>前调整模型。</p>
+<h2 id="evaluations">Evaluations</h2>
+<p>评估指标应当体现虚拟细胞的核心目标：通过计算机模拟实验来复现实体细胞行为——具体而言，即预测基因表达对遗传扰动的响应。此类实验的主要观测指标包括扰动后的基因表达量和差异表达基因集。基于这些标准，我们设计了三个评估模型性能的指标（图1C)。前两个指标——<font style="color:#DF2A3F;">差异表达评分</font><font style="color:#DF2A3F;">和</font><font style="color:#DF2A3F;">扰动区分度评分</font><font style="color:#DF2A3F;">differential expression score and perturbation discrimination score</font>——具有互补性。差异表达评分用于评估模型预测差异基因表达的准确性，这是大多数单细胞基因组学实验的关键输出结果，也是后续生物学解读的重要输入数据。扰动区分度评分则通过将预测结果按其与真实扰动效应的相似度排序（不考虑效应大小），来衡量模型区分不同扰动的能力。12</p>
+<p>这两个指标分别衡量了性能的不同且互不重叠的维度。例如，一个简单模型若能持续从训练数据中预测出同一组常见差异表达基因，可能获得合理的差异表达评分。但其扰动辨别得分会随机或处于下限水平。反之，若模型能根据嵌入空间中的细微变化成功区分扰动效应，则可能在扰动辨别上表现优异。然而这种模型难以生成具有生物学意义的差异表达基因集，限制了其作为实验测量替代品的实际应用价值。</p>
+<p>为确保预测结果涵盖<font style="color:#DF2A3F;">所有基因</font>（<font style="color:#DF2A3F;">包括非差异表达基因</font>），我们引入第三个指标——平均绝对误差（MAE）。虽然MAE的生物学解释性较低，但它能反映整体预测准确性，并为模型在整个基因表达谱中的表现提供全局视角。这三个指标共同构成了全面的评估框架。我们将采用综合评分机制，合理权衡各指标权重，并对所有指标设定最低阈值以促进均衡性能，避免模型因偏重某一方面而牺牲其他维度的表现。我们还将报告每个单独指标上的模型排名，以帮助解释结果，并突出在任何维度上表现优异的模型。</p>
+<h2 id="datasets">Datasets</h2>
+<p>首届虚拟细胞挑战赛将基于Arc研究所生成的H1 hESCs数据进行评估。更多训练数据可从我们的虚拟细胞图谱（<a href="https://arcinstitute.org/tools/virtualcellatlas">https:// arcinstitute.org/tools/virtualcellatlas</a>）和公共扰动数据集中获取。</p>
+<h3 id="new-arc-generated-benchmark-dataset-新的arc生成的基准数据集"><font style="color:rgb(0,0,0);">New Arc-generated benchmark dataset. 新的Arc生成的基准数据集。</font></h3>
+<p>为应对本次挑战，我们采用单细胞基因组测序（scFG）技术，通过<font style="color:#DF2A3F;">CRISPR干扰技术（CRISPRi）</font>沉默300个精心筛选的基因，生成了约30万个单细胞RNA测序（scRNA-seq）数据谱（图1D)。这些基因扰动设计旨在展现下游变化强度（<font style="color:#DF2A3F;">显著差异表达基因</font><strong><font style="color:#DF2A3F;">数量</font></strong>）与表型多样性在H1人胚胎干细胞（hESC）广谱低深度筛选中的广泛代表性，同时确保与现有公共数据集的充分覆盖。评估数据集通过Flex单细胞测序平台生成，该平台具有高靶细胞覆盖率（每个扰动中位数∼1,000个细胞）和测序深度（每个细胞超过50,000个唯一分子标识符[UMIs]）。我们选用10x Genomics的Flex化学试剂，因其具备更优的工作流程可扩展性、通过细胞固定减少批次效应，并实现更高效的残余敲低效率。参赛者将获得未扰动H1 hESC的转录组参考数据、包含150个基因扰动的单细胞谱训练集（∼150,000个细胞）、用于竞赛期间实时排行榜构建的50个基因扰动验证集，以及提交截止日前一周公布的100个保留扰动最终测试集。最终排名将完全基于保留测试集的表现。</p>
+<h3 id="arc-virtual-cell-atlas-arc虚拟细胞图谱"><font style="color:rgb(0,0,0);">Arc Virtual Cell Atlas. Arc虚拟细胞图谱</font></h3>
+<p>这个最新发布的资源库包含scBaseCount14和Tahoe-100M，分别是目前最大的公开可用的观测型和扰动型单细胞RNA测序数据集。该资源库已收录超过3.5亿个细胞的单细胞数据，且数量仍在持续增长，为科研界提供了不断扩大的训练数据集，助力新一代虚拟细胞模型的开发。</p>
+<h3 id="public-perturbation-datasets-公共扰动数据集"><font style="color:rgb(0,0,0);">Public perturbation datasets. 公共扰动数据集</font></h3>
+<p>我们还将提供部分公开扰动数据集的预处理版本，这些数据集与测试集中的扰动类型存在重叠。11,16–18虽然这种筛选并非面面俱到，但这些具有显著扰动重叠的大规模数据集旨在支持模型训练——因为在<font style="color:#DF2A3F;">不同细胞环境中观察目标扰动的影响</font>，可能对模型训练大有裨益。</p>
+<h2 id="community-engagement"><font style="color:#000000;">Community engagement</font></h2>
+<p>虚拟细胞挑战赛旨在汇聚全球科研人员，共同致力于构建更精准的细胞行为模型。参赛者将通过Arc虚拟细胞挑战赛平台定期获取更新，并在竞赛期间持续出现在排行榜快照中。通过结合社区参与与严格基准测试，我们期望该赛事能实现三大目标：(1)提炼最佳实践和关键数据考量——从训练集质量到测序深度及平台选择——为更具可重复性和稳健性的研究提供支持；(2)识别方法论瓶颈，明确数据和/或模型选择标准，最终形成更可重复的扰动建模规范；(3)凸显训练数据质量、细胞覆盖率、测序深度及技术选择的重要性。通过聚焦这些核心议题，有望形成更可重复且遵循原则的数据生成指南。</p>
+<h2 id="future-directions"><font style="color:#000000;">Future directions</font></h2>
+<p>这项研究依托于Arc研究所持续开展的数据生成工作，旨在通过构建参考级数据集来夯实预测性细胞建模的实证基础。我们期待此举能激励整个科研界开展类似项目——无论是基于单细胞RNA测序还是其他技术手段，都应致力于构建高质量参考数据集，从而推动更全面、更具普适性的细胞行为模型发展。虽然首届挑战赛聚焦于单一细胞类型的基因扰动预测，但后续赛事将拓展至组合扰动研究和跨细胞类型泛化能力。展望未来，要实现细胞行为的全面建模，必须整合转录组、蛋白质组和表观遗传学等多维生物数据，并在时空维度上进行跨细胞系统建模。同样重要的是，逆向扰动响应预测技术——即通过识别最佳扰动方案来实现预期效果——将成为虚拟细胞模型的关键能力，这对未来具有明确治疗价值的挑战至关重要。我们视此为推动定量建模发展的试验平台，其数据集与评估框架将随着领域对生物复杂性的认知深化而持续优化。未来指标将根据历年研究成果的反馈进行完善。我们诚邀科学界同仁共同参与，为虚拟细胞挑战赛的升级版本贡献智慧与力量。</p>
+<h2 id="conclusion"><font style="color:#000000;">Conclusion</font></h2>
+<p>虚拟细胞有望成为生物学领域的基础工具，要让其充分发挥潜力，我们需要清晰严谨的评估体系。虚拟细胞挑战赛正是为此而生：通过公平开放的竞赛机制，筛选出最佳模型，明确技术前沿，并凝聚学术力量。我们诚邀各界参与首轮竞赛，共同勾勒预测性细胞建模这一科学学科的发展蓝图。</p>
+<h2><strong><font style="color:#000000;">DECLARATION OF INTERESTS</font></strong></h2>
+<p>D.P.B.是谷歌顾问。</p>
+<p>H.G.是Exai Bio、Tahoe Therapeutics和Therna Therapeutics的联合创始人，担任Exai Bio董事会成员，并出任Verge Genomics和Deep Forest Biosciences的科学顾问委员会成员。</p>
+<p>P.D.H.是Monet AI、Terrain Biosciences和Stylus Medicine的联合创始人，担任Stylus Medicine董事会成员，同时兼任EvolutionaryScale和Terrain Biosciences的董事会观察员，是Arbor Biosciences和VedaBio的科学顾问委员会成员，还担任NFDG、Varda Space和Vial Health的顾问。</p>
+<p>L.A.G.是nChroma Bio的联合创始人，同时担任Myllia Biotechnology的科学顾问委员会成员。</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Wei He
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
