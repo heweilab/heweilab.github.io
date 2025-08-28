@@ -1,0 +1,22 @@
+/* 标题居中 */
+.sidebar__visitor-map .visitor-map-title {
+  text-align: center;
+  margin: 0 0 .5rem;
+  font-weight: 600;
+}
+
+/* 地图缩到侧边栏宽度的 50%，并居中 */
+.sidebar__visitor-map .visitor-map-embed {
+  width: 50%;
+  margin: 0 auto;           /* 水平居中 */
+}
+
+/* 让脚本注入的内容自适应父容器宽度 */
+.sidebar__visitor-map .visitor-map-embed iframe,
+.sidebar__visitor-map .visitor-map-embed canvas,
+.sidebar__visitor-map .visitor-map-embed img,
+.sidebar__visitor-map .visitor-map-embed div {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
