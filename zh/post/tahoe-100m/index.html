@@ -1,0 +1,646 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱 |
+      Wei He
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.149.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="Wei He" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.b5c4eefa6949f2433cc347906bf4b8505393c3035206c57d5a939c88391a10d8.css" integrity="sha256-tcTu&#43;mlJ8kM8w0eQa/S4UFOTwwNSBsV9WpOciDkaENg=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/tahoe-100m/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱">
+  <meta name="twitter:description" content="1.维沃治疗公司；2.阿克研究所；3.帕斯生物科学公司
+bioRxiv预印本doi：https://doi.org/10.1101/2025.02.20.639398；本版本发布于2025年2月24日。
+Abstract 构建细胞预测模型需要系统性地绘制扰动如何重塑每个细胞的状态、功能和行为。在此，我们推出Tahoe-100M——一个包含1亿个转录组谱型的千兆级单细胞图谱，测量了1100种小分子扰动对50种癌细胞系的影响。我们的高通量Mosaic平台由高度多样化且平衡优化的“细胞村”组成，有效减少批次效应，并实现了数千种条件在单细胞分辨率下前所未有的大规模并行分析。
+作为迄今为止最大的单细胞数据集，Tahoe-100M使人工智能（AI）驱动的模型能够学习情境依赖性功能，揭示基因调控与网络动态的基本原理。尽管我们利用癌症模型和药理化合物构建了这一资源，但Tahoe-100M本质上是一个广泛适用的扰动图谱，支持对多种组织和情境下的细胞生物学进行更深入的洞察。通过公开发布该图谱，我们旨在加速系统生物学领域稳健AI框架的创建与发展，最终提升我们在广泛应用中预测和调控细胞行为的能力。
+Introduction 细胞生物学领域长期追求的目标是构建预测性、机制性的模型，用以阐释细胞如何整合信号并执行精准的转录调控与表型响应（恩迪和布伦特，2001)。要建立具有表现力的计算机模拟细胞行为模型，需要生成大量定量数据集，系统描绘细胞状态（例如通过转录组特征测量）如何被遗传、化学或环境干预等多样化因素重塑。扰动测量技术能阐明基因间的因果相互作用，揭示反馈回路，并暴露补偿通路，从而揭示调控细胞行为与功能的底层网络（佩尔，2005；迪克西特等，2016；亚当森等，2016)。基于现代高通量分析技术构建的扰动数据集具有惊人优势，能以前所未有的分辨率揭示基础生物过程，进而助力构建细胞计算机模拟模型（邦尼等，2024)。">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/tahoe-100m/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱">
+  <meta property="og:description" content="1.维沃治疗公司；2.阿克研究所；3.帕斯生物科学公司
+bioRxiv预印本doi：https://doi.org/10.1101/2025.02.20.639398；本版本发布于2025年2月24日。
+Abstract 构建细胞预测模型需要系统性地绘制扰动如何重塑每个细胞的状态、功能和行为。在此，我们推出Tahoe-100M——一个包含1亿个转录组谱型的千兆级单细胞图谱，测量了1100种小分子扰动对50种癌细胞系的影响。我们的高通量Mosaic平台由高度多样化且平衡优化的“细胞村”组成，有效减少批次效应，并实现了数千种条件在单细胞分辨率下前所未有的大规模并行分析。
+作为迄今为止最大的单细胞数据集，Tahoe-100M使人工智能（AI）驱动的模型能够学习情境依赖性功能，揭示基因调控与网络动态的基本原理。尽管我们利用癌症模型和药理化合物构建了这一资源，但Tahoe-100M本质上是一个广泛适用的扰动图谱，支持对多种组织和情境下的细胞生物学进行更深入的洞察。通过公开发布该图谱，我们旨在加速系统生物学领域稳健AI框架的创建与发展，最终提升我们在广泛应用中预测和调控细胞行为的能力。
+Introduction 细胞生物学领域长期追求的目标是构建预测性、机制性的模型，用以阐释细胞如何整合信号并执行精准的转录调控与表型响应（恩迪和布伦特，2001)。要建立具有表现力的计算机模拟细胞行为模型，需要生成大量定量数据集，系统描绘细胞状态（例如通过转录组特征测量）如何被遗传、化学或环境干预等多样化因素重塑。扰动测量技术能阐明基因间的因果相互作用，揭示反馈回路，并暴露补偿通路，从而揭示调控细胞行为与功能的底层网络（佩尔，2005；迪克西特等，2016；亚当森等，2016)。基于现代高通量分析技术构建的扰动数据集具有惊人优势，能以前所未有的分辨率揭示基础生物过程，进而助力构建细胞计算机模拟模型（邦尼等，2024)。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-07-25T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-07-25T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱",
+        "headline": "Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003e1.维沃治疗公司；2.阿克研究所；3.帕斯生物科学公司\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022\/picture\/Tahoe100M\/1753345589600-d963d74c-f60c-47d8-8bee-fe84054a8a1d.png\u0022 alt=\u0022\u0022\u003e\u003c\/p\u003e\n\u003cp\u003ebioRxiv预印本doi：\u003ca href=\u0022https:\/\/doi.org\/10.1101\/2025.02.20.639398\u0022\u003ehttps:\/\/doi.org\/10.1101\/2025.02.20.639398\u003c\/a\u003e；本版本发布于2025年2月24日。\u003c\/p\u003e\n\u003chr\u003e\n\u003ch1 id=\u0022abstract\u0022\u003e\u003cfont style=\u0022color:rgb(0, 0, 0);\u0022\u003eAbstract\u003c\/font\u003e\u003c\/h1\u003e\n\u003cp\u003e构建细胞预测模型需要系统性地绘制\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e扰动如何重塑每个细胞的状态、功能和行为\u003c\/font\u003e。在此，我们推出Tahoe-100M——一个包含1亿个转录组谱型的千兆级单细胞图谱，测量了1100种小分子扰动对50种癌细胞系的影响。我们的高通量Mosaic平台由高度多样化且平衡优化的“细胞村”组成，有效减少批次效应，并实现了数千种条件在单细胞分辨率下前所未有的大规模并行分析。\u003c\/p\u003e\n\u003cp\u003e作为迄今为止最大的单细胞数据集，Tahoe-100M使人工智能（AI）驱动的模型能够学习情境依赖性功能，揭示基因调控与网络动态的基本原理。尽管我们利用癌症模型和药理化合物构建了这一资源，但Tahoe-100M本质上是一个广泛适用的扰动图谱，支持对多种组织和情境下的细胞生物学进行更深入的洞察。通过公开发布该图谱，我们旨在加速系统生物学领域稳健AI框架的创建与发展，最终提升我们在广泛应用中预测和调控细胞行为的能力。\u003c\/p\u003e\n\u003ch1 id=\u0022introduction\u0022\u003e\u003cfont style=\u0022color:#000000;\u0022\u003eIntroduction\u003c\/font\u003e\u003c\/h1\u003e\n\u003cp\u003e细胞生物学领域长期追求的目标是构建预测性、机制性的模型，用以阐释细胞如何整合信号并执行精准的转录调控与表型响应（恩迪和布伦特，2001)。要建立具有表现力的计算机模拟细胞行为模型，需要生成大量定量数据集，系统描绘细胞状态（例如通过转录组特征测量）如何被\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e遗传、化学或环境干预\u003c\/font\u003e等多样化因素重塑。扰动测量技术能阐明基因间的因果相互作用，揭示反馈回路，并暴露补偿通路，从而揭示调控细胞行为与功能的底层网络（佩尔，2005；迪克西特等，2016；亚当森等，2016)。基于现代高通量分析技术构建的扰动数据集具有惊人优势，能以前所未有的分辨率揭示基础生物过程，进而助力构建细胞计算机模拟模型（邦尼等，2024)。\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/tahoe-100m\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-07-25T00:00:00.00Z",
+        "datePublished": "2025-07-25T00:00:00.00Z",
+        "dateModified": "2025-07-25T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/tahoe-100m\/",
+        "wordCount" : "321",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Wei He
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  25/7/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <p>1.维沃治疗公司；2.阿克研究所；3.帕斯生物科学公司</p>
+<p><img src="/picture/Tahoe100M/1753345589600-d963d74c-f60c-47d8-8bee-fe84054a8a1d.png" alt=""></p>
+<p>bioRxiv预印本doi：<a href="https://doi.org/10.1101/2025.02.20.639398">https://doi.org/10.1101/2025.02.20.639398</a>；本版本发布于2025年2月24日。</p>
+<hr>
+<h1 id="abstract"><font style="color:rgb(0, 0, 0);">Abstract</font></h1>
+<p>构建细胞预测模型需要系统性地绘制<font style="color:#DF2A3F;">扰动如何重塑每个细胞的状态、功能和行为</font>。在此，我们推出Tahoe-100M——一个包含1亿个转录组谱型的千兆级单细胞图谱，测量了1100种小分子扰动对50种癌细胞系的影响。我们的高通量Mosaic平台由高度多样化且平衡优化的“细胞村”组成，有效减少批次效应，并实现了数千种条件在单细胞分辨率下前所未有的大规模并行分析。</p>
+<p>作为迄今为止最大的单细胞数据集，Tahoe-100M使人工智能（AI）驱动的模型能够学习情境依赖性功能，揭示基因调控与网络动态的基本原理。尽管我们利用癌症模型和药理化合物构建了这一资源，但Tahoe-100M本质上是一个广泛适用的扰动图谱，支持对多种组织和情境下的细胞生物学进行更深入的洞察。通过公开发布该图谱，我们旨在加速系统生物学领域稳健AI框架的创建与发展，最终提升我们在广泛应用中预测和调控细胞行为的能力。</p>
+<h1 id="introduction"><font style="color:#000000;">Introduction</font></h1>
+<p>细胞生物学领域长期追求的目标是构建预测性、机制性的模型，用以阐释细胞如何整合信号并执行精准的转录调控与表型响应（恩迪和布伦特，2001)。要建立具有表现力的计算机模拟细胞行为模型，需要生成大量定量数据集，系统描绘细胞状态（例如通过转录组特征测量）如何被<font style="color:#DF2A3F;">遗传、化学或环境干预</font>等多样化因素重塑。扰动测量技术能阐明基因间的因果相互作用，揭示反馈回路，并暴露补偿通路，从而揭示调控细胞行为与功能的底层网络（佩尔，2005；迪克西特等，2016；亚当森等，2016)。基于现代高通量分析技术构建的扰动数据集具有惊人优势，能以前所未有的分辨率揭示基础生物过程，进而助力构建细胞计算机模拟模型（邦尼等，2024)。</p>
+<hr>
+<p><u>介绍问题背景：细胞生物学利用模型阐释（阐明与解释-预测与解释）细胞行为（工作机制或响应）。过程当中需要数据，而扰动测量技术和高通量分析技术能提供数据定向构建的支持。</u></p>
+<p><u>DS：</u><u><font style="color:rgb(64, 64, 64);">两种技术的融合使细胞状态数据集从“</font></u><strong><u><font style="color:rgb(64, 64, 64);">描述性地图</font></u></strong><u><font style="color:rgb(64, 64, 64);">”升级为“</font></u><strong><u><font style="color:rgb(64, 64, 64);">可操作的GPS导航系统</font></u></strong><u><font style="color:rgb(64, 64, 64);">”——不仅能告诉你细胞在哪（状态），还能预测它要去哪（命运），并指导如何干预（扰动）。</font></u></p>
+<hr>
+<p>传统上，通过大规模转录组学测量细胞对扰动的响应已提供了宝贵见解（Bock等人，2022；Jinek等人，2012；Shalem、Sanjana和Zhang，2015），但这些方法往往掩盖了细胞群体内部的重要异质性。这种异质性可能源于<font style="color:#DF2A3F;">细胞周期阶段、基础转录程序或遗传背景的差异</font>，导致即使在相同外部条件下也会产生多样化的细胞结果（Buettner等人，2015；Trapnell等人，2014；Macaulay等人，2016）。单细胞检测技术——如单细胞RNA测序（scRNA-seq）——彻底改变了我们解析这种异质性的能力，使个体细胞的分子特征得以以前所未有的细节进行表征（Macosko等人，2015；Aldridge和Teichmann，2020）。基于scRNA-seq的研究扩展了我们对细胞如何响应各种扰动的理解，从小分子治疗（Srivatsan等人，2020）到基于CRISPR的联合基因干预（Replogle等人，2022）。组合scRNA-seq技术（Rosenberg等人，2018；Xie等人，2024；Cao等人，2017；Datlinger等人，2021）和新一代测序技术（Simmons等人，2023；Almogy等人，2022）的互补进展进一步提升了通量和成本效益，推动了百万细胞数据集的可行性。</p>
+<hr>
+<p><u>大规模转录组学可以测量细胞扰动响应，但掩盖了细胞群体的异质性，单细胞检测技术很好的解决了这一问题，同时扩展了细胞对小分子治疗和基因干预的响应的理解。DS：</u><u><font style="color:rgb(64, 64, 64);">新一代测序技术通过 </font></u><strong><u><font style="color:rgb(64, 64, 64);">“更高通量、更低成本、更准检测”</font></u></strong><u><font style="color:rgb(64, 64, 64);"> 三要素，使scRNA-seq从千细胞级跃升至百万细胞级。</font></u></p>
+<hr>
+<p>尽管取得了这些进展，但大规模、聚焦扰动的单细胞数据集仍较为稀缺。虽然已有部分图谱规模的研究开始**（①）<strong>整合多组实验数据，但<font style="color:#DF2A3F;">诸如批次效应、实验方案不统一以及扰动覆盖范围有限等问题依然存在</font>（Z. Li等，2024；Tyler等，2024）。</strong>（②）<strong>对于<font style="color:#DF2A3F;">特定细胞扰动组合</font>而言，<font style="color:#DF2A3F;">观测样本数量不足</font>也限制了检测稳健模式的能力，尤其是针对目标亚群的研究（Tyler等，2024；Chen等，2022）。此外，</strong>（③）**现有数据中相当一部分<font style="color:#DF2A3F;">仅关注</font><font style="color:#DF2A3F;background-color:#FBDE28;">特定</font><font style="color:#DF2A3F;">扰动组合</font>——通常与特定疾病或药物研发目标相关——导致关于更广泛扰动图谱的诸多问题仍未得到解答。</p>
+<hr>
+<p><u>大规模、聚焦扰动的单细胞数据集仍较为稀缺。</u></p>
+<p><u>问题一：整合的实验数据，存在多种问题</u></p>
+<p><u>问题二：特定细胞扰动组合，观测样本不足</u></p>
+<p><u>问题三：大部分数据仅关注特定扰动</u></p>
+<hr>
+<p>为应对这些挑战并实现细胞功能的下一代计算建模，我们开发了Mosaic平台（余杰等，2024)。该平台通过单细胞RNA测序技术（scRNA-seq），可同时捕捉数千种扰动对转录组的高分辨率响应。通过构建“细胞村落”（Mitchell等，2020；C. Yu等，2016；McFarland等，2020）——即在每次实验中构建包含数十至数百个不同细胞模型的“细胞村落”，并结合遗传解复用技术，该平台不仅大幅降低了批次效应，还能轻松应对日益增多的扰动组合。</p>
+<hr>
+<p><u>开发Mosaic平台，利用scRNA-seq，结合“细胞村落”和遗传解复用技术解决</u><u><font style="color:#DF2A3F;">诸如批次效应、实验方案不统一以及扰动覆盖范围有限问题</font></u></p>
+<p><u>DS：</u><u><font style="color:rgb(64, 64, 64);">细胞村落与遗传解复用构成“混养-分检”范式，将高通量生物学推进至</font></u><strong><u><font style="color:rgb(64, 64, 64);">单细胞精度×群体尺度</font></u></strong><u><font style="color:rgb(64, 64, 64);">的新维度，为精准医学提供底层技术基座。</font></u></p>
+<hr>
+<p>借助Mosaic平台，我们构建了迄今为止规模最大的公开单细胞数据集Tahoe-100M。该数据集包含从<font style="color:#DF2A3F;">50种癌细胞</font>系中采集的<font style="color:#DF2A3F;">超1亿个单细胞转录组</font>数据，这些细胞系接受了超过<font style="color:#DF2A3F;">1100种小分子药物的不同剂量干预</font>。虽然本研究使用的是药理学试剂，但其底层框架可广泛应用于各类药物干预实验，既支持基础细胞生物学研究，也能推动药物研发等转化应用。通过公开发布Tahoe-100M数据集，我们旨在加速开发稳健且具备情境感知能力的细胞行为AI模型，最终助力科研界深入解析基因功能、调控网络及其受环境信号的影响机制。</p>
+<hr>
+<p><u>介绍Tahoe-100M</u></p>
+<p><u>50中癌细胞系，1亿个单细胞转录组数据</u></p>
+<p><u>超过1100中小分子药物的不用剂量干预</u></p>
+<p><u>展望预期</u></p>
+<hr>
+<h1><strong><font style="color:rgb(0,0,0);">Results</font></strong></h1>
+<h2><strong><font style="color:rgb(0,0,0);">Generating the </font></strong><em><strong><font style="color:rgb(0,0,0);">Tahoe-100M </font></strong></em><strong><font style="color:rgb(0,0,0);">Atlas using Vevo’s Mosaic platform   使用Vevo的Mosaic平台生成Tahoe-100M Atlas</font></strong></h2>
+<p>我们利用Mosaic平台对50种已建立的市售癌细胞系进行了药物治疗转录组响应分析（图1A)。具体操作中，我们将混合细胞系培养成球体后，分别进行DMSO溶剂对照等处理。经过24小时药物处理后，通过组合条形码技术开发的可扩展单细胞RNA测序（scRNA-seq）试剂盒——Parse GigaLab试剂盒（Rosenberg等人，2018），对球体进行解离、固定和基因表达谱分析。该方法不仅能生成不同处理条件下的单细胞基因表达矩阵，还能检测scRNA-seq文库中的遗传变异，并通过SNP解卷积技术将细胞归类至其原始细胞系（图1B)（Kang等人，2018）。</p>
+<p>针对该数据集，我们共接种了14个96孔板的球状体并进行药物处理。在文库制备过程中，将每个孔板的条形码单细胞混合后，按等量细胞数分配到“子文库”中，确保每个子文库包含该孔板所有样本的代表，但具有独特的测序接头。我们处理了每孔板72至165个子文库，最终获得1,786个子文库（表1）。测序后，我们获得了~1.4万亿条原始测序读段，代表总计1.53亿个细胞（每个孔板含820万至1450万个细胞）。细胞平均含有2,288条转录本（中位数1,890)，不同子文库间因测序深度存在差异。经Vevo过滤标准处理后（方法部分），我们筛选出1.006亿个通过最低过滤条件的细胞和9560万个通过完整过滤条件的细胞（方法部分；图1C)。本文后续分析均采用后者数据集。</p>
+<p><img src="/picture/Tahoe100M/1753346861221-211e05b2-25c1-4ec4-95ac-d176b93d2252.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753346879226-3497aaef-aaa3-43d8-b24c-edf4e8f9211b.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753346897189-c5d9c117-a72e-4f0c-a4af-26df6ba2cf1c.png" alt=""></p>
+<p><em>图1. Mosaic平台：用于生成Tahoe-100M的实验与信息学工作流程。</em></p>
+<p><em>(A)实验示意图：每个Mosaic肿瘤由50个癌细胞系模型组成，接种于96孔板中。每个孔接受药物扰动处理，24小时后将肿瘤解离为单细胞，并使用Parse GigaLab试剂盒进行条形码标记。这些条形码结合各细胞系已知基因型，可用于治疗组分解析和细胞系去卷积。</em></p>
+<p><em>(B)读段结构与生物信息学过滤流程。每个读段包含cDNA插入片段、四个条形码区域和唯一分子标识符（UMI）。通过将具有相同四个条形码区域的读段分组后，可通过第一个条形码区域解析药物扰动身份，通过cDNA插入片段中的单核苷酸多态性（SNP）解析癌症模型身份。</em></p>
+<p><em>(C)去卷积与生物信息学流程：处理、注释并质量控制细胞数据，最终生成带有治疗组分和细胞系身份的单细胞基因表达矩阵。</em></p>
+<p><em>表1.Tahoe-100M中关键统计数据的每板细分。</em></p>
+<p><img src="/picture/Tahoe100M/1753347160078-b8644af2-9574-4904-85bb-5af40972352d.png" alt=""></p>
+<h2><strong><font style="color:rgb(0,0,0);">Cell line and treatment diversity in </font></strong><em><strong><font style="color:rgb(0,0,0);">Tahoe-100M   Tahoe-100M的细胞系和处理多样性</font></strong></em></h2>
+<p>在Tahoe-100M数据库的50个细胞系中，有47个在不同实验条件下具有足够的代表性，可纳入后续分析。这47个细胞系来自13个不同器官（主要为肺、肠道、胰腺和皮肤），携带多种驱动突变，其中约半数细胞系存在TP53、KRAS和CDKN2A基因异常（图2A)。在该数据库涵盖的379种不同药物中，180种被归类为25种作用机制（MOA），每个作用机制平均包含5种独特药物（最多27种，最少3种）（图2B-C)。这些药物中69%已获批准上市，化合物类别覆盖了大量与癌症相关的通路。据报告，这些药物靶向325个基因（方法部分），其中120个基因被多个药物同时靶向（图2C)。该数据集共记录了17,813种独特的细胞系-药物组合条件，相比基准单细胞药物筛选(Srivatsan等，2020年）药物扰动条件数量增加了31倍，相较于基准遗传扰动筛选（Replogle等，2022年）每种条件的观测次数增加了29倍（图2D）。</p>
+<p><img src="/picture/Tahoe100M/1753348254398-8a8cccaa-4ab1-40d8-9c83-19bf231396a0.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753348270793-b872b8ef-e31c-400c-8ca4-6eedf8345270.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753348281469-22705e8b-10c5-4208-bc58-fbfdbd21c7de.png" alt=""></p>
+<p><em>图2.Tahoe-100M数据集中细胞模型与药物扰动的多样性分析。(A) Oncoplot可视化图表展示了在Tahoe-100M数据库中，前47个细胞模型中发现的前30种驱动突变的丰度分布。这些突变按类型进一步分类，细胞模型则按起源器官进行归类。(B)Tahoe-100M数据库中379种药物扰动的作用机制分类，根据临床试验状态进行分层分析。(C)Tahoe-100M数据库中379种药物扰动的目标基因分组，针对325个目标基因中的前120个进行临床试验状态分层展示。(D)与其他基准扰动性单细胞RNA测序数据集相比，本研究在扰动数量、独特细胞模型数量及总细胞计数方面的对比分析。</em></p>
+<h2><strong><font style="color:rgb(0,0,0);">The global transcriptomic landscape captured by </font></strong><em><strong><font style="color:rgb(0,0,0);">Tahoe-100M   Tahoe-100M</font></strong></em><strong><font style="color:rgb(0,0,0);">捕捉到的全球转录组景观</font></strong></h2>
+<p>我们首先使用scVI（Lopez等人，2018；Gayoso等人，2022）进行降维处理，为每个细胞构建了10维嵌入向量，以此启动Tahoe-100M数据集的分析。考虑到处理1亿个细胞数据集的可视化挑战，我们从47个细胞系（总计658万个细胞）中各选取14万个高质量样本，计算二维tSNE坐标后随机抽取20万个细胞进行可视化（图3A-C)。tSNE可视化结果清晰显示，在转录组空间中，细胞根据遗传特性（及细胞周期阶段）而非原始培养板产生明显分层，这表明在统一的~1亿细胞图谱中不存在显著批次效应（图3A-C)。尽管如此，后续章节所述的差异基因表达分析仍通过整合所有培养板中经DMSO处理的孔位数据，有效校正了可能存在的批次效应。</p>
+<p>经过质量控制筛选后，我们最终获得包含47个细胞系、379种药物、1135种药物剂量组合及52886种独特细胞系-药物-剂量条件的数据集，每个条件的中位数细胞数量为1287个。为验证Mosaic平台的可重复性，我们将第14号培养板作为第6号培养板的生物学重复样本。基于这些培养板未转换的基因表达矩阵，我们对同一批次、同一细胞系及相同药物浓度处理组的细胞进行伪批量分组，并计算了这些伪批量基因表达向量间的皮尔逊相关系数。令人欣慰的是，与两块培养板间未匹配的比较（估计q25：0.892，中位数：0.915，q75：0.929)相比，具有匹配治疗方案和细胞身份的条件间显示出更高的相关性（估计q25：0.97，中位数：0.975，q75：0.98）（图3D)。</p>
+<p><img src="/picture/Tahoe100M/1753348387546-ce3e86b3-9131-47bc-a6ab-4301b452ae8f.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753348403996-f079a612-8906-4df5-a350-c9b8b7d06435.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753348425732-cf2063c0-f7e2-4ff6-92e7-32529cadee98.png" alt=""></p>
+<p><em>图3.Tahoe-100M数据库中绝对基因表达可视化。(A)SCVI模型的二维tSNE可视化结果，随机选取20万个细胞样本，这些样本按丰度从前47个细胞系中等比例分配。各聚类区域标注了对应的癌症模型身份。(B)与(A)相同，但标注了源自Mosaic肿瘤的96孔板细胞。(C)与(A)相同，但标注了细胞周期阶段。(D)Atlas数据库中两个生物学重复96孔板间基因表达向量相关性的皮尔逊相关值分布。根据匹配的癌症模型身份和药物扰动特征，将细胞聚类为伪批量基因表达向量，并随机选取4000组未匹配及匹配的癌症模型身份与药物扰动对比数据。(E)左图：Atlas数据库中所有Mosaic肿瘤的细胞覆盖度热图，颜色表示特定细胞系和药物剂量处理下的单细胞观测数量。右图：Tahoe-100M数据库中50个癌症模型的总单细胞计数，其中丰度最低的3个细胞系以红色高亮显示。</em></p>
+<h2><strong><font style="color:rgb(0,0,0);">Drug-induced transcriptomic effects across cell lines and mechanisms of action  药物诱导的转录组效应在细胞系和作用机制中的作用</font></strong></h2>
+<p>为量化Tahoe-100M细胞群的形成因素，我们基于不同元数据指标对数据子样本进行了局部逆辛普森指数（LISI）的估算。通过在100个不同子样本中重复该流程，我们测定了中位LISI估计值的均值和标准差（图4A)。与我们的预期及tSNE可视化结果一致，这些数据表明细胞系身份（其次是细胞周期阶段）是驱动数据分层的主要因素。正如预期，药物处理和剂量的影响相对较小，这提示需要通过差异基因表达分析来更精准地解析药物诱导的细胞变化。</p>
+<p>为探究药物治疗对转录组的响应特征，我们首先采用E距离（Peidli等人，2024）分析特定治疗方案在全转录组中的效应强度。该距离度量方法在单细胞扰动数据分析领域应用广泛，可量化扰动群体与对照组的分离程度（Norman等人，2019；Replogle等人，2022）。基于单细胞VI嵌入技术（方法部分），我们计算了细胞系中所有药物条件下的E距离值。与预期一致，最高剂量组的E距离中位数显著增大（图4B左）。将该分析方法应用于已发表的单细胞扰动数据集Sciplex3（Srivatsan等人，2020）时，也观察到类似的E距离分布特征（图4B中）。此外，在全基因组CRISPRi扰动研究（Replogle等人，2022）中，通过基因必需性分层分析发现，该数据集中的药物扰动效应呈现中间水平（图4B右）。</p>
+<p>在按作用机制（MOA）对药物进行分层时，我们观察到几个显著的异常值（图4C)。例如，哈林顿宁和同型哈林顿宁是植物来源的生物碱类化合物，它们通过直接抑制核糖体多肽延伸来诱导癌细胞毒性（Kantarjian等，2001），这与本研究中其他蛋白合成抑制剂通过调节翻译因子或上游信号通路的作用机制不同。此外，地那西利布是一种强效选择性CDK1、CDK2、CDK5和CDK9抑制剂，在多种癌症模型中均能有效抑制细胞增殖（Parry等，2010）。除这些异常药物外，蛋白酶体抑制剂、组蛋白去乙酰化酶（HDAC）抑制剂和PI3K/AKT抑制剂在不同剂量水平下往往表现出更大的效应。总体而言，作用于上皮实体瘤的抗癌药物（如MAPK抑制剂、PI3K/AKT抑制剂、微管抑制剂、CDK抑制剂、微管干扰剂及DNA合成/修复抑制剂）通常具有比其他药物（如视黄酸受体激动剂、肾上腺素受体激动剂、环氧合酶抑制剂）或未分类作用机制更大的效应距离（E值）。</p>
+<p><img src="/picture/Tahoe100M/1753349222900-f3d6e040-bc6c-4601-8f43-2235b32db523.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753349254187-4d1c3cc5-5598-4b8c-8263-1ee08fc48771.png" alt=""></p>
+<p><em>图4.太浩-100M数据集中不同细胞系处理对转录组的总体影响。(A)基于若干选定分类元数据变量的局部逆辛普森指数（LISI）评分。(B)比较同一细胞类型在太浩-100M与另外两个基准单细胞扰动图谱数据集中的扰动细胞与对照细胞的中位数log1p E距离。绘制了所有细胞模型的中位数E距离分布图。左：按药物剂量分层的太浩-100M；中：按药物剂量分层的SciPlex-3数据集；右：按扰动基因分类分层的Replogle等人Perturb-seq数据集。(C)按作用机制（MOA）分组比较太浩-100M中同一细胞类型扰动细胞与对照细胞的中位数log1p E距离。MOA按最高剂量下的中位数值从高到低排序。</em></p>
+<p>针对基于差异表达基因集评分的降维分析（图5A)，我们选择将细胞系、药物和剂量的每种独特组合视为单一数据点。在二维t-SNE和nnMDS中，具有较大E距离的药物存在明显特征，两者均呈现出从中心到外围的E距离梯度分布（图5B-C)。针对与上皮癌相关性更强且具有较大E距离的作用机制（如HDAC抑制剂、蛋白酶体抑制剂、PI3K/AKT抑制剂等），我们观察到两者存在高度重叠但部分分离现象，尤其在E距离较高的区域表现明显（图5D-E)。最后聚焦KRAS G12C特异性共价抑制剂阿达格拉西布与突变非特异性泛RAS抑制剂RMC-6236，结果显示在KRAS G12C细胞系中RMC-6236与阿达格拉西布呈现明显分离，而非KRAS G12C细胞系中则保持一致（图5F-G)，这与预期结果完全吻合。</p>
+<p><img src="/picture/Tahoe100M/1753349337237-91eba11b-783e-40bc-aeaf-b7da0d21a705.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753349361578-30af4a69-dfd3-47b8-b7d3-1b546572cb57.png" alt=""></p>
+<p><em>图5.基于伪批量细胞模型和药物处理条件的降维分析，可视化展示差异基因集表达评分。(A)Atlas数据库中的单细胞数据点按共享细胞模型和药物处理条件进行伪批量分组，计算出7,390个基因集的差异表达评分。生成包含61,927个细胞模型与药物处理伪批量组及7,390个基因集的矩阵，作为两种降维可视化分析的输入数据。(B)(A)矩阵的二维tSNE可视化图，按E距离着色。(C)(A)矩阵的二维nnMDS可视化图，同样采用E距离着色。(D)与(B)相同的tSNE结果，按药物作用机制（MOA）和剂量着色，并从图中过滤掉未标注MOA的药物数据点。(E)与(C)相同的二维nnMDS可视化图，仅保留最大E距离的MOA数据点，同时按药物MOA和剂量着色。(F)与(B)相同的二维tSNE可视化图，仅显示RAS抑制剂RMC-6236和Adagrasib对应的点，按剂量着色，其中Adagrasib还根据细胞系中KRAS-G12C突变的存在与否进行区分。(G)与(C)相同的二维nnMDS可视化图，着色规则与(F)一致。</em></p>
+<h2><strong><font style="color:rgb(0,0,0);">Context-dependent inhibition of the RAS/RAF pathway       RAS/RAF通路的上下文依赖性抑制</font></strong></h2>
+<p>为深入探究药物的转录调控效应，我们重点研究了靶向调节RAS/RAF信号通路的治疗方案。通过Vision软件（德托马索等，2019)计算细胞层面的基因集表达评分，并对比汇总处理组与对照组的差异评分。我们采用MSigDB.c6基因集（苏布拉马尼安等，2005)，该基因集已被证实是RAS/RAF通路活性的有效转录标志物。针对BRAF-V600E抑制剂达拉非尼，我们在三种细胞系分层中分析了其差异Vision评分（方法部分）：无其他RAF或RAS突变的KRAS突变细胞系、缺乏RAS或RAF突变的BRAF-V600E突变细胞系，以及同时缺失RAF和RAS突变的细胞系。值得注意的是，达拉非尼在携带BRAF突变的细胞系中表现出最显著的疗效，这从最低剂量(P = 0.0013，Welch t检验）和最高剂量（P = 0.00023，Welch t检验）的评分显著降低即可看出，而KRAS突变细胞系的变化则微乎其微（图6A）。由于KRAS激活突变发生在BRAF激活突变之前，这些发现与RAS/RAF信号通路的预期动态特征完全吻合。相比之下，使用泛RAS抑制剂RMC-6236进行治疗时，在KRAS突变组中效果最为显著。与未突变的RAS组相比，最低剂量(p = 0.065，Welch‘s t检验）和中等剂量（p = 0.063，Welch’s t检验）的视觉评分差异最为明显（图6B）。这些结果充分证明了RMC-6236对KRAS的特异性作用——该药物能有效抑制KRAS突变细胞系中的信号传导。</p>
+<p>为探究药物治疗对细胞周期各阶段分布的影响，我们通过计算各阶段细胞比例相对于对照组的比值比展开分析。在CDK抑制剂类药物中，帕博西尼和地那西尼展现出显著差异：帕博西尼富集于G1期，而地那西尼则富集于G2/M期（图6C)。这与阿贝西尼、AT5719和利博西尼等其他CDK抑制剂形成鲜明对比——这些药物几乎未见富集现象。值得注意的是，地那西尼可同时抑制CDK1、CDK2、CDK5和CDK9，已被证实能诱导G2/M期阻滞；而帕博西尼则特异性靶向CDK4/6复合体——该复合体负责调控视网膜母细胞瘤蛋白（Rb）的磷酸化过程，并促进细胞从G1期向S期过渡（Rajput等，2016；Crozier等，2022）。进一步研究发现，HDAC抑制剂和微管抑制剂对G2/M期阻滞作用最为显著。在HDAC抑制剂中，贝利诺司他和帕诺诺司他主导了这一富集效应，与之形成对比的是卡马西平——尽管其作为组蛋白去乙酰化酶调节剂发挥作用，但未表现出明显富集；而替库西诺司他（奇达胺）则呈现负向富集（图6D)。</p>
+<p>卡马西平条件下未观察到富集现象，这可能与其主要作为抗癫痫药物的特性有关——该药物主要通过调控电压门控通道发挥作用，仅表现出中等程度的HDAC抑制活性（Beutler等人，2005）。相比之下，替库定诺他酯引发的负向富集效应，可能源于其对HDAC1、HDAC2、HDAC3和HDAC10的抑制作用。已有研究表明，该机制通过下调CDK4蛋白水平诱导细胞进入G0/G1期停滞（Beutler等人，2005；Zhong等人，2021）。就微管抑制剂而言，这类药物通过激活有丝分裂检查点来诱导细胞周期停滞，从而确保染色体与纺锤体装置在后期启动前正确排列（Cermak等人，2020)。总体而言，这些药物大多在G2/M期呈现普遍富集现象，但紫杉醇和微管抑制剂6例外，其富集程度极低（图6E)。</p>
+<p><img src="/picture/Tahoe100M/1753349515716-345158a1-ae60-43a6-a62b-41ebb5295045.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753349526595-ae61197c-ffd0-4a2a-a091-1fd6d2dc3ef8.png" alt=""></p>
+<p><img src="/picture/Tahoe100M/1753349536103-ed22be83-6cac-4e00-b263-87d71ebeb55c.png" alt=""></p>
+<p><em>图6.基因表达与细胞周期阶段对特定药物的特异性响应。(A)RAF抑制剂达拉非尼作用下，RAS/RAF信号通路活性的600基因转录特征差异表达小提琴图，按细胞模型基因型（野生型或功能获得型）和药物剂量(5.0、0.5、0.05μM，自上而下）分组展示。(B)RAS抑制剂RMC-6236作用下，MAPK信号通路相关600基因集差异表达小提琴图，按RAS突变状态和药物剂量(5.0、0.5、0.05μM，自上而下）分组展示。(C)比较特定细胞周期抑制剂对各细胞模型中G2M期比例的log2比值，与未处理对照组进行对比。同一小提琴图同时展示了47种细胞模型及全部3种药物浓度的数据。(D)精选HDAC抑制剂作用下G2M期细胞log2比值的比较。(E)精选微管抑制剂作用下G2M期细胞log2比值的比较。</em></p>
+<h1><strong><font style="color:rgb(0,0,0);">Discussion</font></strong></h1>
+<p>本研究开发的Tahoe-100M大型单细胞扰动图谱，无论在数据广度还是深度上都远超现有数据集。该图谱整合了50个细胞系中超过1亿个单细胞转录组数据，这些细胞系均接受过1100多种小分子药物处理。通过单细胞分辨率捕捉转录组响应，Tahoe-100M揭示了不同遗传背景下的多样化药理扰动如何重塑细胞状态。这一资源的独特规模与设计，有效应对系统生物学领域的核心挑战——特别是构建新一代人工智能驱动的细胞模型所需的规模化扰动数据需求（Bunne等人，2024）。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Enabling AI-driven models of the cell with a large, single-cell perturbation atlas   使细胞的AI驱动模型具有一个大的、单一细胞扰动图集</font></strong></h2>
+<ol>
+<li>多样化训练数据：通过构建广泛均衡的实验条件与药物作用机制组合，确保AI模型能捕捉复杂的情境依赖性基因调控模式，而非单一或高度专业化的反应。</li>
+<li>深度扰动覆盖：当多种药物作用于同一通路或靶点时，模型可学习更精细的作用机制差异，从而强化基因间及基因-药物相互作用的稳健表征。</li>
+<li>上下文关联分析：在多细胞系“细胞群”框架下实施的扰动实验，整合了不同细胞系与组织的数据，使AI系统能够解析遗传与表观遗传环境如何调控药物疗效及细胞状态转变。</li>
+</ol>
+<p>这些特性共同为自监督学习、半监督学习和迁移学习方法奠定了坚实基础，进而为构建细胞计算机模拟模型开辟了新路径。人工智能框架在自然语言处理和图像识别等领域的成功应用表明，随着数据规模和多样性的增加，系统性能能够实现显著提升。我们预计单细胞生物学领域也将呈现类似发展轨迹——Tahoe-100M项目通过提供大量高质量训练数据，将推动该领域取得关键性突破。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Inter- and intra-population cellular heterogeneity in drug response   药物反应中种群间和种群内细胞异质性</font></strong></h2>
+<p>Tahoe-100M还揭示了细胞对相同药理学扰动的反应的深刻异质性，揭示了癌症治疗的重要考虑因素：</p>
+<ol>
+<li>亚群动态：单细胞分辨率研究揭示，即使在遗传背景一致的细胞系中，也可能存在多个转录亚状态，每个亚状态对特定药物的敏感性各不相同（Dann等，2022；Skinnider等，2021）。例如，我们观察到不同药物类别下细胞周期状态呈现显著差异，这凸显了基础细胞程序与药物干预之间依赖于具体情境的相互作用（Weinberger、Lin和Lee，2023；Schiebinger等，2019；Dong等，2023；Papalexi等，2021）。</li>
+<li>通路特异性效应：研究结果表明，针对RAS或RAF等靶点的抑制剂会引发显著不同的转录组变化，且这种变化具有驱动突变依赖性。这意味着单细胞图谱不仅能帮助识别通过代偿途径逃避治疗的细胞亚群，还能揭示通路间相互作用如何使传统抑制策略复杂化。</li>
+<li>预测性生物标志物：Tahoe-100M系统通过涵盖多种细胞系，可系统鉴定与药物反应相关的转录关联因子。这些关联因子可作为潜在生物标志物，指导患者分层，并帮助临床医生根据最可能产生响应的分子特征调整治疗方案（C. Yu等，2016；Tsherniak等，2017）。</li>
+</ol>
+<p>理解药物与细胞相互作用的这些细微差别，是剖析耐药性如何产生和持续的关键。此外，这种对细胞异质性的更清晰认识有助于完善药物反应的人工智能模型，因为这些模型必须考虑潜在结果的全部分布，而不仅仅是“平均”或整体反应。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Accelerating cancer drug discovery and translational research   加速癌症药物发现和转化研究</font></strong></h2>
+<p>癌症治疗至今仍是医学界最复杂的疾病之一，这主要归因于其高度的遗传多样性以及肿瘤细胞中被劫持的多层调控动态。我们Mosaic平台生成的数据为转化研究提供了以下机遇：</p>
+<ol>
+<li>情境感知药物研发：通过捕捉每种药物与不同遗传背景的相互作用，Tahoe-100M为发现新型疗法提供了可操作的蓝图。研究人员可以快速挖掘这一图谱，识别出能够利用特定突变背景或规避已知耐药机制的化合物类别。</li>
+<li>联合疗法：该图谱作为研究不同药物类别协同效应的起点。对联合治疗方案进行单细胞分析，可揭示同时抑制CDK和HDAC通路等多靶点策略是否能在异质性细胞群体中产生更持久的疗效。</li>
+<li>个性化医疗洞见：在精准肿瘤学时代，将基因型特异性转录反应与高通量药物筛选相结合，可指导个性化治疗方案的制定。通过分析反映患者亚型特征的细胞系，结合差异表达、细胞周期阻滞或通路激活状态等信息，可发现或验证有效的药物组合疗法。</li>
+</ol>
+<h2><strong><font style="color:rgb(0,0,0);">Future directions   未来方向</font></strong></h2>
+<p>通过公开发布Tahoe-100M数据集，我们旨在推动数据驱动发现与人工智能模型开发的良性循环。科研人员不仅能借此优化现有计算框架，更能从中获得关于基础细胞生物学、药物疗效及治疗耐药性的全新洞见。随着该领域围绕大规模扰动图谱的整合发展，实验创新与计算突破的协同效应将加速我们实现对细胞机制的预测性理解——最终为患者提供更精准有效的个性化治疗方案。</p>
+<h1><strong><font style="color:rgb(0,0,0);">Methods</font></strong></h1>
+<h2><strong><font style="color:rgb(0,0,0);">Cell culture   细胞培养，细胞培养物</font></strong></h2>
+<p>细胞系购自ATCC或NCI-43，使用完全1X RPMI-1640培养基（Cytiva）进行培养，其中添加了10%胎牛血清和1.5倍浓度的青霉素-链霉素混合液，在37℃、5%二氧化碳条件下培养。对于贴壁细胞使用TrypLE Express酶解试剂（Gibco）收集，悬浮细胞则直接从培养基中收集，按等比例混合后加入Cultrex培养基（R&amp;D Systems），最终装入14孔深孔96孔板（Diaago）中。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Compound sourcing and treatment   化合物来源和处理</font></strong></h2>
+<p>化合物采购自MedChemExpress，配制时将化合物稀释至最终浓度，使用含10%胎牛血清、1.5倍浓度青霉素链霉素的RPMI-1640完全培养基，并确保终液中二甲基亚砜（DMSO）含量不超过1%。共制备了14个96孔药物培养板，其中H11和H12孔为不含化合物的对照培养基。将药物培养基覆盖于三维细胞培养物表面，其位置与96孔板坐标及孔号精确匹配。细胞在37℃、5%二氧化碳条件下暴露于药物培养基中24小时。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Single cell dissociation and fixation   单细胞分离和固定</font></strong></h2>
+<p>使用TrypLE Express酶解试剂在96孔板中将三维细胞培养物解离为单细胞。随后采用高通量Evercode细胞固定试剂盒（帕斯生物科学公司）进行样本固定，并保存于96孔板中。整个过程中严格保持样本的坐标位置和孔板编号信息，最终获得14个装有固定细胞悬液的96孔板。固定后的样本经-80℃冷冻保存后，通过干冰运输至帕斯生物科学公司的GigaLab实验室。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Barcoding    条形码</font></strong></h2>
+<p>为进行样本稀释，每个样本中大致等量的细胞被输入条形码系统。固定细胞的每块培养板均按照Parse Biosciences GigaLab协议第1部分，完成三轮组合式条形码标记。完成标记后，细胞被分装至每个亚文库（每组~10万细胞），并依照该协议进行裂解处理。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Sublibrary Preparation    子库制备</font></strong></h2>
+<p>裂解液采用汉密尔顿Vantage液体处理机器人，按照帕斯生物科学公司GigaLab协议的第2、3步流程进行批量处理（每批96个样本）。在完成第3步后，向每个亚文库添加Illumina i7和i5引物以生成可测序分子。随后，根据先前研究方法（Simmons等人，2023），将各亚文库转化为Ultima基因组学兼容测序文库，并使用UG-100测序仪进行测序。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Sequencing    先后顺序, 定序</font></strong></h2>
+<p>使用Ultima Genomics测序仪（Almogy等人，2022）进行测序。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Split-pipe processing    分管加工</font></strong></h2>
+<p>通过Ultima Trimmer工作流程生成的Fastq文件，我们使用改进版spit-pipe v1.4.0进行处理，以适配GigaLab处理的文库。除默认参数外，我们还添加了-yes_allwell选项，以便从最终细胞条形码列表中剔除低质量细胞。针对每个子文库，split-pipe会生成基因矩阵（count_matrix.mtx）、细胞元数据（cell_metadata.csv）以及用于映射Fastq文件的基因列表（all_genes.csv）。基因和转录本定义基于Ensembl 109版本及基因组构建38（<a href="https://ftp.ensembl.org/pub/release-109/gtf/homo_sapiens/Homo_sapiens.GRCh38.109.gtf.gz">https://ftp.ensembl.org/pub/release-109/gtf/homo_sapiens/Homo_sapiens.GRCh38.109.gtf.gz</a>）。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Genotype-based cell line demultiplexing    基于基因型的细胞系解复用</font></strong></h2>
+<p>单细胞RNA测序（scRNA-seq）数据的解复用通过demuxlet工具完成，该工具结合了跨细胞系构建的精选单核苷酸多态性（SNP）参考集（Kang等，2018）。参考集通过筛选dbSNP数据库，仅保留外显子和非翻译区（UTR）中等位基因频率超过0.1的变异位点。随后使用mpileup工具对各细胞系的scRNA-seq数据进行处理，获取所有位点的基因型判定结果（H. Li，2011）。最终筛选出的SNP变异位点需满足三个条件：深度（dp）大于6、映射质量（MQ）超过30、质量评分（Qual）高于50。这些经过筛选的变异位点被整合到单一VCF文件中，进一步剔除插入缺失、多等位SNP以及在所有细胞系中均为纯合参考等位基因的SNP后，形成最终的SNP参考集。该参考集的基准测试采用已知细胞系的BAM文件作为真实数据。性能评估显示准确率超过98%，超过90%的细胞被正确标记为单细胞。值得注意的是，当细胞谱型显示不同细胞系归属概率相等时，demuxlet可能将其判定为双细胞——这种分类既可能是真实的双细胞，也可能代表覆盖度较低或SNP数量较少的细胞。</p>
+<h2><strong><font style="color:rgb(0,0,0);">QC filters    质量控制过滤器</font></strong></h2>
+<p>为确保下游分析仅使用高质量数据，所有细胞均严格实施质量控制（QC）。QC过滤分为完整筛选和最低标准两个层级：完整筛选要求细胞至少包含700个独特分子标识符（UMI），线粒体读数占比低于20%，UMI z值在±3范围内以剔除总计数异常值，线粒体含量z值在±3范围内以剔除异常值，并且检测到至少250个基因。此外，仅保留经解复用器判定为单细胞的样本，排除被识别为双细胞或存在歧义的样本。最低标准筛选要求较为宽松，仅需解复用器判定为单细胞且线粒体读数占比低于20%。最终仅通过完整筛选的细胞用于后续分析。</p>
+<p>进一步的质控检测在条件水平下进行，其中每个细胞系-药物处理条件需至少包含50个细胞才能纳入后续分析。此外，三个在不同条件下持续呈现低计数的细胞系（NCI-H661、NCI-H596、NCI-H2122）被排除在后续分析之外。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Replication analysis    复制分析</font></strong></h2>
+<p>UMI对第6号培养板(7,285,856个细胞）和第14号培养板(6,201,077个细胞）的单细胞数据进行了聚合处理，生成了每个细胞系与处理条件组合对应的“伪批量”UMI计数(Squair等人，2021年），最终获得第6号培养板的4,800个伪批量数据集和第14号培养板的4,796个伪批量数据集。随后，研究团队将数据集中仅保留两个培养板共有的4,796组细胞系与处理条件组合。通过将这些伪批量UMI计数矩阵进行拼接整合，最终形成了包含9,592组数据的完整数据集。</p>
+<p>使用伪批量曲线中的对数转换UMI计数（log（UMI计数+ 1）），计算平板内所有细胞系、处理组配对的Pearson相关系数。</p>
+<p>相关性被分为两类：是否匹配治疗和细胞身份。从每个类别中随机抽取4000对比较数据，利用这些抽样比较计算出各分类皮尔逊相关值的四分位数（第25、50和75百分位）。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Drug targets and mechanism of action (MOA)    药物靶点和作用机制（MOA）</font></strong></h2>
+<p>我们使用MedChemExpress（<a href="https://www.medchemexpress.com/">https://www.medchemexpress.com/</a>）和GPT-4o对已知基因靶点及作用机制（MOAs）的化合物列表进行注释。通过Selenium工具，我们从MedChemExpress中提取了化合物描述及其靶点列表（若已知）。</p>
+<p>为获取目标化合物，我们首先让GPT-4o根据化合物名称为其生成候选基因列表。随后要求模型利用MedChemExpress数据库信息优化推荐结果，仅保留经该平台验证的基因，并将基因名称转换为标准符号。若未找到有效靶点，则返回“无”的提示。完成每个化合物的靶点筛选后，系统会综合考虑候选列表与MedChemExpress数据，判断该化合物是否作用于特定靶点突变，并分别输出相关结论。</p>
+<p>我们采用“广义”和“狭义”两种方式对分子作用机制进行标注。在将化合物大致归类为“抑制剂/拮抗剂”或“激活剂/激动剂”时，我们要求GPT-4o综合考虑MedChemExpress数据库信息及化合物靶点列表，并在信息不足时返回“不明确”作为判定结果。针对更精细的作用机制标注，我们向GPT-4o提供了相同信息库，并附上人工整理的25种作用机制示例清单（每类包含典型化合物）。同样要求模型判断每个化合物最合适的MOA类别，若信息不足则返回“不明确”。</p>
+<p>我们对380种化合物中的97种进行了人工标注检查。发现部分靶标未采用标准基因符号，于是再次通过GPT-4o对靶标列表进行校正处理。</p>
+<p>我们还运用GPT-4o模型标注这些化合物是否已获批用于人体或参与临床试验。具体操作时，我们会向模型输入化合物名称，并要求其对两个问题分别给出肯定或否定的回答。在回答中特别设置了“备注”栏，用于补充说明相关背景信息（例如：若某特定对映体未获人体用药批准，但作为外消旋混合物的一部分使用）。此外，我们通过让模型借助clinicaltrials.gov工具验证其临床试验标注结果，进一步完善了标注流程。</p>
+<h2><strong><font style="color:rgb(0,0,0);">scVI model    scvi模型</font></strong></h2>
+<p>我们采用SCVI模型（Lopez等人，2018）通过scvi-tools工具（Gayoso等人，2022），利用负二项似然函数构建了10维表征来表征全部62,710个基因的表达水平。在模型训练过程中，我们将来自1至13号培养板的1,685份.h5ad格式AnnData文件（Virshup等人，2021）整合到单一AnnCollection对象中，该对象包含以“背载模式”加载的AnnData文件指针。由于14号培养板与6号培养板重复，我们将其排除在训练集之外，专门用于验证和模型评估。</p>
+<p>本研究将第1至13号培养板中通过全筛选的细胞（总计95,624,334个）（其中第1号培养板为89,423,257个）纳入训练集。这些细胞被随机划分为两组：90%用于训练，10%作为验证集。模型采用单细胞观测数据进行10轮训练，累计处理超过8亿个单细胞基因表达谱样本。</p>
+<p>训练完成后，模型及其对应的AnnData文件（包含所有通过完整筛选的细胞数据，包括第14号培养板）被压缩为便于交互分析的格式（Ergen等人，2024）。在压缩后的版本中，该模型利用41 GB存储空间，可为95,624,334个细胞中的62,710个基因提供基因表达量估算。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Single cell gene expression dimensionality reduction and visualization    单细胞基因表达降维与可视化</font></strong></h2>
+<p>局部逆辛普森指数（LISI）被用于量化基于已知因素的SCVI细胞转录组表征的离散程度或可分离性（Korsunsky等人，2019）。该指标的计算方法是：首先随机抽取10,000个细胞样本，通过30个最近邻进行估算；接着为每个分类因子计算中位数LISI值，并重复此过程100次以获得中位数LISI估计值的均值和标准差。</p>
+<p>为可视化基因表达数据，我们首先剔除了三个低丰度细胞系，对剩余各细胞系进行均匀采样，最终获得每个细胞系均等比例的代表性样本集（共6,580,000个细胞）。随后使用NVIDIA RAPIDS平台cuML软件包的TSNE函数，以默认参数将这些细胞的SCVI表示后验均值进行二维可视化呈现。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Differential gene-set score calculations for dimensionality reduction    用于降维的差异基因集评分计算</font></strong></h2>
+<p>我们对基因进行筛选，筛选标准为参考基因组中的基因与MSigDB数据库（版本v2023.1)中h.all、c5、GO、c6.all和c2.cp等基因集集合的交集，最终获得20,250个基因。通过SCVI模型生成10万个基因表达水平样本，并计算每个基因样本的标准差，从而估算出各基因在数据集中的标准化表达水平标准差。将标准差位于前50%的基因归类为“高变异性”基因，共计10,126个。</p>
+<p>我们首先对MSigDB基因集进行筛选，保留包含15至500个基因的集合（在任何基因过滤步骤前），随后进一步精炼，仅保留“高变异性”基因集中的至少10个基因，最终获得7,390个有效基因集。采用改良版Vision评分法（DeTomaso等人，2019）对基因集活性进行量化分析，该方法基于SCVI模型标准化表达水平计算得出。具体而言，基因集的Vision评分由该集合内SCVI标准化基因表达水平的几何平均数的对数构成。</p>
+<p>为评估药物扰动对基因集活性的影响，我们通过计算药物处理组与未处理对照组细胞的Vision评分平均差异来得出差异值。实验中每个培养板和细胞系均独立进行对比分析，其中同一培养板内的药物处理组与溶剂（DMSO）处理组进行直接比较。最终保留了62,927组有效对比数据，排除了任一处理组中样本量不足50个的情况。</p>
+<p>在每次比较中，我们使用SCVI模型为药物处理组和对照组细胞分别生成了250个蒙特卡洛样本，这些样本包含所有62,710个基因的标准化表达水平估计值。通过将这些样本转换为经过筛选的基因集评分，最终得到250个蒙特卡洛样本的差异基因集评分。取各蒙特卡洛样本中位数作为每个基因集的最终差异基因集评分，从而构建出涵盖62,927次比较的差异基因集评分矩阵。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Dimensionality reduction of differential gene-set scores    差异基因集评分的降维</font></strong></h2>
+<p>将7,390个基因集的差异基因集评分的前50个主成分作为输入，使用NVIDIA RAPIDS中的cuML程序包的TSNE函数和默认参数创建比较的二维可视化。</p>
+<p>我们实现了神经网络多维标度分析（NNMDS），这是一种针对度量多维标度问题的可扩展解决方案（Canzar等人，2024）。我们的实现遵循原始文献方法，并对中间神经网络层宽度进行了调整——将其设置为输入维度的10倍。将7,390个基因组分的前128个主成分作为输入数据进行NNMDS分析，并采用二维可视化目标。训练过程使用62,927次比较数据，经过250个周期完成。</p>
+<p>为了对差异基因集评分进行可视化和说明，排除了来自复制平板、平板14（平板6的副本）的比较，保留了57,471个比较。</p>
+<h2><strong><font style="color:rgb(0,0,0);">E-distance    e距离</font></strong></h2>
+<p>基于先前计算的scVI 10维潜在表征，我们按照Peidli等人（2024）的方法计算了E距离指标。具体而言，首先分别计算对照组（“DMSO_TF”）细胞群与处理组细胞群之间的所有成对欧氏距离。随后，将对照组与处理组细胞群的成对距离平均值从两倍于所有对照组与处理组细胞间成对欧氏距离的平均值中扣除。最终E距离值会根据所考虑的总细胞数量进行调整。在单个培养板中，我们针对特定细胞系，计算了所有药物处理条件与对照组（DMSO_TF）的E距离差异。对于涉及多个培养板的细胞系-药物组合，我们取所有培养板数据的中位数作为综合E距离指标。为了综合评估特定药物的效力，我们进一步计算了该药物在所有细胞系中的中位数值。</p>
+<p>为了将E距离度量与其他数据集进行对比，我们首先从桑德实验室（Peidli等人，2024）提供的scperturb数据集集合（<a href="http://projects.sanderlab.org/scperturb/">http://projects.sanderlab.org/scperturb/</a>）下载了Sciplex3（Srivatsan等人，2020）和Replogle2022基因组规模CRISPRi数据集（Replogle等人，2022）。这些数据经过筛选，确保每个扰动/处理条件包含超过50个细胞样本，随后通过scVI算法进行10维潜在表示分析。最后按照Tahoe-100M数据集的计算方法，完成了E距离的量化分析。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Cell cycle phase analysis    细胞周期相分析</font></strong></h2>
+<p>细胞周期分类采用Scanpy的“scoregenes_cell_cycle”函数进行，基因集来源于Regev实验室的细胞周期特征数据库（<a href="https://github.com/scverse/scanpy_usage/blob/master/180209_cell_cycle/data/regev_lab_cell_cycle_genes.txt">https://github.com/scverse/scanpy_usage/blob/master/180209_cell_cycle/data/regev_lab_cell_cycle_genes.txt</a>）.。根据该特征将细胞划分为G1期、S期或G2/M期，并计算各细胞系与药物处理组合在各阶段的富集度评分。该富集度评分定义为log-odds比值log2（（phase_drug/nonphase_drug）/（phase_ctrl/nonphase_ctrl）），，便于直接比较药物处理组与对照组（DMSO对照组）的差异。为消除培养板批次效应，评分以单细胞系、单培养板为单位进行计算。随后，通过比较不同作用机制（MOAs）药物在各细胞周期阶段的富集度评分，评估特定药物类别是否引发细胞周期分布的显著改变。本分析排除了作用机制不明确的药物。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Gene-set signature analysis    基因组特征分析</font></strong></h2>
+<p>为评估靶向RAS/RAF信号通路治疗的转录影响，我们筛选了特异性调控该通路的抑制剂，包括泛RAS（RMC-6236）和BRAF-V600E（达拉非尼）抑制剂。首先对数据集进行过滤，保留经这些抑制剂处理的细胞及其对应的平板对照组，并进一步将表达矩阵子集化为仅包含来自MSigDB的蛋白质编码基因。随后对原始表达值进行单细胞UMI标准化处理，并根据标准差筛选出变异最大的前50%基因。由此生成的标准化表达矩阵作为后续分析的输入数据，使用Vision软件（DeTomaso等，2019）进行处理。在分析中，我们从MSigDB筛选KRAS相关通路并过滤出本数据集中高度变异的基因，再通过Vision软件计算这些优化后的KRAS特征的通路评分。针对每种细胞系与药物组合，我们采用公式（treat_mdn - dmso_mdn）/（treat_iqr + dmso_iqr）计算综合差异Vision评分，该评分反映治疗组与DMSO对照组中位数Vision评分的差异，并通过合并四分位距进行标准化处理。最后，我们使用KRAS.600.LUNG.BREAST.V1特征比较了不同治疗组之间的差异视力评分。将细胞系分为三组：携带KRAS突变但无RAF突变的细胞系、携带BRAF V600E突变但无RAS突变的细胞系以及同时缺乏RAS和RAF突变的细胞系。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Data Availability   数据可用性</font></strong></h2>
+<p>数据将于2025年2月25日在Arc的虚拟细胞图谱上提供下载。</p>
+<h2><strong><font style="color:rgb(0,0,0);">Acknowledgments</font></strong></h2>
+<p>我们衷心感谢帕斯生物科学公司（Parse Biosciences）为本项目提供的Gigalab技术支持。特别鸣谢乌尔蒂玛基因组学公司（Ultima Genomics）在测序服务方面给予的鼎力支持。同时感谢维沃治疗公司（Vevo Therapeutics）团队成员——雅斯敏·萨梅尼（Yasmin Sameni）、钱西·费斯勒（Chancy Fessler）、什雷斯特·甘地（Shreshth Gandhi）和法努什·贾瓦迪（Farnoosh Javadi）对本项目的大力支持。最后，感谢礼来门户实验室（Lilly Gateway Labs）为维沃治疗公司实验室提供场地支持。</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        Wei He
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -30,14 +30,32 @@
     </item>
     
     <item>
-      <title>虚拟细胞挑战</title>
+      <title>Tahoe-100M：一个用于上下文相关基因功能和细胞建模的千兆级单细胞扰动图谱</title>
+      <link>https://www.heweilab.com/zh/post/tahoe-100m/</link>
+      <pubDate>Fri, 25 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/tahoe-100m/</guid>
+      
+        <description>&lt;p&gt;1.维沃治疗公司；2.阿克研究所；3.帕斯生物科学公司&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.heweilab.com/picture/Tahoe100M/1753345589600-d963d74c-f60c-47d8-8bee-fe84054a8a1d.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;bioRxiv预印本doi：&lt;a href=&#34;https://doi.org/10.1101/2025.02.20.639398&#34;&gt;https://doi.org/10.1101/2025.02.20.639398&lt;/a&gt;；本版本发布于2025年2月24日。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;Abstract&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;构建细胞预测模型需要系统性地绘制&lt;font style=&#34;color:#DF2A3F;&#34;&gt;扰动如何重塑每个细胞的状态、功能和行为&lt;/font&gt;。在此，我们推出Tahoe-100M——一个包含1亿个转录组谱型的千兆级单细胞图谱，测量了1100种小分子扰动对50种癌细胞系的影响。我们的高通量Mosaic平台由高度多样化且平衡优化的“细胞村”组成，有效减少批次效应，并实现了数千种条件在单细胞分辨率下前所未有的大规模并行分析。&lt;/p&gt;
+&lt;p&gt;作为迄今为止最大的单细胞数据集，Tahoe-100M使人工智能（AI）驱动的模型能够学习情境依赖性功能，揭示基因调控与网络动态的基本原理。尽管我们利用癌症模型和药理化合物构建了这一资源，但Tahoe-100M本质上是一个广泛适用的扰动图谱，支持对多种组织和情境下的细胞生物学进行更深入的洞察。通过公开发布该图谱，我们旨在加速系统生物学领域稳健AI框架的创建与发展，最终提升我们在广泛应用中预测和调控细胞行为的能力。&lt;/p&gt;
+&lt;h1 id=&#34;introduction&#34;&gt;&lt;font style=&#34;color:#000000;&#34;&gt;Introduction&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;细胞生物学领域长期追求的目标是构建预测性、机制性的模型，用以阐释细胞如何整合信号并执行精准的转录调控与表型响应（恩迪和布伦特，2001)。要建立具有表现力的计算机模拟细胞行为模型，需要生成大量定量数据集，系统描绘细胞状态（例如通过转录组特征测量）如何被&lt;font style=&#34;color:#DF2A3F;&#34;&gt;遗传、化学或环境干预&lt;/font&gt;等多样化因素重塑。扰动测量技术能阐明基因间的因果相互作用，揭示反馈回路，并暴露补偿通路，从而揭示调控细胞行为与功能的底层网络（佩尔，2005；迪克西特等，2016；亚当森等，2016)。基于现代高通量分析技术构建的扰动数据集具有惊人优势，能以前所未有的分辨率揭示基础生物过程，进而助力构建细胞计算机模拟模型（邦尼等，2024)。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>虚拟细胞挑战：迈向虚拟细胞的图灵测试</title>
       <link>https://www.heweilab.com/zh/post/virtual-cell-challenge/</link>
       <pubDate>Wed, 23 Jul 2025 00:00:00 +0000</pubDate>
       
       <guid>https://www.heweilab.com/zh/post/virtual-cell-challenge/</guid>
       
-        <description>&lt;h1 id=&#34;虚拟细胞挑战迈向虚拟细胞的图灵测试&#34;&gt;虚拟细胞挑战：迈向虚拟细胞的图灵测试&lt;/h1&gt;
-&lt;p&gt;1美国加州帕洛阿尔托Arc研究所&lt;/p&gt;
+        <description>&lt;p&gt;1美国加州帕洛阿尔托Arc研究所&lt;/p&gt;
 &lt;p&gt;2美国加州旧金山加利福尼亚大学旧金山分校&lt;/p&gt;
 &lt;p&gt;3美国加州帕洛阿尔托斯坦福大学&lt;/p&gt;
 &lt;p&gt;4美国加州伯克利加利福尼亚大学伯克利分校&lt;/p&gt;
@@ -45,7 +63,8 @@
 &lt;p&gt;Cell 188,2025年6月26日&lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;挑战的核心目标是：预测细胞对扰动的反应，例如基因敲除或药物作用&lt;/p&gt;
-&lt;p&gt;契机：&lt;/p&gt;</description>
+&lt;p&gt;契机：&lt;/p&gt;
+&lt;p&gt;数据多了：单细胞测序技术发展，积累海量单细胞细节数据&lt;/p&gt;</description>
       
     </item>
     
