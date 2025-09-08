@@ -1,0 +1,618 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        SToFM：空间转录组学的多尺度基础模型 |
+      何为
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.149.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="何为" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.86b1f7f8e46fb7f9432e28081186d24eb6cd881e4d058e84aef93462f1e41337.css" integrity="sha256-hrH3&#43;ORvt/lDLigIEYbSTrbNiB5NBY6Ervk0YvHkEzc=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/stofm/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="SToFM：空间转录组学的多尺度基础模型">
+  <meta name="twitter:description" content="《第42届国际机器学习会议论文集》（加拿大温哥华）。PMLR 267卷，2025年。
+Abstract 空间转录组学（ST）技术通过保留细胞的空间上下文，为生物学家提供了单细胞生物学的深刻见解。构建ST的基础模型能显著提升对海量复杂数据源的分析能力，为生物组织的复杂性开辟新视角。然而，由于需要从含有海量细胞的组织切片中提取多尺度信息，ST数据建模本身具有天然挑战性。这一过程需要整合宏观层面的组织形态、微观层面的细胞微环境以及基因层面的表达谱。为应对这一挑战，我们提出了SToFM——一种多尺度空间转录组学基础模型。SToFM首先对每个ST切片进行多尺度信息提取，构建整合宏观、微观和基因尺度信息的ST子切片集合。随后采用SE(2) Transformer从子切片中获取高质量细胞表征。此外，我们还构建了SToCorpus-88M——目前最大的高分辨率空间转录组学预训练语料库。SToFM在组织区域语义分割、细胞类型标注等下游任务中表现优异，通过捕捉和整合多尺度信息展现了其对ST数据的全面理解能力。
+空间转录组学：__(Spatial Transcriptomics, ST) 转录组学 (Transcriptomics)：研究的是一个细胞在特定时间点所有信使RNA（mRNA）的集合，即转录组__。 空间 (Spatial)：这个前缀是关键技术所在。它意味着在测量基因表达（转录组）的同时，记录每个测量点在原始组织中的精确物理坐标__。 所以，空间转录组学是一门能够在组织切片上原位（in situ）捕获全部基因表达信息，并保留其空间位置的新型技术。">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/stofm/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="SToFM：空间转录组学的多尺度基础模型">
+  <meta property="og:description" content="《第42届国际机器学习会议论文集》（加拿大温哥华）。PMLR 267卷，2025年。
+Abstract 空间转录组学（ST）技术通过保留细胞的空间上下文，为生物学家提供了单细胞生物学的深刻见解。构建ST的基础模型能显著提升对海量复杂数据源的分析能力，为生物组织的复杂性开辟新视角。然而，由于需要从含有海量细胞的组织切片中提取多尺度信息，ST数据建模本身具有天然挑战性。这一过程需要整合宏观层面的组织形态、微观层面的细胞微环境以及基因层面的表达谱。为应对这一挑战，我们提出了SToFM——一种多尺度空间转录组学基础模型。SToFM首先对每个ST切片进行多尺度信息提取，构建整合宏观、微观和基因尺度信息的ST子切片集合。随后采用SE(2) Transformer从子切片中获取高质量细胞表征。此外，我们还构建了SToCorpus-88M——目前最大的高分辨率空间转录组学预训练语料库。SToFM在组织区域语义分割、细胞类型标注等下游任务中表现优异，通过捕捉和整合多尺度信息展现了其对ST数据的全面理解能力。
+空间转录组学：__(Spatial Transcriptomics, ST) 转录组学 (Transcriptomics)：研究的是一个细胞在特定时间点所有信使RNA（mRNA）的集合，即转录组__。 空间 (Spatial)：这个前缀是关键技术所在。它意味着在测量基因表达（转录组）的同时，记录每个测量点在原始组织中的精确物理坐标__。 所以，空间转录组学是一门能够在组织切片上原位（in situ）捕获全部基因表达信息，并保留其空间位置的新型技术。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-09-02T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-02T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "SToFM：空间转录组学的多尺度基础模型",
+        "headline": "SToFM：空间转录组学的多尺度基础模型",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003e\u003cimg src=\u0022\/picture\/SToFM\/1756371353809-ae2f4763-b6d0-4000-9197-260d704d980e.png\u0022 alt=\u0022\u0022\u003e\u003c\/p\u003e\n\u003cp\u003e\u003cimg src=\u0022\/picture\/SToFM\/1756371342835-6ba13647-a6ea-4756-ba20-bbef44b20d10.png\u0022 alt=\u0022\u0022\u003e\u003c\/p\u003e\n\u003cp\u003e《第42届国际机器学习会议论文集》（加拿大温哥华）。PMLR 267卷，2025年。\u003c\/p\u003e\n\u003ch1 id=\u0022abstract\u0022\u003e\u003cfont style=\u0022color:rgb(0, 0, 0);\u0022\u003eAbstract\u003c\/font\u003e\u003c\/h1\u003e\n\u003cp\u003e\u003cfont style=\u0022background-color:#FBDE28;\u0022\u003e空间转录组学（ST）\u003c\/font\u003e技术通过保留\u003cfont style=\u0022background-color:#FBDE28;\u0022\u003e细胞的空间上下文\u003c\/font\u003e，为生物学家提供了单细胞生物学的深刻见解。构建ST的基础模型能显著提升对海量复杂数据源的分析能力，为生物组织的复杂性开辟新视角。然而，由于需要从含有海量细胞的组织切片中提取\u003cfont style=\u0022background-color:#FBDE28;\u0022\u003e多尺度信息\u003c\/font\u003e，ST数据建模本身具有天然挑战性。这一过程需要整合\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e宏观层面的组织形态、微观层面的细胞微环境以及基因层面的表达谱\u003c\/font\u003e。为应对这一挑战，我们提出了SToFM——一种多尺度空间转录组学基础模型。SToFM首先对每个ST切片进行多尺度信息提取，构建整合宏观、微观和基因尺度信息的ST子切片集合。随后采用SE(2) Transformer从子切片中获取高质量细胞表征。此外，我们还构建了SToCorpus-88M——目前最大的高分辨率空间转录组学预训练语料库。SToFM在\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e组织区域语义分割、细胞类型标注\u003c\/font\u003e等下游任务中表现优异，通过捕捉和整合多尺度信息展现了其对ST数据的全面理解能力。\u003c\/p\u003e\n\u003chr\u003e\n\u003col\u003e\n\u003cli\u003e\u003cem\u003e\u003cu\u003e\u003cfont style=\u0022background-color:#FBDE28;\u0022\u003e空间转录组学：\u003c\/font\u003e\u003c\/u\u003e__\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);background-color:#FBDE28;\u0022\u003e(Spatial Transcriptomics, ST)\u003c\/font\u003e\u003c\/u\u003e\u003c\/em\u003e\u003c\/li\u003e\n\u003c\/ol\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e转录组学 (Transcriptomics)\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e：研究的是一个细胞在特定时间点所有信使RNA（mRNA）的集合，即\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e转录组\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e__\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e。\u003c\/font\u003e\u003c\/u\u003e\u003c\/em\u003e\u003c\/li\u003e\n\u003cli\u003e\u003cem\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e空间 (Spatial)\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e：这个前缀是关键技术所在。它意味着在测量基因表达（转录组）的同时，\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e\u003cstrong\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e记录每个测量点在原始组织中的精确物理坐标\u003c\/font\u003e\u003c\/u\u003e\u003c\/strong\u003e__\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e。\u003c\/font\u003e\u003c\/u\u003e\u003c\/em\u003e\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e\u003cem\u003e\u003cu\u003e\u003cfont style=\u0022color:rgb(64, 64, 64);\u0022\u003e所以，空间转录组学是一门能够在组织切片上原位（in situ）捕获全部基因表达信息，并保留其空间位置的新型技术。\u003c\/font\u003e\u003c\/u\u003e\u003c\/em\u003e\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/stofm\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-09-02T00:00:00.00Z",
+        "datePublished": "2025-09-02T00:00:00.00Z",
+        "dateModified": "2025-09-02T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/stofm\/",
+        "wordCount" : "251",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>SToFM：空间转录组学的多尺度基础模型</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  2/9/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <p><img src="/picture/SToFM/1756371353809-ae2f4763-b6d0-4000-9197-260d704d980e.png" alt=""></p>
+<p><img src="/picture/SToFM/1756371342835-6ba13647-a6ea-4756-ba20-bbef44b20d10.png" alt=""></p>
+<p>《第42届国际机器学习会议论文集》（加拿大温哥华）。PMLR 267卷，2025年。</p>
+<h1 id="abstract"><font style="color:rgb(0, 0, 0);">Abstract</font></h1>
+<p><font style="background-color:#FBDE28;">空间转录组学（ST）</font>技术通过保留<font style="background-color:#FBDE28;">细胞的空间上下文</font>，为生物学家提供了单细胞生物学的深刻见解。构建ST的基础模型能显著提升对海量复杂数据源的分析能力，为生物组织的复杂性开辟新视角。然而，由于需要从含有海量细胞的组织切片中提取<font style="background-color:#FBDE28;">多尺度信息</font>，ST数据建模本身具有天然挑战性。这一过程需要整合<font style="color:#DF2A3F;">宏观层面的组织形态、微观层面的细胞微环境以及基因层面的表达谱</font>。为应对这一挑战，我们提出了SToFM——一种多尺度空间转录组学基础模型。SToFM首先对每个ST切片进行多尺度信息提取，构建整合宏观、微观和基因尺度信息的ST子切片集合。随后采用SE(2) Transformer从子切片中获取高质量细胞表征。此外，我们还构建了SToCorpus-88M——目前最大的高分辨率空间转录组学预训练语料库。SToFM在<font style="color:#DF2A3F;">组织区域语义分割、细胞类型标注</font>等下游任务中表现优异，通过捕捉和整合多尺度信息展现了其对ST数据的全面理解能力。</p>
+<hr>
+<ol>
+<li><em><u><font style="background-color:#FBDE28;">空间转录组学：</font></u>__<u><font style="color:rgb(64, 64, 64);background-color:#FBDE28;">(Spatial Transcriptomics, ST)</font></u></em></li>
+</ol>
+<ul>
+<li><em><strong><u><font style="color:rgb(64, 64, 64);">转录组学 (Transcriptomics)</font></u></strong><strong><u><font style="color:rgb(64, 64, 64);">：研究的是一个细胞在特定时间点所有信使RNA（mRNA）的集合，即</font></u></strong><strong><u><font style="color:rgb(64, 64, 64);">转录组</font></u></strong>__<u><font style="color:rgb(64, 64, 64);">。</font></u></em></li>
+<li><em><strong><u><font style="color:rgb(64, 64, 64);">空间 (Spatial)</font></u></strong><strong><u><font style="color:rgb(64, 64, 64);">：这个前缀是关键技术所在。它意味着在测量基因表达（转录组）的同时，</font></u></strong><strong><u><font style="color:rgb(64, 64, 64);">记录每个测量点在原始组织中的精确物理坐标</font></u></strong>__<u><font style="color:rgb(64, 64, 64);">。</font></u></em></li>
+</ul>
+<p><em><u><font style="color:rgb(64, 64, 64);">所以，空间转录组学是一门能够在组织切片上原位（in situ）捕获全部基因表达信息，并保留其空间位置的新型技术。</font></u></em></p>
+<ol start="2">
+<li><em><u><font style="background-color:#FBDE28;">细胞的空间上下文：(Spatial Context of Cells)</font></u></em></li>
+</ol>
+<p><em><u><font style="color:rgb(64, 64, 64);">“空间上下文”指的是一个细胞在其所处微观环境中的</font></u><strong><strong><u><font style="color:rgb(64, 64, 64);">位置、邻居和空间关系</font></u></strong></strong><u><font style="color:rgb(64, 64, 64);">所蕴含的生物学信息。这不仅仅是“它在哪儿”，更是“它周围是谁，这如何影响它”。</font></u>__<strong><u><font style="color:rgb(64, 64, 64);">它直接决定了细胞的功能和行为。</font></u></strong></em></p>
+<ol start="3">
+<li><em><u><font style="background-color:#FBDE28;">多尺度信息：(multi-scale information)</font></u></em></li>
+</ol>
+<p><em><u><font style="color:rgb(64, 64, 64);">在空间转录组学的语境中，“多尺度”指的是生物组织固有的、嵌套的层次化结构。分析数据时，需要同时考虑这些不同尺度上的生物现象，而不能只盯着一个层面。有细胞尺度、组织尺度、中间尺度（前两个尺度的如何相互作用）。</font></u></em></p>
+<hr>
+<h1 id="introduction"><font style="color:#000000;">Introduction</font></h1>
+<p>在单细胞转录组学研究中，单细胞RNA测序（scRNA-seq）数据能够反映细胞内的基因表达水平，为细胞提供数字化表征（齐根海因等人，2017)。机器学习方法在分析scRNA-seq数据方面取得了显著进展，有效提升了对复杂生物系统的理解（Szałata等人，2024)。然而，scRNA-seq技术将细胞与组织环境分离，因此忽略了组织形态、细胞间相互作用等组织层面的信息。这一局限性制约了scRNA-seq数据在涉及细胞的真实世界研究中的应用范围（威廉姆斯等人，2022；杜等人，2023)。</p>
+<hr>
+<p><em><u>先讲单细胞RNA测序技术以及机器学习在其上的应用。但是存在弊端：将细胞与组织环境分离，限制了涉及细胞真实环境世界中的研究。</u></em></p>
+<hr>
+<p>幸运的是，空间转录组学（ST）技术为在不破坏组织空间结构的前提下测量细胞基因表达开辟了新途径。具体而言，<font style="color:#DF2A3F;">ST数据以组织切片形式获取</font>，可通过计算建模为包含数万个点的二维点云。每个点代表一个细胞或测序位点，其中最多可容纳约2万个基因表达值。这种丰富的信息为生物学家提供了研究单细胞生物学的独特视角（杜等人，2023；马克思，2021)。有效分析ST数据可为胚胎学（陈等人，2022)、神经科学（施等人，2023；哈塞尔等人，2021)、肿瘤微环境分析（吴等人，2021；金等人，2024)以及特定器官相关疾病研究（吴等人，2024；弗兰岑等人，2024)等各类组织结构相关研究提供细胞层面的洞见。</p>
+<hr>
+<p><em><u>引出空间转录组学，包含了组织环境的转录组学。介绍了ST数据的计算描述：点云；以及ST数据在各个学科领域当中的价值意义。</u></em></p>
+<p><em><u>点云是ST数据的计算本质：它是一个巨量的、包含丰富基因信息的空间几何结构。每个点都拥有两大核心属性：空间坐标，基因表达向量 </u></em></p>
+<hr>
+<p>近年来，单细胞空间转录组学（ST）产生的海量数据催生了日益增长的分析需求（阿塔与范，2021)，这推动了机器学习方法在该领域的应用。早期研究针对解卷积、数据填补和聚类等下游任务设计了特定方法（比安卡拉尼等人，2021；阿卜德拉尔等人，2020；董与张，2022)。近期受预训练模型在单细胞转录组学中取得突破性进展的启发（杨等人，2022；崔等人，2023；郝等人，2023；西奥多里斯等人，2023)，部分研究尝试开发ST基础模型。例如，Nicheformer通过<font style="color:#DF2A3F;">在单细胞基因表达谱上预训练基于Transformer的模型，同时整合ST数据和单细胞RNA测序数据以增强迁移能力</font>（沙尔等人，2024)。CellPLM则通过<font style="color:#DF2A3F;">将细胞坐标编码为正弦位置嵌入来整合空间信息</font>（文等人，2023)。这些模型在一系列下游任务中展现出卓越性能和良好的迁移能力。</p>
+<hr>
+<p><em><u>数据积累催生分析需求，推动方法进步。介绍方法：早期的特定方法—&gt;近期的预训练模型，开发基础模型（Foundation Model）。介绍了Nicheformer和CellPLM方法。</u></em></p>
+<p><em><u>Nicheformer:模型在预训练阶段同时使用了单细胞RNA测序数据（无空间坐标的单细胞基因表达谱）和从ST数据中获得的单细胞基因表达谱（有坐标）。从scRNA-seq数据中学习“细胞身份”的通用字典，从ST数据中学习“空间语境”如何修饰基因表达，目的是让模型获得强大的迁移（transferability） 能力。（可能只是利用了两种数据，而没有考虑ST数据的位置坐标？）</u></em></p>
+<p><em><u>CellPLM：通过正弦位置编码对细胞坐标进行编码，解决原始坐标数值敏感、缺乏平移不变以及与高维基因表达不匹配的问题，同时具有唯一性、相对位置感知、稳定且边界无关和与高维数据融合的优势。</u></em></p>
+<hr>
+<p>尽管ST数据取得了显著进展，但我们认为现有研究尚未充分捕捉其最重要的特征之一。如图1所示，ST数据蕴含着多尺度的生物信息：宏观层面（图1a)可提取组织形态与器官结构信息，例如功能分区和解剖层；微观层面（图1b)通过分析相邻细胞间的空间关系，可捕捉细胞环境及细胞间相互作用；基因层面（图1c)则能通过基因表达谱深入解析单个细胞的详细信息。要有效分析ST数据，需要全面理解不同尺度的生物信息。以神经科学为例，要理解大脑结构与功能，必须整合大脑解剖区域等宏观信息、神经元连接等微观信息以及空间变异基因等基因层面信息（Jung &amp; Kim，2023）。这为构建ST基础模型提出了独特挑战——如何通过合适的模型架构和自监督目标，从海量ST切片中捕获并整合多尺度信息。</p>
+<p><img src="/picture/SToFM/1756456491973-7a6130bf-0872-4a7b-bd27-4ecaa32758cd.png" alt=""></p>
+<p><em>图1：ST数据包含来自多个尺度的生物信息。(a)小鼠脑部ST切片的可视化示例。(b)脑切片的显微亚切片。(c)脑切片中单个细胞的基因表达谱。</em></p>
+<hr>
+<p><em><u>介绍现有研究的缺陷，也就是本文的motivation：ST数据特有的多尺度生物信息利用。作者分为三个方面来介绍：宏观层面的组织形态、微观层面的细胞微环境与细胞互作以及基因层面的表达谱。以神经科学为例解释多尺度信息利用的重要性。</u></em></p>
+<hr>
+<p>为应对这一挑战，我们提出SToFM——一种多尺度空间拓扑基础模型，如图2所示。首先，为捕捉基因尺度信息，SToFM通过持续预训练现成的预训练细胞编码器（Theodoris等人，2023），利用空间拓扑数据中的基因表达谱进行领域自适应。其次，为捕捉微观尺度信息，我们根据细胞坐标将空间拓扑切片划分为多个子切片，并采用SE(2) Transformer（Zhou等人，2023）来捕捉空间信息和细胞间相互作用。这种划分不仅突出了局部细胞间的空间交互（Zormpas等人，2023），还提升了空间拓扑数据的全量采集效率。最后，为保持每个子切片内的宏观信息，我们借鉴了计算机视觉（Cao等人，2019；Liu等人，2021）和图神经网络（Ying等人，2018；Xu等人，2018）的多尺度方法，通过聚类将宏观信息表示为若干虚拟细胞，并将其注入子切片。我们设计了两项预训练任务：掩码细胞建模和成对距离恢复，以同时捕捉基因表达和空间拓扑数据的特征。</p>
+<p><img src="/picture/SToFM/1756456870205-9443dc26-d892-460d-bfa3-3fd93c42c37a.png" alt=""></p>
+<p><em>图2：SToFM架构概览。(a)多尺度处理将宏观、微观和基因层面的信息整合为子切片。在基因层面，我们使用经过领域适应训练的细胞编码器提取每个细胞的表征。在微观层面，我们将ST切片分割为多个子切片。在宏观层面，我们基于空间分布和基因表达数据对细胞进行聚类，为每个聚类构建虚拟细胞，并将其添加到各子切片中。值得注意的是，实际子切片包含的细胞数量（˜1000）和虚拟细胞数量（˜50）远超简化图示。(b)预训练阶段首先使用领域适应的细胞编码器重新计算细胞嵌入向量，通过反向传播完成模型训练。随后采用SE(2) Transformer联合建模随机掩码的细胞嵌入向量与噪声增强的距离矩阵。最终利用输出表征重构原始细胞嵌入向量和空间距离。这两个预训练任务分别称为掩码细胞建模（MCM）和成对距离恢复（PDR）。</em></p>
+<hr>
+<p><em><u>介绍SToFm：<br>
+</u>__<u>宏观：对ST切片进行聚类，构建虚拟细胞类型信息，并将其注入子切片（区分组织形态？）</u></em></p>
+<p><em><u>微观：根据细胞坐标对ST切片进行子切片划分，并捕捉空间信息和细胞间相互作用（考虑细胞微环境？）</u></em></p>
+<p><em><u>基因：利用空间拓扑数据中的基因表达谱进行领域自适应，经过领域适应训练的细胞编码器提取每个细胞的表征</u></em></p>
+<p><em><u>宏观：计算机视觉图神经网络的聚类方法</u></em></p>
+<p><em><u>微观：SE(2) Transformer（Zhou等人，2023）</u></em></p>
+<p><em><u>基因：通过持续预训练现成的预训练细胞编码器（Theodoris等人，2023），领域自适应</u></em></p>
+<hr>
+<p>为训练SToFM模型，我们构建了迄今为止规模最大的高分辨率ST预训练语料库SToCorpus-88M。该语料库包含通过6种不同ST技术获取的约2000张高分辨率ST切片，总计8800万个细胞样本。其规模是当前最大ST语料库(Schaar等人，2024年）的1.5倍，技术多样性更是达到两倍。SToCorpus-88M将向公众开放发布。</p>
+<hr>
+<p><em><u>简单介绍了整理和训练的数据集：SToCorpus-88M</u></em></p>
+<hr>
+<p>为验证SToFM在整合多尺度ST数据信息方面的有效性，我们构建了一个包含多项重要生物学任务的综合基准测试。具体而言，在跨切片组织区域语义分割任务（Chan等人，2019；He等人，2024）和细胞类型标注任务（Yang等人，2022；Dom‘ınguez Conde等人，2022）中，SToFM分别以11.6%和14.34%的F1分数优势超越最佳基线模型。我们通过补充定性与定量结果进一步验证了SToFM表征的语义信息量和迁移能力，这归功于其多尺度信息整合机制——组织形态、细胞间相互作用模式及基因表达语义特征共同作用，使得不同ST切片间能获得一致且可迁移的表征。</p>
+<hr>
+<p><em><u>概括介绍了构建的测试基准：跨切片组织区域语义分割任务、细胞类型标注任务。说明模型的优势。</u></em></p>
+<hr>
+<p>我们的主要贡献总结如下：</p>
+<p>(1)我们提出SToFM多尺度基础模型，该模型能从宏观、微观及基因三个维度整合空间转录组学信息。</p>
+<p>(2)我们构建了SToCorpus-88M——首个专为预训练设计的大型空间转录组学语料库，该语料库将向公众开放。</p>
+<p>(3)通过多种涉及时空数据的下游任务验证，SToFM展现出卓越的性能表现。</p>
+<h1><strong><font style="color:rgb(0,0,0);">Related Works</font></strong></h1>
+<p><strong>单细胞基础模型</strong>  单细胞测序技术的发展带来了数据量的指数级增长（Svensson等，2018），这为单细胞基础模型奠定了理论基础。受自然语言处理领域预训练模型的启发，目前主流的单细胞基础模型如scBERT和Geneformer，通过Transformer架构和掩码语言建模等语言建模目标，有效捕捉基因表达的内在规律（Yang等，2022；Gong等，2023；Theodoris等，2023；Zhao等，2023；Cui等，2023；Hao等，2023）。另有研究将单细胞数据与自然语言结合进行多模态预训练，以拓展生物学认知维度（Zhao等，2024；Levine等，2023；Choi等，2024；Yuan等，2024）。得益于大规模预训练的优势，这些单细胞基础模型在单细胞生物学的多种下游任务中展现出显著效果（Wenteler等，2024；Liu等，2023），并为科研人员提供了全新视角（Bordukova等，2024；Yang等，2024）。关于该领域的深入综述，读者可参阅（Szałata等，2024)的系统性研究。</p>
+<p>**空间转录组学的深度学习方法   **早期基于机器学习的空间分析方法主要针对特定下游任务，采用参数规模较小且无需大规模预训练的架构。例如，Tangram（Biancalani等人，2021）利用参考单细胞RNA测序数据集对低分辨率空间数据进行有效解卷积。STAGATE（Dong和Zhang，2022）在组织结构分割和斑点解卷积等下游任务中表现优异。SpaGE（Abdelaal等人，2020）通过整合空间数据与单细胞RNA测序数据来推断基因表达谱。近年来，基于大规模无监督空间数据开发空间基础模型的研究热度持续攀升。<font style="color:#DF2A3F;">Nicheformer（Schaar等人，2024）是一种基于Transformer的模型，通过在空间数据上预训练单细胞数据来缓解空间测序技术带来的分布差异。该模型仅利用空间数据的基因表达信息而忽略空间坐标。据我们所知，CellPLM（Wen等人，2023）是唯一通过结合基因表达嵌入和位置嵌入作为Transformer输入嵌入，在预训练阶段整合空间信息与转录组学的研究成果。作为初步尝试，CellPLM已初步验证了建立空间基础模型的可行性。相比之下，SToFM不仅在基因尺度上捕捉精细的基因表达嵌入，还提出了更先进的方法来整合微观和宏观尺度的信息。</font></p>
+<hr>
+<p><em><u>Nicheformer利用空间数据的基因表达信息而忽略空间坐标，CellPLM通过结合基因表达嵌入和位置嵌入作为Transformer输入嵌入，同时利用了位置和基因信息，而SToFM把位置信息分为了宏观的组织形态和微观的细胞微环境。</u></em></p>
+<hr>
+<h1><strong><font style="color:rgb(0,0,0);">Methods</font></strong></h1>
+<p>本节将详细阐述SToFM的实现方案与工作流程（如图2所示）。首先，我们对每个ST切片进行多尺度信息提取，通过整合亚切片中的宏观、微观及基因层面信息（详见第3.1节），生成适合神经网络处理的输入数据。接着，针对每个亚切片，采用SE(2)变换器融合转录组学数据与空间信息进行表征学习（如第3.2节所述）。最后，在第3.3节中，我们将具体说明预训练的目标设定与实施策略。</p>
+<h2 id="31-multi-scale-information-extraction-多尺度信息提取">3.1. Multi-scale Information Extraction 多尺度信息提取</h2>
+<p>我们将包含N个细胞的ST切片表示为：S0 =（E，P），其中E = {Ei∈R n} N i=1表示n维基因表达矩阵，P = {Pi∈R 2} N i=1代表二维位置坐标。如图2a所示，在此过程中，我们对每个切片进行多尺度信息提取，从而获得一组聚合多尺度信息的子切片集合，定义为ˆS={S(i)}。ˆS将作为模型输入用于后续处理流程。</p>
+<p>**基因尺度域适应    **鉴于基因表达谱具有高维度和稀疏性特征，我们需要对其进行降维嵌入处理。由于技术限制，单细胞转录组（ST）数据常存在基因覆盖范围有限、“零值缺失”率高等问题（Avs¸ar&amp;Pir，2023；Li et al.，2023)。因此相较于单细胞RNA测序（scRNA-seq）数据，ST数据的质量明显逊色。通过在ST数据上逐步训练scRNA-seq基础模型，可将从scRNA-seq数据中习得的知识迁移至不同分布的ST数据，从而获得更高质量的细胞嵌入。我们采用Geneformer作为细胞编码器的初始模型——这是目前最先进的基于Transformer的单细胞基础模型之一，其通过将细胞编码为按相对表达量降序排列的基因序列，实现了高质量表征（Theodoris et al.，2023）。更多细节请参阅附录A.1。</p>
+<p>我们通过逐步训练基于ST数据细胞的编码器来实现领域适应。随后使用经过领域适配的细胞编码器fcell处理ST数据中的基因表达谱E，生成h维特征向量F = {Fi∈R^h}N（其中Fi=fcell（Ei））。我们将F作为细胞的附加信息加入S0中，最终得到包含E、F和P三组数据的复合数据集S =（E，F，P）。</p>
+<p>**微观和宏观层面的整合    **我们设计了一种多尺度方法，有效整合微观与宏观层面的信息。根据空间位置P将每个切片划分为多个子切片，每个子切片包含约1000个可管理的细胞单元。这种划分方式在保持计算效率与保留局部细胞间相互作用之间实现了经验性平衡。为保留宏观信息，我们采用莱顿算法（Traag等人，2019）基于细胞嵌入向量F和细胞位置P对S中的所有细胞进行聚类。我们将每个聚类整合为虚拟细胞，其嵌入向量和位置坐标取该聚类内所有细胞的平均值。这些虚拟细胞保留了切片的主要形态结构与分区特征，成为宏观信息的压缩载体。通过将虚拟细胞融入各子切片，模型既能学习微观信息，又保持感知宏观结构组织的能力。如算法1所示，我们将S =（E，F，P）划分为包含虚拟细胞的子切片集合Sˆ= {S (i) =（E(i)，F(i)，P(i)）}。这些子切片通过虚拟细胞封装微观信息，同时借助虚拟细胞和细胞嵌入向量整合宏观与基因层面的信息。值得注意的是，我们仅计算虚拟细胞的嵌入F VC而非基因表达值，因为多个细胞的平均基因表达谱超出分布范围，无法被细胞编码器有效编码</p>
+<p><img src="/picture/SToFM/1756470255828-79f815bb-4a70-4092-8ecc-93642c055b92.png" alt=""></p>
+<h2 id="32-multi-scale-st-representation-learning--多尺度st表征学习">3.2. Multi-scale ST Representation Learning  多尺度ST表征学习</h2>
+<p>多尺度ST表征学习过程如图2b所示。基于从第3.1节获取的子切片S (i)，我们获得了融合转录组学与多尺度空间信息的细胞表征。</p>
+<p>**第二次使用细胞编码器前进    **我们使用细胞编码器进行二次时间前向运算，使得细胞编码器的参数能够通过梯度反向传播进行更新。这一步骤仅在训练阶段执行，而F (i)可以直接用于推理过程。</p>
+<p>**通过SE(2) Transformer进行表征学习    **SToFM旨在将细胞嵌入向量F (i)与细胞位置P (i)进行联合编码，从而获得空间感知表征并捕捉细胞间的相互作用。此外，输出表征需对P (i)的二维平移和旋转保持不变，这种特性被称为SE(2)不变性。为此，我们采用了广泛使用的SE(2)变换器架构（周等人，2023)。该简洁高效的架构在蛋白质（郑等人，2024)和小分子（周等人，2023)的表征任务中展现出卓越性能。</p>
+<p>具体而言，我们采用距离矩阵D(i)作为位置信息输入，其中D_jk(i)=∥P_j(i)−P_k(i)∥²。该距离矩阵首先通过高斯模块（舒艾比等人，2021)处理以获得初始成对表示。在每个Transformer层中，通过将基于单元表示计算的注意力矩阵与成对表示相加来更新其值。随后，将更新后的成对表示作为实际注意力分数用于更新单元表示。这种利用成对表示作为注意力偏置的方法，在Graphformer（英等人，2021)、Alphafold系列（詹珀等人，2021；阿布拉姆森等人，2024)等重要研究中已被证明有效。此外，考虑到单元间相互作用具有显著的局部性（佐姆帕斯等人，2023)，我们认为距离信息适合作为处理ST数据时的成对表示输入。关于SE(2) Transformer架构的更多细节可参见附录A.2。</p>
+<p>我们训练SE(2) Transformer fST对每个子切片S (i)进行编码，从而获得细胞表征Ycell (i)和成对表征Ypair (i)，具体如下：</p>
+<p><img src="/picture/SToFM/1756470371866-279b937d-4876-4a78-954b-7fec266975a3.png" alt=""></p>
+<p>在预训练阶段，Ycell (i)和Ypair (i)被用于计算损失函数。在下游应用中，我们执行一次子切片分割操作，并根据对应的子切片为每个细胞计算其嵌入向量。</p>
+<h2 id="33-pretraining-objectives-and-strategies--预训练目标与策略">3.3. Pretraining Objectives and Strategies  预训练目标与策略</h2>
+<p>**域适应目标    **在域适应过程中，我们采用了Geneformer（西奥多里斯等人，2023)中的掩码基因建模目标，即根据相对表达水平对输入基因序列中随机掩码的基因进行预测。此外，受赵等人研究启发，我们引入了自监督对比学习任务（高等人，2021)，以提升细胞编码器的表征质量。具体细节详见附录A.1。</p>
+<p><strong>多尺度ST表征学习目标</strong>    为了更好地从单细胞测序数据中捕捉多尺度信息，我们需要设计能够同时获取基因表达和细胞坐标监督信号的目标函数。为此，我们设计了以下两个任务：掩码细胞建模（MCM）和成对距离恢复（PDR）。</p>
+<p>在掩膜细胞建模（Masked Cell Modeling，简称MCM）中，我们会在子切片中随机屏蔽10%的基因表达嵌入向量F (i)，并利用SToFM算法输出的表征Ycell (i)通过回归头对屏蔽后的嵌入向量进行预测。考虑到使用微观信息重建宏观信息的不现实性，我们未对虚拟细胞嵌入进行屏蔽处理。我们采用均方误差（MSE）损失函数，其目标函数定义为：</p>
+<p><img src="/picture/SToFM/1756470487231-d8cbcb0c-d856-4c91-8d94-5910cfcdaffc.png" alt=""></p>
+<p>其中M1是被屏蔽的细胞集合，Fj (i)是第j个细胞嵌入，Fˆj (i)是通过Ycell (i)中的第j个细胞表示预测恢复的第j个细胞嵌入。</p>
+<p>在成对距离恢复（PDR）方法中，我们会在子切片中随机选取10%的细胞，并对其二维坐标P (i)添加高斯噪声，从而修改距离矩阵D(i)对应的行和列。随后，模型通过使用配对表示Ypair (i)，利用回归头尝试重建未受干扰的距离矩阵。对于同一细胞，我们确保不会同时遮蔽其嵌入信息并扰动其坐标。我们采用均方误差损失函数，其目标函数定义为：</p>
+<p><img src="/picture/SToFM/1756470515863-f80518b5-7944-4c92-883a-61159deb81a4.png" alt=""></p>
+<p>其中M2是距离矩阵中扰动元素的集合，Djk (i)是从未扰动位置计算得出的单元格j和k之间的距离，而Dˆjk (i)是由回归头使用成对表示Ypair (i)预测的单元格j和k之间恢复的距离。</p>
+<p>**预训练策略    **我们采用若干策略来稳定训练过程并加速收敛。在预训练初期，由于领域自适应细胞编码器已完成预训练而SE(2)-Transformer仍处于从头训练阶段，我们通过冻结细胞编码器并直接使用F (i)作为SE(2) Transformer的输入来进行同步训练。待SE(2) Transformer的训练基本完成时，我们会同步调整两者参数。考虑到细胞编码器计算成本较高，我们仅对子切片中随机采样的部分细胞执行第3.2节所述的二次细胞编码操作。这种设计使得我们能够通过反向传播同时更新细胞编码器和SE(2) Transformer，从而有效提升模型的学习能力。</p>
+<h1><strong><font style="color:rgb(0,0,0);">Experiments</font></strong></h1>
+<h2><strong><font style="color:rgb(0,0,0);">4.1. Experiment settings</font></strong></h2>
+<p><strong>SToCorpus-88M的构建</strong> 我们整合了来自多个来源的公开ST数据（徐等人，2024；袁等人，2023；Biology等人，2023；10xGENOMICS，2025；Vizgen，2025；nanoString，2025；SeekGene，2025)。由于部分低分辨率ST数据无法准确反映基因层面的表达情况，我们仅选取具有单细胞分辨率或斑点直径接近细胞直径的测序方法。具体而言，我们筛选出六种测序方法并构建了SToCorpus-88M——目前规模最大的ST预训练语料库，包含约2000个组织切片和8800万个细胞，规模是现有最大ST语料库的1.6倍（Schaar等人，2024）。该语料库涵盖人类和小鼠的切片样本，且基因表达谱通过同源基因进行比对（Harrison等人，2024）。我们采用基因名称和Ensembl ID对语料库进行标准化处理，并剔除表达基因少于100个的细胞以确保数据质量。更多细节请参阅附录D.2。</p>
+<p><strong>预训练设置</strong> 预训练在移除下游任务数据后的SToCorpus-88M语料库上进行。我们首先进行为期一个周期的领域适应训练，随后按照第3.3节所述策略，在前两个周期冻结细胞编码器的情况下，开展为期三个周期的多尺度ST表示学习。整个预训练过程使用4块英伟达Tesla A100 GPU完成，耗时约20天。详细的预训练超参数设置详见附录C.1。</p>
+<p><strong>基线选择和下游任务设置</strong>  为进行基线对比，我们选取了仅处理单细胞转录组数据或空间转录组（ST）数据的预训练模型，未整合文本（赵等人，2024；莱文等人，2023)或图像（林等人，2024)等其他模态。所选基准模型包括：单细胞模型Geneformer（西奥多里斯等人，2023)、scGPT（崔等人，2023)、专攻空间转录组的Nicheformer（沙尔等人，2024)，以及首个将基因表达与空间信息结合的空间转录组模型CellPLM（温等人，2023)。这些模型在各类任务中均展现出优于传统方法的性能表现。由于各模型参数和架构存在差异，其全参数微调效果可能受超参数设置和微调策略的显著影响。为确保表征质量的公平比较，我们在下游任务上通过在预训练模型输出基础上训练任务专用头层网络（魏等人，2021)进行头部微调。作为补充，我们在附录B.1中也进行了全参数微调实验。</p>
+<h2 id="42-tissue-region-semantic-segmentation--组织区域语义分割">4.2. Tissue Region Semantic Segmentation  组织区域语义分割</h2>
+<p>与图像或点云语义分割类似，组织区域语义分割是空间转录组学研究中的关键任务之一（Zhou等人，2024），其核心目标在于确定每个细胞所属的结构或功能区域。精准的区域分割不仅能揭示组织内部的空间转录模式，还为理解细胞在生物过程中的功能特化提供了基础。我们通过两个生物学意义重大的实验场景评估了SToFM模型在组织区域语义分割上的表现：人类胚胎结构分割和背外侧前额叶皮层（DLPFC）层分割。针对每个任务，我们分别收集包含四个切片的数据集，并对每个切片单独进行模型性能评估。此外，为检验模型的迁移能力，我们采用了更具挑战性的跨切片训练场景——分类头在三个切片上进行训练，然后在剩余切片上进行测试。</p>
+<p><strong>人类胚胎结构分割</strong> 人类胚胎发育是一个高度动态且复杂的生理过程。精准分割胚胎结构不仅能帮助我们理解发育过程中细胞分化与组织形成机制，还能揭示关键器官和组织的起源及其调控机制。本实验通过分析人类胚胎立体测序（Stereo-seq）的ST数据，采用结构分割技术（Pan等人，2023；HESTA，2025）</p>
+<p><strong>DLPFC层分割</strong> 背外侧前额叶皮层（DLPFC）作为大脑前额叶皮层的关键组成部分，在工作记忆和注意力调节等高级认知功能中发挥着重要作用。该区域属于大脑新皮质，具有典型的六层板层结构。本实验采用人类DLPFC的10倍Visium ST数据集（梅纳德等人，2021年），该数据集在前期研究中已包含人工标注的层信息。需要特别说明的是，SToFM模型及所有基线模型的预训练阶段均未使用10倍Visium数据。因此，本实验还评估了模型对全新测序技术数据的适应能力。</p>
+<p>我们采用分类准确率和F1分数作为评估指标。表1的数据显示，SToFM在不同组织区域语义分割任务中均优于现有方法。作为唯一同时整合细胞基因表达与定位信息的基线模型，CellPLM在多数任务中表现次优，这进一步印证了联合利用两类信息的重要性。值得注意的是，在跨切片场景中，SToFM展现出更强的性能优势，充分体现了其鲁棒性和迁移能力。我们认为这种特性源于SToFM对微观与宏观信息的深度融合——由于组织形态特征和细胞间相互作用模式更易在不同ST切片间迁移，因此该模型具有显著的跨切片适应性。综上所述，SToFM在多种复杂生物场景中实现了高精度组织区域分割，为ST数据的生物学解读提供了有力工具。</p>
+<p><em>表1：人类胚胎与背外侧前额叶皮层（DLPFC）切片的组织区域语义分割性能评估。Expr：基因表达量；Pos：细胞定位；M-S：多尺度分析；Acc：准确率；F1：宏F1值。</em></p>
+<p><img src="/picture/SToFM/1756471813234-a7064aef-020f-4b30-acac-31e2c8302172.png" alt=""></p>
+<h2 id="43-cell-type-annotation-in-spatial-transcriptomics--空间转录组学中的细胞类型注释">4.3. Cell Type Annotation in Spatial Transcriptomics  空间转录组学中的细胞类型注释</h2>
+<p>细胞类型标注是单细胞组学研究中的基础性课题。相较于单细胞RNA测序数据，单细胞组学数据的基因表达谱质量较低，这主要源于捕获基因数量较少或存在较高的零值缺失概率。这种特性给基于基因表达谱的细胞类型标注带来了挑战。本研究采用两种通过立体测序技术和SeekSpace技术获取的小鼠脑组织数据集（Cheng等人，2022；SeekGene，2025），这两个数据集分别被人工标注为25种和8种不同细胞类型作为基准标准。表2数据显示，我们的模型在这两个数据集上的表现均显著优于现有方法。这证实了整合空间信息能有效提升单细胞组学数据的细胞类型标注精度。具体而言，即使在基因表达数据质量较低的场景中，通过分析细胞所在组织区域及其邻近细胞的组成特征，也能辅助推断细胞类型。</p>
+<p><em>表2：细胞类型注释在小鼠脑切片上的性能</em></p>
+<p><img src="/picture/SToFM/1756471855706-fd0653f4-1837-44cf-9923-3ef41f5c4c30.png" alt=""></p>
+<h2 id="44-zero-shot-clustering-and-visualization--零样本聚类与可视化">4.4. Zero-shot Clustering and Visualization  零样本聚类与可视化</h2>
+<p>细胞聚类与可视化在生物信息学分析中具有重要价值。本节通过使用SToFM模型和基准模型生成的细胞表征数据进行聚类分析，并评估其结果与MERFISH小鼠脑切片真实细胞类型标签（Allen等人，2023）的吻合程度。图3的实验结果显示，相较于真实细胞类型标签，基于SToFM细胞嵌入的聚类方法在NMI和ARI评分指标上表现最佳。可视化结果进一步展示了SToFM生成高质量细胞嵌入的能力——各细胞类型在SToFM嵌入空间中形成独特且紧密的聚类。值得注意的是，SToFM的细胞表征还揭示了细胞间的某些关联性。例如，少突胶质前体细胞与神经元共享同一祖细胞，且可进一步分化为少突胶质细胞。</p>
+<p><img src="/picture/SToFM/1756471882729-aa016f8f-397e-425a-935b-6e09b82c03c6.png" alt=""></p>
+<p><em>图3：小鼠脑切片细胞表征的UMAP可视化结果，按细胞类型着色。ARI和NMI评分是基于莱顿聚类结果和细胞类型标签计算得出的。</em></p>
+<h2 id="45-spatial-deconvolution--空间解卷积">4.5. Spatial Deconvolution  空间解卷积</h2>
+<p>如附录D.1所述，在某些立体分割方法中，每个数据点实际上代表一个称为斑点的小区域，该区域包含不同细胞的部分。因此，斑点可被描述为多种细胞类型比例的集合。预测立体分割数据中的细胞类型比例被称为空间解卷积。考虑到基础模型能够为不同切片的数据生成一致的表征，利用基础模型将已标注切片的解卷积结果迁移至未标注切片，为这一任务提供了极具前景的解决方案。本节通过一个简单的定量实验探讨了SToFM在立体分割解卷积中的应用潜力。实验基于立体测序小鼠肝脏数据集（Wu等人，2024），测试模型在同切片内及跨切片转移解卷积标签的能力。真实标签由生物学家标注（Wu等人，2024）。我们采用三个回归评估指标：皮尔逊相关系数、均方根误差和平均绝对误差。表3展示了实验结果，表明SToFM在同切片内和跨切片解卷积任务中均表现最佳。此外，SToFM在跨切片设置下实现了更显著的性能提升，进一步凸显了其出色的迁移能力。</p>
+<p><em>表3：小鼠肝脏切片的空间去卷积性能。</em></p>
+<p><img src="/picture/SToFM/1756471928723-df6b0cc1-0d75-4f82-891e-28c0cabfab44.png" alt=""></p>
+<h2 id="46-spatial-transcriptomics-imputation--空间转录组学插补">4.6. Spatial Transcriptomics Imputation  空间转录组学插补</h2>
+<p>单细胞转录组技术（ST）在保持高分辨率的同时往往难以捕获大量基因，这给数据分析带来了挑战。单细胞推断（即推断未捕获的基因表达水平）是这类数据分析中的重要任务（Abdelaal等，2020；Jiang等，2024）。与4.5节类似，我们探索了SToFM在单细胞推断中的应用潜力。我们收集了两个10x Xenium人类皮肤数据集（10xGENOMICS，2025）作为训练集和测试集。这些数据集中每个细胞包含377个已知基因表达值，我们从中随机选取50个作为标签，剩余327个作为输入。评估指标包括皮尔逊相关系数、均方根误差（RMSE）和平均绝对误差（MAE）。表4中的实验结果表明，SToFM在此任务中表现出色。</p>
+<p><em>表4：对人类皮肤切片进行插补的性能。</em></p>
+<p><img src="/picture/SToFM/1756471963830-1c091a63-b069-4241-8cb4-4db0ddeddefc.png" alt=""></p>
+<h2 id="47-ablation-study">4.7. Ablation Study</h2>
+<p>为验证多尺度建模信息带来的性能提升，我们进行了如表5所示的一系列消融实验。具体而言，首先通过移除虚拟细胞来消除宏观尺度信息；接着移除SE(2) Transformer以削弱模型在微观尺度上联合建模多个细胞的能力；最后关闭领域自适应功能以测试模型处理基因规模表达谱的原始能力。这些消融实验分别针对胚胎结构分割和细胞类型标注两个典型任务展开。</p>
+<p><em>表5：不同缩放比例对SToFM性能影响的消融研究。VC：虚拟细胞；DA：领域自适应。</em></p>
+<p><img src="/picture/SToFM/1756471998609-c3476310-98c8-4933-a08e-047c4f1b037c.png" alt=""></p>
+<p>实验结果表明，各尺度信息的整合有效提升了模型性能，证实了多尺度信息融合对各类下游任务的辅助作用。此外，跨切片实验结果进一步证明，引入更多宏观信息能显著增强模型的迁移能力。</p>
+<h1><strong><font style="color:rgb(0,0,0);">Conclusions and Limitations</font></strong></h1>
+<p>本研究提出SToFM——一种基于多尺度结构化文本（ST）的基础模型，该模型通过在大规模ST语料库SToCorpus-88M上进行预训练。SToFM通过有效捕捉并整合不同尺度的信息，实现了对结构化文本数据中生物信息的全面理解。该模型在各类下游任务中展现出卓越性能，不仅为结构化文本数据分析开辟了新视角，更为推动该领域发展注入了新动能。</p>
+<p>目前，SToFM模型仍存在若干局限性。该模型仅考虑宏观、微观和基因三个层面的分析维度。未来研究可尝试采用图像金字塔技术(Adelson等人，1984年）进行多尺度建模整合，或引入因果机器学习方法来构建基因调控网络(Tejada-Lapuerta等人，2025年；钟等人，2024年）。此外，通过结合先验生物学知识或其他数据模态（如已知配体-受体对或病理影像），也能有效提升模型性能。这些方向性探索将留待后续研究深入展开。</p>
+<h1><strong><font style="color:rgb(0,0,0);">Code Availability</font></strong></h1>
+<p><font style="color:rgb(0,0,0);">SToFM will soon be added to the OpenBioMed toolkit: </font><a href="https://github.com/PharMolix/OpenBioMed">https://github.com/PharMolix/OpenBioMed</a><font style="color:rgb(0,0,0);">. </font></p>
+<p><font style="color:rgb(0,0,0);">Code is available at: </font><a href="https://github.com/PharMolix/SToFM">https://github.com/PharMolix/SToFM</a><font style="color:rgb(0,0,0);">.</font></p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

@@ -6,7 +6,61 @@
     <description>Recent content in 文章 on 我的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Tue, 26 Aug 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 04 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CellPLM：超越单细胞的细胞语言模型预训练</title>
+      <link>https://www.heweilab.com/zh/post/cellplm/</link>
+      <pubDate>Thu, 04 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/cellplm/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://www.heweilab.com/picture/CellPLM/1756887060262-415637cd-0973-4b41-8c58-3576fbf3b05f.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;密歇根州立大学&lt;/p&gt;
+&lt;p&gt;bioRxiv preprint doi: &lt;a href=&#34;https://doi.org/10.1101/2023.10.03.560734;&#34;&gt;https://doi.org/10.1101/2023.10.03.560734;&lt;/a&gt; 该版本发布于2023年10月5日&lt;/p&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;Abstract&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;当前最先进的单细胞预训练模型深受大型语言模型成功的启发。这些模型通过将基因视为标记、细胞视为句子来训练transformer。然而，单细胞数据与自然语言数据之间存在三个根本差异常被忽视：(1)单细胞RNA测序数据以基因包形式呈现而非RNA序列；(2)细胞间关系比句子间关系更为复杂且重要；(3)单细胞数据量远少于文本数据且噪声较大。基于这些特性，我们提出了一种新型预训练模型CellPLM，该模型将细胞视为标记、组织视为句子。此外，我们在预训练中利用空间解析转录组数据来促进细胞间关系的学习，并引入高斯混合先验分布作为额外的归纳偏置以克服数据限制。CellPLM是首个编码细胞间关系的单细胞预训练transformer，在多种下游任务中持续超越现有预训练和非预训练模型，其推理速度比现有预训练模型快100倍。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Nicheformer：单细胞和空间组学的基础模型</title>
+      <link>https://www.heweilab.com/zh/post/nicheformer/</link>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/nicheformer/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://www.heweilab.com/picture/Nicheformer/1756883664284-928c8616-1598-4f20-8f7f-a0f416167b1b.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;bioRxiv preprint doi: &lt;a href=&#34;https://doi.org/10.1101/2024.04.15.589472;&#34;&gt;https://doi.org/10.1101/2024.04.15.589472;&lt;/a&gt; 该版本发布于2024年10月26日&lt;/p&gt;
+&lt;p&gt;1慕尼黑工业大学计算、信息与技术学院，德国加兴。2计算生物学研究所，赫尔姆霍兹慕尼黑计算健康中心，德国诺伊赫贝格。3慕尼黑工业大学生命科学学院魏亨斯泰芬校区，德国弗赖辛。4糖尿病与肥胖症研究所，赫尔姆霍兹慕尼黑糖尿病中心，德国诺伊赫贝格（邮编85764）。5基因与环境系，马克斯·普朗克精神病学研究所及国际马克斯·普朗克转化精神病学研究学院（IMPRS-TP），德国慕尼黑。6中风与痴呆症研究所，慕尼黑大学医院，德国路德维希-马克西米利安大学。&lt;/p&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;Abstract&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;组织结构的形成从根本上依赖于&lt;font style=&#34;color:#DF2A3F;&#34;&gt;细胞微环境&lt;/font&gt;。空间单细胞基因组学技术能够以无偏倚、可扩展的方式探究细胞间的潜在相互作用。为构建&lt;font style=&#34;color:#DF2A3F;&#34;&gt;能反映细胞微环境中局部依赖关系&lt;/font&gt;的统一细胞表征，我们提出Nicheformer——一种基于Transformer架构的基础模型，该模型整合了&lt;font style=&#34;color:#DF2A3F;&#34;&gt;人类和小鼠解离单细胞数据及靶向空间转录组学数据&lt;/font&gt;。该模型经过预训练，基于73种组织样本中超过5700万解离细胞和5300万个空间解析细胞进行重构，并针对空间组学数据的空间分析任务进行微调以解码空间解析的细胞信息。Nicheformer在新型下游任务的&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;线性探查和微调场景&lt;/font&gt;中表现优异，尤其在空间组成预测和空间标签预测方面效果显著。我们进一步发现，仅基于解离单细胞数据训练的传统基础模型无法复现细胞微环境中复杂的空间信息，这表明需要多尺度模型才能理解大规模下的复杂局部依赖关系。Nicheformer能够预测解离细胞的空间上下文，实现将丰富的空间信息迁移至单细胞RNA测序数据集。总体而言，Nicheformer为下一代机器学习模型在空间单细胞分析领域的应用奠定了基础。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>SToFM：空间转录组学的多尺度基础模型</title>
+      <link>https://www.heweilab.com/zh/post/stofm/</link>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/stofm/</guid>
+      
+        <description>&lt;p&gt;&lt;img src=&#34;https://www.heweilab.com/picture/SToFM/1756371353809-ae2f4763-b6d0-4000-9197-260d704d980e.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://www.heweilab.com/picture/SToFM/1756371342835-6ba13647-a6ea-4756-ba20-bbef44b20d10.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;《第42届国际机器学习会议论文集》（加拿大温哥华）。PMLR 267卷，2025年。&lt;/p&gt;
+&lt;h1 id=&#34;abstract&#34;&gt;&lt;font style=&#34;color:rgb(0, 0, 0);&#34;&gt;Abstract&lt;/font&gt;&lt;/h1&gt;
+&lt;p&gt;&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;空间转录组学（ST）&lt;/font&gt;技术通过保留&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;细胞的空间上下文&lt;/font&gt;，为生物学家提供了单细胞生物学的深刻见解。构建ST的基础模型能显著提升对海量复杂数据源的分析能力，为生物组织的复杂性开辟新视角。然而，由于需要从含有海量细胞的组织切片中提取&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;多尺度信息&lt;/font&gt;，ST数据建模本身具有天然挑战性。这一过程需要整合&lt;font style=&#34;color:#DF2A3F;&#34;&gt;宏观层面的组织形态、微观层面的细胞微环境以及基因层面的表达谱&lt;/font&gt;。为应对这一挑战，我们提出了SToFM——一种多尺度空间转录组学基础模型。SToFM首先对每个ST切片进行多尺度信息提取，构建整合宏观、微观和基因尺度信息的ST子切片集合。随后采用SE(2) Transformer从子切片中获取高质量细胞表征。此外，我们还构建了SToCorpus-88M——目前最大的高分辨率空间转录组学预训练语料库。SToFM在&lt;font style=&#34;color:#DF2A3F;&#34;&gt;组织区域语义分割、细胞类型标注&lt;/font&gt;等下游任务中表现优异，通过捕捉和整合多尺度信息展现了其对ST数据的全面理解能力。&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;em&gt;&lt;u&gt;&lt;font style=&#34;background-color:#FBDE28;&#34;&gt;空间转录组学：&lt;/font&gt;&lt;/u&gt;__&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);background-color:#FBDE28;&#34;&gt;(Spatial Transcriptomics, ST)&lt;/font&gt;&lt;/u&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;转录组学 (Transcriptomics)&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;：研究的是一个细胞在特定时间点所有信使RNA（mRNA）的集合，即&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;转录组&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;__&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;。&lt;/font&gt;&lt;/u&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;空间 (Spatial)&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;：这个前缀是关键技术所在。它意味着在测量基因表达（转录组）的同时，&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;&lt;strong&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;记录每个测量点在原始组织中的精确物理坐标&lt;/font&gt;&lt;/u&gt;&lt;/strong&gt;__&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;。&lt;/font&gt;&lt;/u&gt;&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;&lt;u&gt;&lt;font style=&#34;color:rgb(64, 64, 64);&#34;&gt;所以，空间转录组学是一门能够在组织切片上原位（in situ）捕获全部基因表达信息，并保留其空间位置的新型技术。&lt;/font&gt;&lt;/u&gt;&lt;/em&gt;&lt;/p&gt;</description>
+      
+    </item>
+    
     <item>
       <title>这是我的第一篇文章（样例）</title>
       <link>https://www.heweilab.com/zh/post/%E6%A0%B7%E7%A8%BF/</link>

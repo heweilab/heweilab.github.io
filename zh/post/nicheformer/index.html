@@ -1,0 +1,514 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        Nicheformer：单细胞和空间组学的基础模型 |
+      何为
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.149.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="何为" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.86b1f7f8e46fb7f9432e28081186d24eb6cd881e4d058e84aef93462f1e41337.css" integrity="sha256-hrH3&#43;ORvt/lDLigIEYbSTrbNiB5NBY6Ervk0YvHkEzc=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/nicheformer/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="Nicheformer：单细胞和空间组学的基础模型">
+  <meta name="twitter:description" content="bioRxiv preprint doi: https://doi.org/10.1101/2024.04.15.589472; 该版本发布于2024年10月26日
+1慕尼黑工业大学计算、信息与技术学院，德国加兴。2计算生物学研究所，赫尔姆霍兹慕尼黑计算健康中心，德国诺伊赫贝格。3慕尼黑工业大学生命科学学院魏亨斯泰芬校区，德国弗赖辛。4糖尿病与肥胖症研究所，赫尔姆霍兹慕尼黑糖尿病中心，德国诺伊赫贝格（邮编85764）。5基因与环境系，马克斯·普朗克精神病学研究所及国际马克斯·普朗克转化精神病学研究学院（IMPRS-TP），德国慕尼黑。6中风与痴呆症研究所，慕尼黑大学医院，德国路德维希-马克西米利安大学。
+Abstract 组织结构的形成从根本上依赖于细胞微环境。空间单细胞基因组学技术能够以无偏倚、可扩展的方式探究细胞间的潜在相互作用。为构建能反映细胞微环境中局部依赖关系的统一细胞表征，我们提出Nicheformer——一种基于Transformer架构的基础模型，该模型整合了人类和小鼠解离单细胞数据及靶向空间转录组学数据。该模型经过预训练，基于73种组织样本中超过5700万解离细胞和5300万个空间解析细胞进行重构，并针对空间组学数据的空间分析任务进行微调以解码空间解析的细胞信息。Nicheformer在新型下游任务的线性探查和微调场景中表现优异，尤其在空间组成预测和空间标签预测方面效果显著。我们进一步发现，仅基于解离单细胞数据训练的传统基础模型无法复现细胞微环境中复杂的空间信息，这表明需要多尺度模型才能理解大规模下的复杂局部依赖关系。Nicheformer能够预测解离细胞的空间上下文，实现将丰富的空间信息迁移至单细胞RNA测序数据集。总体而言，Nicheformer为下一代机器学习模型在空间单细胞分析领域的应用奠定了基础。">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/nicheformer/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="Nicheformer：单细胞和空间组学的基础模型">
+  <meta property="og:description" content="bioRxiv preprint doi: https://doi.org/10.1101/2024.04.15.589472; 该版本发布于2024年10月26日
+1慕尼黑工业大学计算、信息与技术学院，德国加兴。2计算生物学研究所，赫尔姆霍兹慕尼黑计算健康中心，德国诺伊赫贝格。3慕尼黑工业大学生命科学学院魏亨斯泰芬校区，德国弗赖辛。4糖尿病与肥胖症研究所，赫尔姆霍兹慕尼黑糖尿病中心，德国诺伊赫贝格（邮编85764）。5基因与环境系，马克斯·普朗克精神病学研究所及国际马克斯·普朗克转化精神病学研究学院（IMPRS-TP），德国慕尼黑。6中风与痴呆症研究所，慕尼黑大学医院，德国路德维希-马克西米利安大学。
+Abstract 组织结构的形成从根本上依赖于细胞微环境。空间单细胞基因组学技术能够以无偏倚、可扩展的方式探究细胞间的潜在相互作用。为构建能反映细胞微环境中局部依赖关系的统一细胞表征，我们提出Nicheformer——一种基于Transformer架构的基础模型，该模型整合了人类和小鼠解离单细胞数据及靶向空间转录组学数据。该模型经过预训练，基于73种组织样本中超过5700万解离细胞和5300万个空间解析细胞进行重构，并针对空间组学数据的空间分析任务进行微调以解码空间解析的细胞信息。Nicheformer在新型下游任务的线性探查和微调场景中表现优异，尤其在空间组成预测和空间标签预测方面效果显著。我们进一步发现，仅基于解离单细胞数据训练的传统基础模型无法复现细胞微环境中复杂的空间信息，这表明需要多尺度模型才能理解大规模下的复杂局部依赖关系。Nicheformer能够预测解离细胞的空间上下文，实现将丰富的空间信息迁移至单细胞RNA测序数据集。总体而言，Nicheformer为下一代机器学习模型在空间单细胞分析领域的应用奠定了基础。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-09-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-03T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "Nicheformer：单细胞和空间组学的基础模型",
+        "headline": "Nicheformer：单细胞和空间组学的基础模型",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cp\u003e\u003cimg src=\u0022\/picture\/Nicheformer\/1756883664284-928c8616-1598-4f20-8f7f-a0f416167b1b.png\u0022 alt=\u0022\u0022\u003e\u003c\/p\u003e\n\u003cp\u003ebioRxiv preprint doi: \u003ca href=\u0022https:\/\/doi.org\/10.1101\/2024.04.15.589472;\u0022\u003ehttps:\/\/doi.org\/10.1101\/2024.04.15.589472;\u003c\/a\u003e 该版本发布于2024年10月26日\u003c\/p\u003e\n\u003cp\u003e1慕尼黑工业大学计算、信息与技术学院，德国加兴。2计算生物学研究所，赫尔姆霍兹慕尼黑计算健康中心，德国诺伊赫贝格。3慕尼黑工业大学生命科学学院魏亨斯泰芬校区，德国弗赖辛。4糖尿病与肥胖症研究所，赫尔姆霍兹慕尼黑糖尿病中心，德国诺伊赫贝格（邮编85764）。5基因与环境系，马克斯·普朗克精神病学研究所及国际马克斯·普朗克转化精神病学研究学院（IMPRS-TP），德国慕尼黑。6中风与痴呆症研究所，慕尼黑大学医院，德国路德维希-马克西米利安大学。\u003c\/p\u003e\n\u003ch1 id=\u0022abstract\u0022\u003e\u003cfont style=\u0022color:rgb(0, 0, 0);\u0022\u003eAbstract\u003c\/font\u003e\u003c\/h1\u003e\n\u003cp\u003e组织结构的形成从根本上依赖于\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e细胞微环境\u003c\/font\u003e。空间单细胞基因组学技术能够以无偏倚、可扩展的方式探究细胞间的潜在相互作用。为构建\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e能反映细胞微环境中局部依赖关系\u003c\/font\u003e的统一细胞表征，我们提出Nicheformer——一种基于Transformer架构的基础模型，该模型整合了\u003cfont style=\u0022color:#DF2A3F;\u0022\u003e人类和小鼠解离单细胞数据及靶向空间转录组学数据\u003c\/font\u003e。该模型经过预训练，基于73种组织样本中超过5700万解离细胞和5300万个空间解析细胞进行重构，并针对空间组学数据的空间分析任务进行微调以解码空间解析的细胞信息。Nicheformer在新型下游任务的\u003cfont style=\u0022background-color:#FBDE28;\u0022\u003e线性探查和微调场景\u003c\/font\u003e中表现优异，尤其在空间组成预测和空间标签预测方面效果显著。我们进一步发现，仅基于解离单细胞数据训练的传统基础模型无法复现细胞微环境中复杂的空间信息，这表明需要多尺度模型才能理解大规模下的复杂局部依赖关系。Nicheformer能够预测解离细胞的空间上下文，实现将丰富的空间信息迁移至单细胞RNA测序数据集。总体而言，Nicheformer为下一代机器学习模型在空间单细胞分析领域的应用奠定了基础。\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/nicheformer\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-09-03T00:00:00.00Z",
+        "datePublished": "2025-09-03T00:00:00.00Z",
+        "dateModified": "2025-09-03T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/nicheformer\/",
+        "wordCount" : "33",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>Nicheformer：单细胞和空间组学的基础模型</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  3/9/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <p><img src="/picture/Nicheformer/1756883664284-928c8616-1598-4f20-8f7f-a0f416167b1b.png" alt=""></p>
+<p>bioRxiv preprint doi: <a href="https://doi.org/10.1101/2024.04.15.589472;">https://doi.org/10.1101/2024.04.15.589472;</a> 该版本发布于2024年10月26日</p>
+<p>1慕尼黑工业大学计算、信息与技术学院，德国加兴。2计算生物学研究所，赫尔姆霍兹慕尼黑计算健康中心，德国诺伊赫贝格。3慕尼黑工业大学生命科学学院魏亨斯泰芬校区，德国弗赖辛。4糖尿病与肥胖症研究所，赫尔姆霍兹慕尼黑糖尿病中心，德国诺伊赫贝格（邮编85764）。5基因与环境系，马克斯·普朗克精神病学研究所及国际马克斯·普朗克转化精神病学研究学院（IMPRS-TP），德国慕尼黑。6中风与痴呆症研究所，慕尼黑大学医院，德国路德维希-马克西米利安大学。</p>
+<h1 id="abstract"><font style="color:rgb(0, 0, 0);">Abstract</font></h1>
+<p>组织结构的形成从根本上依赖于<font style="color:#DF2A3F;">细胞微环境</font>。空间单细胞基因组学技术能够以无偏倚、可扩展的方式探究细胞间的潜在相互作用。为构建<font style="color:#DF2A3F;">能反映细胞微环境中局部依赖关系</font>的统一细胞表征，我们提出Nicheformer——一种基于Transformer架构的基础模型，该模型整合了<font style="color:#DF2A3F;">人类和小鼠解离单细胞数据及靶向空间转录组学数据</font>。该模型经过预训练，基于73种组织样本中超过5700万解离细胞和5300万个空间解析细胞进行重构，并针对空间组学数据的空间分析任务进行微调以解码空间解析的细胞信息。Nicheformer在新型下游任务的<font style="background-color:#FBDE28;">线性探查和微调场景</font>中表现优异，尤其在空间组成预测和空间标签预测方面效果显著。我们进一步发现，仅基于解离单细胞数据训练的传统基础模型无法复现细胞微环境中复杂的空间信息，这表明需要多尺度模型才能理解大规模下的复杂局部依赖关系。Nicheformer能够预测解离细胞的空间上下文，实现将丰富的空间信息迁移至单细胞RNA测序数据集。总体而言，Nicheformer为下一代机器学习模型在空间单细胞分析领域的应用奠定了基础。</p>
+<hr>
+<p><em><u>motivation：构建</u><strong><u><font style="color:#DF2A3F;">能反映细胞微环境中局部依赖关系</font></u></strong><u>的统一细胞表征</u></em></p>
+<p><em><u>架构：Transformer</u></em></p>
+<p><em><u>数据集：来源</u><strong><u><font style="color:#DF2A3F;">人类和小鼠的解离单细胞数据以及靶向空间转录组学数据</font></u></strong><u>，73个组织样本超过5700万解离细胞和5300万个空间解析细胞，并针对空间组学数据的空间分析任务进行微调</u></em></p>
+<p><em><u>任务：空间组成预测、空间标签预测</u></em></p>
+<p><em><u>理解：用解离单细胞数据进行预训练学习，然后再针对空间组学数据来解码空间解析的细胞信息（单细胞数据预训练，空间组学数据微调）SToFM讲它只是利用了空间组学数据而忽略了其中的空间坐标。</u></em></p>
+<p><em><u><font style="background-color:#FBDE28;">线性探查：</font></u>__<u><font style="color:rgb(15, 17, 21);">冻结预训练模型的所有参数（即不更新、不训练），只在其输出的特征之上，训练一个新添加的、最简单的线性分类器（或回归器）。</font></u></em></p>
+<p><em><u><font style="background-color:#FBDE28;">微调场景：</font></u>__<u><font style="color:rgb(15, 17, 21);">不冻结预训练模型的参数。我们使用下游任务的数据，对整个模型（预训练模型 + 新添加的任务特定层）进行端到端的训练。预训练模型的权重作为优化的起点，而不是固定值。</font></u></em></p>
+<hr>
+<h1 id="extended-abstract">Extended Abstract</h1>
+<p>组织结构及其调控生命活动的精密机制——从发育分化到免疫应答和再生——本质上都依赖于细胞微环境与细胞间的相互作用。空间单细胞基因组学技术能够以无偏倚且日益可扩展的方式，深入解析这些细胞间互动。为构建能体现细胞微环境局部依赖性及基础细胞相互作用的统一表征模型，我们建议将近期在解离单细胞转录组学领域的基础建模方法推广至空间组学研究领域。</p>
+<hr>
+<p><em><u>介绍细胞微环境和细胞间互作的重要性，空间单细胞基因组学技术能很好解析这些互动。</u></em></p>
+<p><em><u>将解离单细胞转录组学领域的基础建模方法推广至空间组学研究领域</u></em></p>
+<hr>
+<p>我们的模型Nicheformer是一款基于Transformer架构的基础模型，通过整合人类与小鼠的解离单细胞数据及靶向空间转录组学数据，学习出适用于多种下游任务的细胞表征方法。该模型在人类和小鼠73种组织样本中，基于超过5700万解离细胞和5300万个空间解析细胞进行预训练。随后针对空间组学数据的空间分析任务进行微调，从而解码具有空间分辨率的细胞信息。</p>
+<hr>
+<p><em><u>介绍Nicheformer，内容与摘要重复</u></em></p>
+<hr>
+<p>我们在一系列新型空间相关下游任务中验证了Nicheformer模型的实用性，包括空间密度预测、生态位与区域标签预测等场景下的线性检测和微调任务。特别值得注意的是，Nicheformer能够预测解离细胞的空间上下文特征，从而将丰富的空间信息迁移至单细胞RNA测序数据集。我们设计了一系列创新的空间预测任务，发现Nicheformer始终保持着优异表现，充分展现了底层transformer模型增强的容量优势。通过与scGPT1、Geneformer2、scVI3及PCA等模型的对比测试，Nicheformer架构在这些任务中均展现出显著优势。综合来看，我们构建的包含超过1.1亿个细胞的部分空间上下文大规模数据集，结合创新的空间学习任务和Nicheformer模型本身，将为下一代空间单细胞分析机器学习模型的发展奠定重要基础。</p>
+<hr>
+<p><em><u>介绍下游任务：空间密度预测、生态位与区域标签预测等场景下的线性检测和微调任务</u></em></p>
+<p><em><u>Nicheformer能够预测解离细胞的空间上下文特征，从而将丰富的空间信息迁移至单细胞RNA测序数据集</u></em></p>
+<p><em><u>设计了空间预测任务，且Nicheformer表现优异</u></em></p>
+<hr>
+<h1 id="introduction"><font style="color:#000000;">Introduction</font></h1>
+<p>单细胞基因组学技术推动了我们对整个组织、器官乃至生物体细胞异质性的理解。大规模数据生成工作使研究人员能够绘制特定组织（如肺部4、心脏5）及更广泛的跨组织图谱6、7的细胞异质性图谱。然而，单细胞RNA测序技术存在固有局限——需要将细胞从其天然组织环境中解离，这会导致细胞微环境信息的缺失，从而无法完整呈现分子变异的全貌8、9。近年来，基于图像的空间转录组学技术取得突破，实现了单细胞RNA测序的原位检测，使得在各类组织器官中对数十万个细胞进行数百基因的分析成为可能9、10。原位空间组学已成功应用于多种生物系统、组织和器官，揭示了细胞变异的空间成分（如细胞间通讯11、空间梯度）以及组织微环境的涌现特性12，例如在小鼠和人类大脑13、14、肺部15及肝脏16中的应用。本文提出假设：随着空间组学数据日益丰富，我们正逐步构建出能够大规模感知空间特征的细胞变异“基础性”表征体系。</p>
+<p>基础模型是一种基于海量数据训练的深度学习模型，能够适配多种下游任务17。近年来，这类模型作为颠覆性建模范式崭露头角，彻底改变了自然语言处理18、19和计算机视觉20等领域。通过整合文本、图像、视频和音频21等多模态数据，基础模型日益成为主流。借助海量数据集、强大的机器学习架构和算力资源，它们能学习语言、视觉或特定领域数据（如DNA2、22、23及蛋白质序列24-26）的通用表征，在多项下游任务中超越传统建模方法。这类模型多采用transformer架构27，通过预训练海量未标注数据，省去了传统方法中成本高昂的样本标注环节。借助自监督学习28，它们无需人工标注即可通过识别数据内在模式和关联性，构建复杂数据的强大表征。这些表征既为下游任务提供了坚实基础，又可通过标注数据微调来提升特定应用的性能。</p>
+<p>单细胞生物学领域采用基于深度学习的表征学习技术已有一段时间，通过自动编码器29-31等模型完成数据整合32、图谱绘制33及扰动预测34-37等分析任务。近年来，该领域涌现出大量专为单细胞基因组数据1,2,23,38-45设计的基础模型。这些模型在标记化处理和学习策略上各有不同，但大多采用带有自注意力机制27的transformer架构。它们通常需要数千万细胞规模的大数据集进行预训练1,2,39。这些模型通过灵活的transformer架构，隐式建模单个细胞内基因表达模式的复杂交互，从而获得基因与细胞的表征信息。目前，单细胞基础模型已在多种下游任务中得到验证，包括细胞类型分类2,39、基因调控网络推断1,2以及细胞扰动响应预测1,41,43。这些任务的多样性和复杂性有助于全面评估模型性能，检验所学表征的鲁棒性及模型对复杂预测任务的泛化能力。尽管现有成果令人鼓舞，但在独立基准测试46-51中仍未完全复现。<font style="color:#DF2A3F;">值得注意的是，迄今为止，这些模型中没有一个考虑了训练期间细胞的空间关系，CellPLM41除外，但它是在900万解离细胞和200万个空间转录组学细胞的有限数据集上训练的41，而且没有在基因推断之外的空间任务上进行微调。</font></p>
+<p>我们提出Nicheformer，这是一种基于大规模单细胞与空间转录组学数据预训练的基础模型，旨在实现数据有限场景下的空间依赖性预测任务。为大规模学习空间细胞表征，我们整合了迄今为止最大规模的单细胞与空间转录组学数据集，涵盖人类和小鼠73个不同器官组织的1.1亿余个细胞。Nicheformer数据集是首个包含解离单细胞数据与基于图像的空间技术测量的5383万余个细胞的大型预训练语料库。通过整合模态、生物体及检测标记的上下文信息，Nicheformer能够学习单细胞与空间基因组学的联合表征。我们设计的一系列新型下游任务表明：无论是微调后的Nicheformer还是基于Nicheformer嵌入训练的线性探针模型，其性能均系统性超越现有基础模型（特别是仅基于解离数据预训练的Geneformer2和scGPT1，以及用于这些任务的scVI29,30和PCA等嵌入模型）。实验证明，Nicheformer能精准将空间转录组学识别的空间上下文迁移至解离单细胞数据，使用户能够为经典单细胞RNA测序数据注入空间背景信息。这项工作为新一代基础模型铺平了道路，用于学习组织中细胞变异的稳健表征。</p>
+<hr>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
