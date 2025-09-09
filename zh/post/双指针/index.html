@@ -1,0 +1,702 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        LeetCode 热题 | 双指针 |
+      何为
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.150.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="何为" />
+  <meta
+    name="description"
+    content="欢迎大家来到我的主页。"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.86b1f7f8e46fb7f9432e28081186d24eb6cd881e4d058e84aef93462f1e41337.css" integrity="sha256-hrH3&#43;ORvt/lDLigIEYbSTrbNiB5NBY6Ervk0YvHkEzc=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/%E5%8F%8C%E6%8C%87%E9%92%88/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="LeetCode 热题 | 双指针">
+  <meta name="twitter:description" content="欢迎大家来到我的主页。">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/%E5%8F%8C%E6%8C%87%E9%92%88/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="LeetCode 热题 | 双指针">
+  <meta property="og:description" content="欢迎大家来到我的主页。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-09-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-09T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "LeetCode 热题 | 双指针",
+        "headline": "LeetCode 热题 | 双指针",
+        "alternativeHeadline": "",
+        "description": "
+      欢迎大家来到我的主页。
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/%E5%8F%8C%E6%8C%87%E9%92%88\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-09-09T00:00:00.00Z",
+        "datePublished": "2025-09-09T00:00:00.00Z",
+        "dateModified": "2025-09-09T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%8F%8C%E6%8C%87%E9%92%88\/",
+        "wordCount" : "454",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>LeetCode 热题 | 双指针</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  9/9/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <h2 id="双指针">双指针</h2>
+<p>双指针技巧的核心是<strong>使用两个指针（通常是索引或引用）以不同的策略遍历数据结构（主要是数组和链表），从而高效地解决问题</strong>。它能够将原本需要多重循环的暴力解法优化为线性或接近线性的时间复杂度（<em>O(n)</em> 或 <em>O(n log n)</em>），极大地提升效率。</p>
+<p>双指针题型丰富，但主要可以分为以下几大类：</p>
+<hr>
+<h3 id="1-左右指针对撞指针">1. 左右指针（对撞指针）</h3>
+<p>这是最经典的双指针类型。两个指针分别位于序列的两端（一个在开头 <code>left</code>，一个在末尾 <code>right</code>），然后向中间移动，直到它们相遇或交错。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>通常用于<strong>有序数组</strong>（但并非绝对）。</li>
+<li>可以跳过许多不必要的枚举组合。</li>
+</ul>
+<p><strong>常见题型：</strong></p>
+<ol>
+<li><strong>两数之和 II - 输入有序数组 (Two Sum II)</strong>
+<ul>
+<li><strong>问题：</strong> 在有序数组中找出两个数，使它们的和等于目标值。</li>
+<li><strong>解法：</strong> <code>left</code> 指向最小数，<code>right</code> 指向最大数。
+<ul>
+<li>如果 <code>nums[left] + nums[right] &lt; target</code>，说明和太小，<code>left</code> 右移。</li>
+<li>如果 <code>nums[left] + nums[right] &gt; target</code>，说明和太大，<code>right</code> 左移。</li>
+<li>相等时即为答案。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>盛最多水的容器 (Container With Most Water)</strong>
+<ul>
+<li><strong>问题：</strong> 用数组表示一系列板子的高度，求哪两块板子能盛最多的水。</li>
+<li><strong>解法：</strong> <code>left</code> 和 <code>right</code> 分别指向首尾。水量由 <code>min(height[left], height[right]) * (right - left)</code> 决定。
+<ul>
+<li>每次移动高度较小的那个指针（因为移动高的指针只会让水量变得更小）。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>三数之和 (3Sum) / 最接近的三数之和</strong>
+<ul>
+<li><strong>问题：</strong> 找出数组中所有不重复的三元组，使得和为 0。</li>
+<li><strong>解法：</strong> 先排序。固定一个数 <code>i</code>，然后在其后面的区间使用左右指针 <code>left</code> 和 <code>right</code> 寻找 <code>nums[left] + nums[right] == -nums[i]</code>。通过移动指针来跳过重复解。</li>
+</ul>
+</li>
+<li><strong>验证回文串 (Valid Palindrome)</strong>
+<ul>
+<li><strong>问题：</strong> 判断一个字符串是否是回文串（忽略大小写和非字母数字字符）。</li>
+<li><strong>解法：</strong> <code>left</code> 从头开始，<code>right</code> 从尾开始，向中间移动。跳过非字母数字字符，判断 <code>s[left]</code> 和 <code>s[right]</code> 是否相等（忽略大小写）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="2-快慢指针">2. 快慢指针</h3>
+<p>两个指针从同一侧开始，以不同的速度前进。快指针<code>fast</code>的移动速度是慢指针<code>slow</code>的两倍或更快。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>主要用于<strong>链表</strong>相关的问题。</li>
+<li>常用于检测循环或寻找特定节点。</li>
+</ul>
+<p><strong>常见题型：</strong></p>
+<ol>
+<li><strong>判断链表是否有环 (Linked List Cycle)</strong>
+<ul>
+<li><strong>问题：</strong> 判断一个链表中是否存在环。</li>
+<li><strong>解法：</strong> <code>slow</code> 每次走一步，<code>fast</code> 每次走两步。如果链表中存在环，<code>fast</code> 最终会追上 <code>slow</code>（相遇）。如果 <code>fast</code> 走到尽头（<code>null</code>），则无环。</li>
+</ul>
+</li>
+<li><strong>寻找链表的中间结点 (Middle of the Linked List)</strong>
+<ul>
+<li><strong>问题：</strong> 找到链表的中间节点。</li>
+<li><strong>解法：</strong> <code>slow</code> 每次走一步，<code>fast</code> 每次走两步。当 <code>fast</code> 走到链表末尾时，<code>slow</code> 正好在中间。</li>
+</ul>
+</li>
+<li><strong>寻找链表的倒数第 k 个结点</strong>
+<ul>
+<li><strong>问题：</strong> 找到链表中倒数第 k 个节点。</li>
+<li><strong>解法：</strong> 让 <code>fast</code> 指针先走 k 步，然后 <code>slow</code> 和 <code>fast</code> 以相同速度前进。当 <code>fast</code> 走到末尾时，<code>slow</code> 就在倒数第 k 个位置。</li>
+</ul>
+</li>
+<li><strong>寻找环的入口节点</strong>
+<ul>
+<li><strong>问题：</strong> 如果链表有环，找到环开始的位置。</li>
+<li><strong>解法：</strong> 先使用快慢指针找到相遇点。然后将一个指针重置到链表头，两个指针以相同速度前进，再次相遇的点即为环的入口。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="3-滑动窗口">3. 滑动窗口</h3>
+<p>这是双指针的一种高级形式，两个指针 <code>left</code> 和 <code>right</code> 形成一个窗口 <code>[left, right]</code>，通过移动 <code>right</code> 来扩大窗口，移动 <code>left</code> 来缩小窗口，从而在窗口内寻找满足条件的区间。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>主要用于解决<strong>连续子数组/子串</strong>的相关问题。</li>
+<li>目标是找到满足某些条件的最短/最长/最值的子区间。</li>
+</ul>
+<p><strong>常见题型：</strong></p>
+<ol>
+<li><strong>无重复字符的最长子串 (Longest Substring Without Repeating Characters)</strong>
+<ul>
+<li><strong>问题：</strong> 给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</li>
+<li><strong>解法：</strong> 用 <code>left</code> 和 <code>right</code> 维护一个窗口。用 Set 或 Map 记录窗口内的字符。<code>right</code> 右移扩大窗口，如果新字符已存在，则 <code>left</code> 右移缩小窗口，直到窗口中无重复字符。</li>
+</ul>
+</li>
+<li><strong>最小覆盖子串 (Minimum Window Substring)</strong>
+<ul>
+<li><strong>问题：</strong> 在字符串 S 中找出包含字符串 T 所有字符的最小子串。</li>
+<li><strong>解法：</strong> <code>right</code> 右移直到窗口包含 T 的所有字符，然后 <code>left</code> 右移尝试收缩窗口，找到能满足条件的最小窗口。记录最小值，然后继续移动 <code>right</code> 寻找下一个可行解。</li>
+</ul>
+</li>
+<li><strong>长度最小的子数组 (Minimum Size Subarray Sum)</strong>
+<ul>
+<li><strong>问题：</strong> 给定一个含有 n 个正整数的数组和一个正整数 target，找出该数组中满足其和 ≥ target 的长度最小的 <strong>连续子数组</strong>。</li>
+<li><strong>解法：</strong> <code>right</code> 右移累加和，当和 &gt;= target 时，记录长度并尝试 <code>left</code> 右移，看是否能缩小窗口但仍满足条件。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="4-分离指针用于多个数据结构">4. 分离指针（用于多个数据结构）</h3>
+<p>两个指针分别遍历两个不同的数组或链表。</p>
+<p><strong>特点：</strong></p>
+<ul>
+<li>用于处理<strong>多个序列</strong>的问题。</li>
+</ul>
+<p><strong>常见题型：</strong></p>
+<ol>
+<li><strong>合并两个有序数组 (Merge Sorted Array)</strong>
+<ul>
+<li><strong>问题：</strong> 将两个有序数组合并到第一个数组中。</li>
+<li><strong>解法：</strong> 从两个数组的<strong>末尾</strong>开始（<code>p1</code> 在 nums1 的有效元素尾，<code>p2</code> 在 nums2 的尾），比较大小，将较大的元素放到 nums1 的最终末尾（从后往前填充），避免覆盖。</li>
+</ul>
+</li>
+<li><strong>两个数组的交集 (Intersection of Two Arrays)</strong>
+<ul>
+<li><strong>问题：</strong> 给定两个数组，编写一个函数来计算它们的交集。</li>
+<li><strong>解法（已排序数组）：</strong> 先对两个数组排序。然后用指针 <code>i</code> 和 <code>j</code> 分别遍历两个数组。根据 <code>nums1[i]</code> 和 <code>nums2[j]</code> 的大小关系移动相应的指针，相等时则记录结果。</li>
+</ul>
+</li>
+</ol>
+<h3 id="总结与解题技巧">总结与解题技巧</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">类型</th>
+          <th style="text-align: left">指针初始位置</th>
+          <th style="text-align: left">移动方向</th>
+          <th style="text-align: left">典型应用</th>
+          <th style="text-align: left">关键点</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><strong>左右指针</strong></td>
+          <td style="text-align: left">首尾</td>
+          <td style="text-align: left">向中间夹逼</td>
+          <td style="text-align: left">有序数组的和、容器盛水</td>
+          <td style="text-align: left">利用有序性排除无效解</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>快慢指针</strong></td>
+          <td style="text-align: left">同一起点</td>
+          <td style="text-align: left">一快一慢</td>
+          <td style="text-align: left">链表环、中点、倒数第k个</td>
+          <td style="text-align: left">速度差产生奇妙关系</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>滑动窗口</strong></td>
+          <td style="text-align: left">同一起点</td>
+          <td style="text-align: left">一前一后</td>
+          <td style="text-align: left">连续子串/子数组问题</td>
+          <td style="text-align: left">维护窗口的合法性</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>分离指针</strong></td>
+          <td style="text-align: left">不同结构起点</td>
+          <td style="text-align: left">各自独立移动</td>
+          <td style="text-align: left">合并有序数组、求交集</td>
+          <td style="text-align: left">同步遍历多个结构</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>如何识别双指针问题？</strong></p>
+<ul>
+<li>问题涉及<strong>数组</strong>或<strong>链表</strong>。</li>
+<li>要求寻找<strong>连续子区间</strong>、<strong>配对</strong>、<strong>顺序</strong>关系。</li>
+<li>暴力解法是 O(n²) 或 O(n³) 的，可能可以通过双指针优化到 O(n) 或 O(n log n)。</li>
+</ul>
+<hr>
+<hr>
+<h3 id="283-移动零"><a href="https://leetcode.cn/problems/move-zeroes/">283. 移动零</a></h3>
+<p>已解答    简单</p>
+<p>提示</p>
+<p>给定一个数组 <code>nums</code>，编写一个函数将所有 <code>0</code> 移动到数组的末尾，同时保持非零元素的相对顺序。</p>
+<p><strong>请注意</strong> ，必须在不复制数组的情况下原地对数组进行操作。</p>
+<p><strong>示例 1:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入: nums = [0,1,0,3,12]
+</span></span><span class="line"><span class="cl">输出: [1,3,12,0,0]
+</span></span></code></pre></div><p><strong>示例 2:</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入: nums = [0]
+</span></span><span class="line"><span class="cl">输出: [0]
+</span></span></code></pre></div><p><strong>提示</strong>:</p>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-231 &lt;= nums[i] &lt;= 231 - 1</code></li>
+</ul>
+<p><strong>进阶</strong>：你能尽量减少完成的操作次数吗？</p>
+<p><strong>解题代码：</strong></p>
+<p>一开始的做题思路其实很简单，就是利用 <code>Python</code> <code>List</code> 的 <code>pop</code> 和 <code>append</code>  函数，遍历、删除、添加；思路很简单，也有点取巧了。因为过程当中要考虑 <code>nums</code> 的改写，所以过程也遇到了问题，比如：如果直接在遍历的时候删除，会导致 i 的索引错位的问题，这个时候删除一个添加一个，很难找到错位的规律，那就只在遍历的时候考虑末尾增加，用空 <code>List</code> 记录删除位点，重新进行一次删除，同样在重新删除的时候要把错位考虑进去，这个时候每次删除，错位-1即可。</p>
+<p>这个时候其实是没有考虑到双指针的知识点的，但是后来回顾发现，用空列表保存0位点，好像还和双指针沾点边。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def moveZeroes(self, nums: List[int]) -&gt; None:
+</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">        Do not return anything, modify nums in-place instead.
+</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">        N = []
+</span></span><span class="line"><span class="cl">        n = 0
+</span></span><span class="line"><span class="cl">        for i in range(len(nums)-1):
+</span></span><span class="line"><span class="cl">            if nums[i] == 0:
+</span></span><span class="line"><span class="cl">                N.append(i)
+</span></span><span class="line"><span class="cl">                nums.append(0)
+</span></span><span class="line"><span class="cl">        for j in N:
+</span></span><span class="line"><span class="cl">            nums.pop(j-n)
+</span></span><span class="line"><span class="cl">            n+=1
+</span></span></code></pre></div><p>看了网上的解析，很多用双指针来求解，解法很多，我看懂了一个比较好理解的，代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def moveZeroes(self, nums: List[int]) -&gt; None:
+</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">        Do not return anything, modify nums in-place instead.
+</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
+</span></span><span class="line"><span class="cl">        left = 0
+</span></span><span class="line"><span class="cl">        right = 0
+</span></span><span class="line"><span class="cl">        for i in range(len(nums)):
+</span></span><span class="line"><span class="cl">            if nums[right] != 0:
+</span></span><span class="line"><span class="cl">                nums[right],nums[left] = nums[left],nums[right]
+</span></span><span class="line"><span class="cl">                left+=1
+</span></span><span class="line"><span class="cl">            right+=1
+</span></span></code></pre></div><p>解析：从左往右依次遍历，把所有非0的数据依次提到最前，即可求解。一个指针用于遍历，一个指针用于记录下一个需要替换的值的位置。</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2025
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

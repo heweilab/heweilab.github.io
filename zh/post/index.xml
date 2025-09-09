@@ -8,15 +8,32 @@
     <language>zh</language>
     <lastBuildDate>Tue, 09 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.heweilab.com/zh/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>LeetCode 热题 | 双指针</title>
+      <link>https://www.heweilab.com/zh/post/%E5%8F%8C%E6%8C%87%E9%92%88/</link>
+      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.heweilab.com/zh/post/%E5%8F%8C%E6%8C%87%E9%92%88/</guid>
+      
+        <description>欢迎大家来到我的主页。</description>
+      
+    </item>
+    
+    <item>
       <title>LeetCode 热题 | 哈希</title>
       <link>https://www.heweilab.com/zh/post/%E5%93%88%E5%B8%8C/</link>
-      <pubDate>Tue, 09 Sep 2025 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 +0000</pubDate>
       
       <guid>https://www.heweilab.com/zh/post/%E5%93%88%E5%B8%8C/</guid>
       
         <description>&lt;h2 id=&#34;哈希查找hash-search&#34;&gt;哈希查找（Hash Search）&lt;/h2&gt;
 &lt;p&gt;这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级  &lt;em&gt;&lt;code&gt;O(1)&lt;/code&gt;&lt;/em&gt; 的平均查找时间。&lt;/p&gt;
-&lt;p&gt;字典数据类型 &lt;code&gt;dict&lt;/code&gt; 的使用：把目标内容 &lt;code&gt;target&lt;/code&gt; 当做字典的 &lt;code&gt;Key&lt;/code&gt; ，要寻找的目标视为 &lt;code&gt;Key&lt;/code&gt; 对应的 &lt;code&gt;value&lt;/code&gt; ，即 &lt;code&gt;return value=dict[target] if target in dict&lt;/code&gt; 。&lt;/p&gt;</description>
+&lt;h3 id=&#34;一核心思想与比喻&#34;&gt;一、核心思想与比喻&lt;/h3&gt;
+&lt;p&gt;你可以把它想象成一个&lt;strong&gt;超级高效的图书馆管理系统&lt;/strong&gt;：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;传统方法（顺序或二分查找）&lt;/strong&gt;：就像你进入一个按书名拼音排序的书架区，从A到Z一本本找，或者从中间开始二分查找。这需要时间。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;哈希查找方法&lt;/strong&gt;：图书馆有一个神奇的智能系统。你告诉它书名《三体》，它瞬间计算出一个编号 &lt;code&gt;S253&lt;/code&gt;，然后直接让机器人去&lt;code&gt;S253&lt;/code&gt;这个精确的书架位置把书取来。这个“计算编号”和“直接取书”的过程就是哈希查找。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这个比喻包含了哈希查找的三个最关键部分：&lt;/p&gt;</description>
       
     </item>
     
