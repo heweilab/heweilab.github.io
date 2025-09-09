@@ -15,7 +15,7 @@
       <guid>https://www.heweilab.com/zh/post/%E5%93%88%E5%B8%8C/</guid>
       
         <description>&lt;h2 id=&#34;哈希查找hash-search&#34;&gt;哈希查找（Hash Search）&lt;/h2&gt;
-&lt;p&gt;这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 &lt;code&gt;O(1)&lt;/code&gt;的平均查找时间。&lt;/p&gt;
+&lt;p&gt;这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 *&lt;code&gt;O(1)&lt;/code&gt;*的平均查找时间。&lt;/p&gt;
 &lt;p&gt;字典数据类型 &lt;code&gt;dict&lt;/code&gt; 的使用：把目标内容 &lt;code&gt;target&lt;/code&gt; 当做字典的 &lt;code&gt;Key&lt;/code&gt; ，要寻找的目标视为 &lt;code&gt;Key&lt;/code&gt; 对应的 &lt;code&gt;value&lt;/code&gt; ，即 &lt;code&gt;return value=dict[target] if target in dict&lt;/code&gt; 。&lt;/p&gt;</description>
       
     </item>

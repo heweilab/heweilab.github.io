@@ -117,7 +117,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
   <meta name="twitter:title" content="LeetCode 热题 | 哈希">
-  <meta name="twitter:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 O(1)的平均查找时间。
+  <meta name="twitter:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 *O(1)*的平均查找时间。
 字典数据类型 dict 的使用：把目标内容 target 当做字典的 Key ，要寻找的目标视为 Key 对应的 value ，即 return value=dict[target] if target in dict 。">
 
 
@@ -126,7 +126,7 @@
   <meta property="og:url" content="https://www.heweilab.com/zh/post/%E5%93%88%E5%B8%8C/">
   <meta property="og:site_name" content="我的博客">
   <meta property="og:title" content="LeetCode 热题 | 哈希">
-  <meta property="og:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 O(1)的平均查找时间。
+  <meta property="og:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 *O(1)*的平均查找时间。
 字典数据类型 dict 的使用：把目标内容 target 当做字典的 Key ，要寻找的目标视为 Key 对应的 value ，即 return value=dict[target] if target in dict 。">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
@@ -151,7 +151,7 @@
         "alternativeHeadline": "",
         "description": "
       
-        \u003ch2 id=\u0022哈希查找hash-search\u0022\u003e哈希查找（Hash Search）\u003c\/h2\u003e\n\u003cp\u003e这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 \u003ccode\u003eO(1)\u003c\/code\u003e的平均查找时间。\u003c\/p\u003e\n\u003cp\u003e字典数据类型 \u003ccode\u003edict\u003c\/code\u003e 的使用：把目标内容 \u003ccode\u003etarget\u003c\/code\u003e 当做字典的 \u003ccode\u003eKey\u003c\/code\u003e ，要寻找的目标视为 \u003ccode\u003eKey\u003c\/code\u003e 对应的 \u003ccode\u003evalue\u003c\/code\u003e ，即 \u003ccode\u003ereturn value=dict[target] if target in dict\u003c\/code\u003e 。\u003c\/p\u003e
+        \u003ch2 id=\u0022哈希查找hash-search\u0022\u003e哈希查找（Hash Search）\u003c\/h2\u003e\n\u003cp\u003e这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 *\u003ccode\u003eO(1)\u003c\/code\u003e*的平均查找时间。\u003c\/p\u003e\n\u003cp\u003e字典数据类型 \u003ccode\u003edict\u003c\/code\u003e 的使用：把目标内容 \u003ccode\u003etarget\u003c\/code\u003e 当做字典的 \u003ccode\u003eKey\u003c\/code\u003e ，要寻找的目标视为 \u003ccode\u003eKey\u003c\/code\u003e 对应的 \u003ccode\u003evalue\u003c\/code\u003e ，即 \u003ccode\u003ereturn value=dict[target] if target in dict\u003c\/code\u003e 。\u003c\/p\u003e
 
 
       
@@ -207,7 +207,7 @@
 
     ,
         "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%93%88%E5%B8%8C\/",
-        "wordCount" : "518",
+        "wordCount" : "531",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -444,7 +444,7 @@
           </li>
         </ul>
       <h2 id="哈希查找hash-search">哈希查找（Hash Search）</h2>
-<p>这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 <code>O(1)</code>的平均查找时间。</p>
+<p>这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 *<code>O(1)</code>*的平均查找时间。</p>
 <p>字典数据类型 <code>dict</code> 的使用：把目标内容 <code>target</code> 当做字典的 <code>Key</code> ，要寻找的目标视为 <code>Key</code> 对应的 <code>value</code> ，即 <code>return value=dict[target] if target in dict</code> 。</p>
 <p>注意：</p>
 <p>字典的 <code>Key</code> 需要唯一，也就需要你寻找的目标解 <code>target</code> 是唯一解。</p>
@@ -474,6 +474,7 @@
 <li><strong>只会存在一个有效答案</strong></li>
 </ul>
 <p><strong>解题代码：</strong></p>
+<p>暴力求解的方法就不列了，双循环遍历，只有一个解，找到了 <code>return</code> 即可</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
 </span></span><span class="line"><span class="cl">    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
 </span></span><span class="line"><span class="cl">        dic = collections.defaultdict()
@@ -548,7 +549,7 @@
 <li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
 </ul>
 <p><strong>解题代码：</strong></p>
-<p>我的一开始思路：暴力求解。找到数组当中的序列当中最小的那个数，也就是 <code>num-1 not in nums</code> ，从这个数开始往上找，直到 <code>num+i not in nums</code> 这时关于这个最小数的最长序列长度就是 <code>i</code> ，保留整个数组的最大长度即为题目所求。另外题目限制了时间复杂度，这个时间复杂度是超的，为了通过测试，利用了 <code>set()</code> 集合的属性进行去重后求解。</p>
+<p>我的一开始思路：暴力枚举求解。找到数组当中的序列当中最小的那个数，也就是 <code>num-1 not in nums</code> ，从这个数开始往上找，直到 <code>num+i not in nums</code> 这时关于这个最小数的最长序列长度就是 <code>i</code> ，保留整个数组的最大长度即为题目所求。另外题目限制了时间复杂度，这个时间复杂度是超的，为了通过测试，利用了 <code>set()</code> 集合的属性进行去重后求解。</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
 </span></span><span class="line"><span class="cl">    def longestConsecutive(self, nums: List[int]) -&gt; int:
 </span></span><span class="line"><span class="cl">        result = 0
@@ -567,8 +568,8 @@
 </span></span><span class="line"><span class="cl">                    if i+1&gt;result:
 </span></span><span class="line"><span class="cl">                        result = i+1
 </span></span><span class="line"><span class="cl">        return result
-</span></span></code></pre></div><p>这里应该还有一个用哈希的解法</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div><h3 id="知识点回顾">知识点回顾：</h3>
+</span></span></code></pre></div><p>在Python中，set是一种无序且不重复的元素集合。它内部使用哈希表（hash table）实现，因此通常被称为哈希集合。所以虽然我用了两次循环，但是由于判断了<code>num-1 not in nums</code> 加上<code>set()</code> 的使用，相当于在第一次循环我跳过了非开头数据，第二次循环使用了 <em><code>O(1)</code></em> 的复杂度去寻找跳过的非开头数据，整体的时间复杂度在 <em><code>O(N)</code></em> ，满足了题目的要求。</p>
+<h3 id="知识点回顾">知识点回顾：</h3>
 <p><strong>关于字典：</strong></p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">if target in my_dict
 </span></span><span class="line"><span class="cl"># 这行代码判断的是target是否在dict字典的Key上，那么如何判断字典的value当中是否存在某个值，用以下代码：
