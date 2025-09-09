@@ -16,7 +16,7 @@
 
   </title>
 
-  <meta name="generator" content="Hugo 0.149.1"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="generator" content="Hugo 0.150.0"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
   <meta name="author" content="何为" />
   <meta
     name="description"
@@ -117,7 +117,8 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
   <meta name="twitter:title" content="LeetCode 热题 | 哈希">
-  <meta name="twitter:description" content="中国石油大学（华东）">
+  <meta name="twitter:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 O(1)的平均查找时间。
+字典数据类型 dict 的使用：把目标内容 target 当做字典的 Key ，要寻找的目标视为 Key 对应的 value ，即 return value=dict[target] if target in dict 。">
 
 
 
@@ -125,12 +126,13 @@
   <meta property="og:url" content="https://www.heweilab.com/zh/post/%E5%93%88%E5%B8%8C/">
   <meta property="og:site_name" content="我的博客">
   <meta property="og:title" content="LeetCode 热题 | 哈希">
-  <meta property="og:description" content="中国石油大学（华东）">
+  <meta property="og:description" content="哈希查找（Hash Search） 这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 O(1)的平均查找时间。
+字典数据类型 dict 的使用：把目标内容 target 当做字典的 Key ，要寻找的目标视为 Key 对应的 value ，即 return value=dict[target] if target in dict 。">
   <meta property="og:locale" content="zh">
   <meta property="og:type" content="article">
     <meta property="article:section" content="post">
-    <meta property="article:published_time" content="2025-09-08T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-09-08T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-09-09T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-09T00:00:00+00:00">
     <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
 
 
@@ -149,7 +151,7 @@
         "alternativeHeadline": "",
         "description": "
       
-        
+        \u003ch2 id=\u0022哈希查找hash-search\u0022\u003e哈希查找（Hash Search）\u003c\/h2\u003e\n\u003cp\u003e这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 \u003ccode\u003eO(1)\u003c\/code\u003e的平均查找时间。\u003c\/p\u003e\n\u003cp\u003e字典数据类型 \u003ccode\u003edict\u003c\/code\u003e 的使用：把目标内容 \u003ccode\u003etarget\u003c\/code\u003e 当做字典的 \u003ccode\u003eKey\u003c\/code\u003e ，要寻找的目标视为 \u003ccode\u003eKey\u003c\/code\u003e 对应的 \u003ccode\u003evalue\u003c\/code\u003e ，即 \u003ccode\u003ereturn value=dict[target] if target in dict\u003c\/code\u003e 。\u003c\/p\u003e
 
 
       
@@ -180,9 +182,9 @@
             "@type": "Person",
             "name": "何为"
         },
-        "dateCreated": "2025-09-08T00:00:00.00Z",
-        "datePublished": "2025-09-08T00:00:00.00Z",
-        "dateModified": "2025-09-08T00:00:00.00Z",
+        "dateCreated": "2025-09-09T00:00:00.00Z",
+        "datePublished": "2025-09-09T00:00:00.00Z",
+        "dateModified": "2025-09-09T00:00:00.00Z",
         "publisher":{
             "@type":"Organization",
             "name": "何为",
@@ -205,7 +207,7 @@
 
     ,
         "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%93%88%E5%B8%8C\/",
-        "wordCount" : "0",
+        "wordCount" : "518",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -434,14 +436,178 @@
             <span class="post__meta-text"
               >
                 
-                  8/9/2025
+                  9/9/2025
                 
 
               
             </span>
           </li>
         </ul>
-      </div>
+      <h2 id="哈希查找hash-search">哈希查找（Hash Search）</h2>
+<p>这是一种非常高效的数据检索技术，其核心思想是“通过关键字直接访问记录”，从而实现近乎常数级 <code>O(1)</code>的平均查找时间。</p>
+<p>字典数据类型 <code>dict</code> 的使用：把目标内容 <code>target</code> 当做字典的 <code>Key</code> ，要寻找的目标视为 <code>Key</code> 对应的 <code>value</code> ，即 <code>return value=dict[target] if target in dict</code> 。</p>
+<p>注意：</p>
+<p>字典的 <code>Key</code> 需要唯一，也就需要你寻找的目标解 <code>target</code> 是唯一解。</p>
+<hr>
+<p>做完第一题，总结的以上内容，但是做完第二第三题发现之前的理解还是片面，哈希查找在应用当中还是很灵活。</p>
+<hr>
+<h3 id="1-两数之和"><a href="https://leetcode.cn/problems/two-sum/">1. 两数之和</a></h3>
+<p>已解答    简单</p>
+<p>给定一个整数数组 <code>nums</code> 和一个整数目标值 <code>target</code>，请你在该数组中找出 <strong>和为目标值</strong> <em><code>target</code></em> 的那 <strong>两个</strong> 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案，并且你不能使用两次相同的元素。</p>
+<p>你可以按任意顺序返回答案。</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [2,7,11,15], target = 9
+</span></span><span class="line"><span class="cl">输出：[0,1]
+</span></span><span class="line"><span class="cl">解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。
+</span></span></code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [3,2,4], target = 6
+</span></span><span class="line"><span class="cl">输出：[1,2]
+</span></span></code></pre></div><p><strong>示例 3：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [3,3], target = 6
+</span></span><span class="line"><span class="cl">输出：[0,1]
+</span></span></code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+<li><code>-109 &lt;= target &lt;= 109</code></li>
+<li><strong>只会存在一个有效答案</strong></li>
+</ul>
+<p><strong>解题代码：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
+</span></span><span class="line"><span class="cl">        dic = collections.defaultdict()
+</span></span><span class="line"><span class="cl">        for i in range(len(nums)):
+</span></span><span class="line"><span class="cl">            if target - nums[i] in dic:
+</span></span><span class="line"><span class="cl">                return dic[target - nums[i]],i
+</span></span><span class="line"><span class="cl">            dic[nums[i]] = i
+</span></span></code></pre></div><p><code>dic = collections.defaultdict()</code> 这行代码创建了一个特殊的字典对象，使用 <code>collections.defaultdict</code> 类型，它与普通字典的区别在于：当访问不存在的键时，不会抛出 <code>KeyError</code> 异常，而是返回一个默认值，括号里为指定默认值的类型。</p>
+<p>哈希查找的字典创建，都应用 <code>collections.defaultdict()</code> 进行初始化。</p>
+<h3 id="49-字母异位词分组"><a href="https://leetcode.cn/problems/group-anagrams/">49. 字母异位词分组</a></h3>
+<p>已解答    中等</p>
+<p>给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。</p>
+<p><strong>示例 1:</strong></p>
+<p><strong>输入:</strong> strs = [&ldquo;eat&rdquo;, &ldquo;tea&rdquo;, &ldquo;tan&rdquo;, &ldquo;ate&rdquo;, &ldquo;nat&rdquo;, &ldquo;bat&rdquo;]</p>
+<p><strong>输出:</strong> [[&ldquo;bat&rdquo;],[&ldquo;nat&rdquo;,&ldquo;tan&rdquo;],[&ldquo;ate&rdquo;,&ldquo;eat&rdquo;,&ldquo;tea&rdquo;]]</p>
+<p><strong>解释：</strong></p>
+<ul>
+<li>在 strs 中没有字符串可以通过重新排列来形成 <code>&quot;bat&quot;</code>。</li>
+<li>字符串 <code>&quot;nat&quot;</code> 和 <code>&quot;tan&quot;</code> 是字母异位词，因为它们可以重新排列以形成彼此。</li>
+<li>字符串 <code>&quot;ate&quot;</code> ，<code>&quot;eat&quot;</code> 和 <code>&quot;tea&quot;</code> 是字母异位词，因为它们可以重新排列以形成彼此。</li>
+</ul>
+<p><strong>示例 2:</strong></p>
+<p><strong>输入:</strong> strs = [&quot;&quot;]</p>
+<p><strong>输出:</strong> [[&quot;&quot;]]</p>
+<p><strong>示例 3:</strong></p>
+<p><strong>输入:</strong> strs = [&ldquo;a&rdquo;]</p>
+<p><strong>输出:</strong> [[&ldquo;a&rdquo;]]</p>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= strs.length &lt;= 104</code></li>
+<li><code>0 &lt;= strs[i].length &lt;= 100</code></li>
+<li><code>strs[i]</code> 仅包含小写字母</li>
+</ul>
+<p><strong>解题代码：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def groupAnagrams(self, strs: List[str]) -&gt; List[List[str]]:
+</span></span><span class="line"><span class="cl">        dic = collections.defaultdict(list)
+</span></span><span class="line"><span class="cl">        for st in strs:
+</span></span><span class="line"><span class="cl">            key = &#34;&#34;.join(sorted(st))
+</span></span><span class="line"><span class="cl">            dic[key].append(st)
+</span></span><span class="line"><span class="cl">        return list(dic.values())
+</span></span></code></pre></div><p>如果使用 <code>collections.defaultdict(list)</code> 创建字典类型数据，可以直接使用 <code>.append</code> 对 <code>list</code> 进行赋值，当然如果不记得这个代码，可以创建一个空 <code>list</code> 来进行字典 <code>value</code> 的赋值，代码如下：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def groupAnagrams(self, strs: List[str]) -&gt; List[List[str]]:
+</span></span><span class="line"><span class="cl">        dic = {}
+</span></span><span class="line"><span class="cl">        lis = []
+</span></span><span class="line"><span class="cl">        for st in strs:
+</span></span><span class="line"><span class="cl">            key = &#34;&#34;.join(sorted(st))
+</span></span><span class="line"><span class="cl">            if key in dic:
+</span></span><span class="line"><span class="cl">                lis = dic[key]
+</span></span><span class="line"><span class="cl">            lis.append(st)
+</span></span><span class="line"><span class="cl">            dic[key] = lis
+</span></span><span class="line"><span class="cl">            lis = []
+</span></span><span class="line"><span class="cl">        return list(dic.values())      
+</span></span></code></pre></div><h3 id="128-最长连续序列"><a href="https://leetcode.cn/problems/longest-consecutive-sequence/">128. 最长连续序列</a></h3>
+<p>已解答    中等</p>
+<p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
+<p>请你设计并实现时间复杂度为 <code>O(n)</code> 的算法解决此问题。</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [100,4,200,1,3,2]
+</span></span><span class="line"><span class="cl">输出：4
+</span></span><span class="line"><span class="cl">解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。
+</span></span></code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [0,3,7,2,5,8,4,6,0,1]
+</span></span><span class="line"><span class="cl">输出：9
+</span></span></code></pre></div><p><strong>示例 3：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [1,0,1,2]
+</span></span><span class="line"><span class="cl">输出：3
+</span></span></code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 105</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+</ul>
+<p><strong>解题代码：</strong></p>
+<p>我的一开始思路：暴力求解。找到数组当中的序列当中最小的那个数，也就是 <code>num-1 not in nums</code> ，从这个数开始往上找，直到 <code>num+i not in nums</code> 这时关于这个最小数的最长序列长度就是 <code>i</code> ，保留整个数组的最大长度即为题目所求。另外题目限制了时间复杂度，这个时间复杂度是超的，为了通过测试，利用了 <code>set()</code> 集合的属性进行去重后求解。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
+</span></span><span class="line"><span class="cl">    def longestConsecutive(self, nums: List[int]) -&gt; int:
+</span></span><span class="line"><span class="cl">        result = 0
+</span></span><span class="line"><span class="cl">        nums = set(nums)
+</span></span><span class="line"><span class="cl">        if len(nums) == 1:
+</span></span><span class="line"><span class="cl">            return 1
+</span></span><span class="line"><span class="cl">        for num in nums:
+</span></span><span class="line"><span class="cl">            if num-1 in nums:
+</span></span><span class="line"><span class="cl">                continue
+</span></span><span class="line"><span class="cl">            for i in range(1,len(nums)):
+</span></span><span class="line"><span class="cl">                if num+i not in nums:
+</span></span><span class="line"><span class="cl">                    if i&gt;result:
+</span></span><span class="line"><span class="cl">                        result = i
+</span></span><span class="line"><span class="cl">                    break
+</span></span><span class="line"><span class="cl">                else: 
+</span></span><span class="line"><span class="cl">                    if i+1&gt;result:
+</span></span><span class="line"><span class="cl">                        result = i+1
+</span></span><span class="line"><span class="cl">        return result
+</span></span></code></pre></div><p>这里应该还有一个用哈希的解法</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></div><h3 id="知识点回顾">知识点回顾：</h3>
+<p><strong>关于字典：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">if target in my_dict
+</span></span><span class="line"><span class="cl"># 这行代码判断的是target是否在dict字典的Key上，那么如何判断字典的value当中是否存在某个值，用以下代码：
+</span></span><span class="line"><span class="cl">if target in my_dict.values():
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 如果需要同时知道该值对应的键，可以遍历字典的项（items）：
+</span></span><span class="line"><span class="cl">for key, value in my_dict.items():
+</span></span><span class="line"><span class="cl">    if value == target:
+</span></span><span class="line"><span class="cl">        # 找到对应的key和value
+</span></span></code></pre></div><p><strong>关于其他：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># sorted函数是直接可以对字符串进行排序的
+</span></span><span class="line"><span class="cl">key = &#34;&#34;.join(sorted(st))
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 这里有一个map的用法，在这里进行总结
+</span></span><span class="line"><span class="cl"># 将字符串列表转换为整数列表
+</span></span><span class="line"><span class="cl">str_numbers = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]
+</span></span><span class="line"><span class="cl">int_numbers = map(int, str_numbers)
+</span></span><span class="line"><span class="cl">print(list(int_numbers))  # 输出: [1, 2, 3]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 将列表中的每个元素平方
+</span></span><span class="line"><span class="cl">numbers = [1, 2, 3, 4]
+</span></span><span class="line"><span class="cl">squared = map(lambda x: x**2, numbers)
+</span></span><span class="line"><span class="cl">print(list(squared))  # 输出: [1, 4, 9, 16]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 将两个列表的对应元素相加
+</span></span><span class="line"><span class="cl">a = [1, 2, 3]
+</span></span><span class="line"><span class="cl">b = [4, 5, 6]
+</span></span><span class="line"><span class="cl">result = map(lambda x, y: x + y, a, b)
+</span></span><span class="line"><span class="cl">print(list(result))  # 输出: [5, 7, 9]
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># 使用自定义函数
+</span></span><span class="line"><span class="cl">def multiply(x, y):
+</span></span><span class="line"><span class="cl">    return x * y
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">nums1 = [1, 2, 3]
+</span></span><span class="line"><span class="cl">nums2 = [4, 5, 6]
+</span></span><span class="line"><span class="cl">result = map(multiply, nums1, nums2)
+</span></span><span class="line"><span class="cl">print(list(result))  # 输出: [4, 10, 18]
+</span></span></code></pre></div></div>
     <div class="post__footer">
       
 
