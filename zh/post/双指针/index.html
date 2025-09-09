@@ -201,7 +201,7 @@
 
     ,
         "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%8F%8C%E6%8C%87%E9%92%88\/",
-        "wordCount" : "454",
+        "wordCount" : "860",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -641,35 +641,168 @@
 <p><strong>解题代码：</strong></p>
 <p>一开始的做题思路其实很简单，就是利用 <code>Python</code> <code>List</code> 的 <code>pop</code> 和 <code>append</code>  函数，遍历、删除、添加；思路很简单，也有点取巧了。因为过程当中要考虑 <code>nums</code> 的改写，所以过程也遇到了问题，比如：如果直接在遍历的时候删除，会导致 i 的索引错位的问题，这个时候删除一个添加一个，很难找到错位的规律，那就只在遍历的时候考虑末尾增加，用空 <code>List</code> 记录删除位点，重新进行一次删除，同样在重新删除的时候要把错位考虑进去，这个时候每次删除，错位-1即可。</p>
 <p>这个时候其实是没有考虑到双指针的知识点的，但是后来回顾发现，用空列表保存0位点，好像还和双指针沾点边。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def moveZeroes(self, nums: List[int]) -&gt; None:
-</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">        Do not return anything, modify nums in-place instead.
-</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">        N = []
-</span></span><span class="line"><span class="cl">        n = 0
-</span></span><span class="line"><span class="cl">        for i in range(len(nums)-1):
-</span></span><span class="line"><span class="cl">            if nums[i] == 0:
-</span></span><span class="line"><span class="cl">                N.append(i)
-</span></span><span class="line"><span class="cl">                nums.append(0)
-</span></span><span class="line"><span class="cl">        for j in N:
-</span></span><span class="line"><span class="cl">            nums.pop(j-n)
-</span></span><span class="line"><span class="cl">            n+=1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">moveZeroes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Do not return anything, modify nums in-place instead.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">N</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">n</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">N</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nums</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">N</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">nums</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">j</span><span class="o">-</span><span class="n">n</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">n</span><span class="o">+=</span><span class="mi">1</span>
 </span></span></code></pre></div><p>看了网上的解析，很多用双指针来求解，解法很多，我看懂了一个比较好理解的，代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def moveZeroes(self, nums: List[int]) -&gt; None:
-</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">        Do not return anything, modify nums in-place instead.
-</span></span><span class="line"><span class="cl">        &#34;&#34;&#34;
-</span></span><span class="line"><span class="cl">        left = 0
-</span></span><span class="line"><span class="cl">        right = 0
-</span></span><span class="line"><span class="cl">        for i in range(len(nums)):
-</span></span><span class="line"><span class="cl">            if nums[right] != 0:
-</span></span><span class="line"><span class="cl">                nums[right],nums[left] = nums[left],nums[right]
-</span></span><span class="line"><span class="cl">                left+=1
-</span></span><span class="line"><span class="cl">            right+=1
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">moveZeroes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">        Do not return anything, modify nums in-place instead.
+</span></span></span><span class="line"><span class="cl"><span class="s2">        &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">right</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="n">left</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="n">right</span><span class="o">+=</span><span class="mi">1</span>
 </span></span></code></pre></div><p>解析：从左往右依次遍历，把所有非0的数据依次提到最前，即可求解。一个指针用于遍历，一个指针用于记录下一个需要替换的值的位置。</p>
-</div>
+<hr>
+<h3 id="11-盛最多水的容器"><a href="https://leetcode.cn/problems/container-with-most-water/">11. 盛最多水的容器</a></h3>
+<p>已解答    中等</p>
+<p>给定一个长度为 <code>n</code> 的整数数组 <code>height</code> 。有 <code>n</code> 条垂线，第 <code>i</code> 条线的两个端点是 <code>(i, 0)</code> 和 <code>(i, height[i])</code> 。</p>
+<p>找出其中的两条线，使得它们与 <code>x</code> 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p>**说明：**你不能倾斜容器。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="/picture/shuangzhizhen/question_11.jpg" alt="img"></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：[1,8,6,2,5,4,8,3,7]
+</span></span><span class="line"><span class="cl">输出：49 
+</span></span><span class="line"><span class="cl">解释：图中垂直线代表输入数组 [1,8,6,2,5,4,8,3,7]。在此情况下，容器能够容纳水（表示为蓝色部分）的最大值为 49。
+</span></span></code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：height = [1,1]
+</span></span><span class="line"><span class="cl">输出：1
+</span></span></code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>n == height.length</code></li>
+<li><code>2 &lt;= n &lt;= 105</code></li>
+<li><code>0 &lt;= height[i] &lt;= 104</code></li>
+</ul>
+<p><strong>解题代码：</strong></p>
+<p>滑动窗口的问题，左右指针往中间靠拢，找到比之前更大的面积时进行替换。这里有一个如何滑动的选择：因为求面积，只需要比较左右边界的高度，滑动矮的那个即可，另外我这里加了一个判断，判断滑动后的高度只有大于原高度时，才进行计算判断。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">maxArea</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">right</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">L</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">right</span><span class="o">-=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="o">+</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">L</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">),</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">left</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">L</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">),</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">L</span>
+</span></span></code></pre></div><p>如果滑动一次就计算一次的话，代码比较简单，但是耗时稍微长一些：</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">maxArea</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">right</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">height</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="n">L</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">while</span> <span class="n">left</span><span class="o">&lt;</span><span class="n">right</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">],</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">])</span><span class="o">*</span><span class="p">(</span><span class="n">right</span><span class="o">-</span><span class="n">left</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">L</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="n">L</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">height</span><span class="p">[</span><span class="n">left</span><span class="p">]</span><span class="o">&gt;</span><span class="n">height</span><span class="p">[</span><span class="n">right</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">right</span><span class="o">-=</span><span class="mi">1</span>            
+</span></span><span class="line"><span class="cl">            <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">left</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">L</span>
+</span></span></code></pre></div><hr>
+<h3 id="15-三数之和"><a href="https://leetcode.cn/problems/3sum/">15. 三数之和</a></h3>
+<p>已解答    中等</p>
+<p>给你一个整数数组 <code>nums</code> ，判断是否存在三元组 <code>[nums[i], nums[j], nums[k]]</code> 满足 <code>i != j</code>、<code>i != k</code> 且 <code>j != k</code> ，同时还满足 <code>nums[i] + nums[j] + nums[k] == 0</code> 。请你返回所有和为 <code>0</code> 且不重复的三元组。</p>
+<p>**注意：**答案中不可以包含重复的三元组。</p>
+<p><strong>示例 1：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [-1,0,1,2,-1,-4]
+</span></span><span class="line"><span class="cl">输出：[[-1,-1,2],[-1,0,1]]
+</span></span><span class="line"><span class="cl">解释：
+</span></span><span class="line"><span class="cl">nums[0] + nums[1] + nums[2] = (-1) + 0 + 1 = 0 。
+</span></span><span class="line"><span class="cl">nums[1] + nums[2] + nums[4] = 0 + 1 + (-1) = 0 。
+</span></span><span class="line"><span class="cl">nums[0] + nums[3] + nums[4] = (-1) + 2 + (-1) = 0 。
+</span></span><span class="line"><span class="cl">不同的三元组是 [-1,0,1] 和 [-1,-1,2] 。
+</span></span><span class="line"><span class="cl">注意，输出的顺序和三元组的顺序并不重要。
+</span></span></code></pre></div><p><strong>示例 2：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [0,1,1]
+</span></span><span class="line"><span class="cl">输出：[]
+</span></span><span class="line"><span class="cl">解释：唯一可能的三元组和不为 0 。
+</span></span></code></pre></div><p><strong>示例 3：</strong></p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">输入：nums = [0,0,0]
+</span></span><span class="line"><span class="cl">输出：[[0,0,0]]
+</span></span><span class="line"><span class="cl">解释：唯一可能的三元组和为 0 。
+</span></span></code></pre></div><p><strong>提示：</strong></p>
+<ul>
+<li><code>3 &lt;= nums.length &lt;= 3000</code></li>
+<li><code>-105 &lt;= nums[i] &lt;= 105</code></li>
+</ul>
+<p><strong>解题代码：</strong></p>
+<p>思路：借鉴了LeetCode官方的解析，通过排序+相邻两次枚举的元素不能相同的方法满足“不重复”的要求。直观的解法是固定前两个数，直接搜索第三个数然后赋值输出，不出意外，超时了。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">threeSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">==</span><span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">three</span> <span class="o">=</span> <span class="mi">0</span><span class="o">-</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">three</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:]:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">three</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
+</span></span></code></pre></div><p>这里我的解决办法是限制第三个数寻找的下界限，因为排序的原因，每次循环第二个数，总会变大， 如果存在第三个数的解的话，一定是在上一个解的左边出现，因此我这里是想保留上一次出现解的第三个数的位置，来当做下次寻找的下界限。（解题思路其实类似哈希里的两数之和，但不同的是那里一定有且仅有一个解，这里不太一样）</p>
+<p>但是这样做仍然有问题：①存在无解的情况，如果不存在第三个数的解，那么还是每次都得全部遍历一遍去找第三个数（而且找不到）。②这种寻找方式还是从第二个数的下一个为起始点往后寻找，这样仍然在每次重复寻找步骤，增加时间复杂度。</p>
+<p>所以过不了特殊的测试用例，超时。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">threeSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">index_map</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">index_map</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">idx</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">==</span><span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">l</span><span class="o">&gt;</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">three</span> <span class="o">=</span> <span class="mi">0</span><span class="o">-</span><span class="p">(</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">if</span> <span class="n">three</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">l</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">l</span> <span class="o">=</span> <span class="n">index_map</span><span class="p">[</span><span class="n">three</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                                <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">three</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">            <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
+</span></span></code></pre></div><p>这是参考官方解题思路修改来的，这个思路很巧妙的是：确定第一个数，用双指针从前往后、从后往前寻找目标组合，而且它的判断不是定向寻找，而且界限划定，什么意思呢？就是说如果不存在解的集合，也能够对第三个数的下界限进行一个更新（更新到最后一个大于0的位置，下次从这个位置往左寻找，原理和上面相同，但是判定条件不再是==而是&gt;）。增加的 <code>if j == third: break</code> 甚至能确定后续第二个数的无解，进一步提高了处理效率。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">threeSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">l</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">l</span><span class="o">-</span><span class="mi">2</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">third</span> <span class="o">=</span> <span class="n">l</span><span class="o">-</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">i</span><span class="o">==</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="n">l</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">!=</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="ow">or</span> <span class="n">j</span><span class="o">-</span><span class="mi">1</span><span class="o">==</span><span class="n">i</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">while</span> <span class="n">j</span><span class="o">&lt;</span><span class="n">third</span> <span class="ow">and</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">third</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">third</span><span class="o">-=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="n">third</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">if</span> <span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">third</span><span class="p">]</span><span class="o">+</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">j</span><span class="p">],</span><span class="n">nums</span><span class="p">[</span><span class="n">third</span><span class="p">]])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
+</span></span></code></pre></div></div>
     <div class="post__footer">
       
 

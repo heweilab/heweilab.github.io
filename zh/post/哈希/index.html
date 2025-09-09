@@ -209,7 +209,7 @@
 
     ,
         "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%93%88%E5%B8%8C\/",
-        "wordCount" : "577",
+        "wordCount" : "582",
         "genre" : [ ],
         "keywords" : [ ]
     }
@@ -516,15 +516,16 @@
 </ul>
 <p><strong>解题代码：</strong></p>
 <p>暴力求解的方法就不列了，双循环遍历，只有一个解，找到了 <code>return</code> 即可</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def twoSum(self, nums: List[int], target: int) -&gt; List[int]:
-</span></span><span class="line"><span class="cl">        dic = collections.defaultdict()
-</span></span><span class="line"><span class="cl">        for i in range(len(nums)):
-</span></span><span class="line"><span class="cl">            if target - nums[i] in dic:
-</span></span><span class="line"><span class="cl">                return dic[target - nums[i]],i
-</span></span><span class="line"><span class="cl">            dic[nums[i]] = i
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">twoSum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">target</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dic</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="n">dic</span><span class="p">[</span><span class="n">target</span> <span class="o">-</span> <span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]],</span><span class="n">i</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dic</span><span class="p">[</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="n">i</span>
 </span></span></code></pre></div><p><code>dic = collections.defaultdict()</code> 这行代码创建了一个特殊的字典对象，使用 <code>collections.defaultdict</code> 类型，它与普通字典的区别在于：当访问不存在的键时，不会抛出 <code>KeyError</code> 异常，而是返回一个默认值，括号里为指定默认值的类型。</p>
 <p>哈希查找的字典创建，都应用 <code>collections.defaultdict()</code> 进行初始化。</p>
+<hr>
 <h3 id="49-字母异位词分组"><a href="https://leetcode.cn/problems/group-anagrams/">49. 字母异位词分组</a></h3>
 <p>已解答    中等</p>
 <p>给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。</p>
@@ -550,27 +551,28 @@
 <li><code>strs[i]</code> 仅包含小写字母</li>
 </ul>
 <p><strong>解题代码：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def groupAnagrams(self, strs: List[str]) -&gt; List[List[str]]:
-</span></span><span class="line"><span class="cl">        dic = collections.defaultdict(list)
-</span></span><span class="line"><span class="cl">        for st in strs:
-</span></span><span class="line"><span class="cl">            key = &#34;&#34;.join(sorted(st))
-</span></span><span class="line"><span class="cl">            dic[key].append(st)
-</span></span><span class="line"><span class="cl">        return list(dic.values())
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">groupAnagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dic</span> <span class="o">=</span> <span class="n">collections</span><span class="o">.</span><span class="n">defaultdict</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">strs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
 </span></span></code></pre></div><p>如果使用 <code>collections.defaultdict(list)</code> 创建字典类型数据，可以直接使用 <code>.append</code> 对 <code>list</code> 进行赋值，当然如果不记得这个代码，可以创建一个空 <code>list</code> 来进行字典 <code>value</code> 的赋值，代码如下：</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def groupAnagrams(self, strs: List[str]) -&gt; List[List[str]]:
-</span></span><span class="line"><span class="cl">        dic = {}
-</span></span><span class="line"><span class="cl">        lis = []
-</span></span><span class="line"><span class="cl">        for st in strs:
-</span></span><span class="line"><span class="cl">            key = &#34;&#34;.join(sorted(st))
-</span></span><span class="line"><span class="cl">            if key in dic:
-</span></span><span class="line"><span class="cl">                lis = dic[key]
-</span></span><span class="line"><span class="cl">            lis.append(st)
-</span></span><span class="line"><span class="cl">            dic[key] = lis
-</span></span><span class="line"><span class="cl">            lis = []
-</span></span><span class="line"><span class="cl">        return list(dic.values())      
-</span></span></code></pre></div><h3 id="128-最长连续序列"><a href="https://leetcode.cn/problems/longest-consecutive-sequence/">128. 最长连续序列</a></h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">groupAnagrams</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">strs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lis</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">st</span> <span class="ow">in</span> <span class="n">strs</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">dic</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">lis</span> <span class="o">=</span> <span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dic</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">lis</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lis</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>      
+</span></span></code></pre></div><hr>
+<h3 id="128-最长连续序列"><a href="https://leetcode.cn/problems/longest-consecutive-sequence/">128. 最长连续序列</a></h3>
 <p>已解答    中等</p>
 <p>给定一个未排序的整数数组 <code>nums</code> ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
 <p>请你设计并实现时间复杂度为 <code>O(n)</code> 的算法解决此问题。</p>
@@ -591,64 +593,68 @@
 </ul>
 <p><strong>解题代码：</strong></p>
 <p>我的一开始思路：暴力枚举求解。找到数组当中的序列当中最小的那个数，也就是 <code>num-1 not in nums</code> ，从这个数开始往上找，直到 <code>num+i not in nums</code> 这时关于这个最小数的最长序列长度就是 <code>i</code> ，保留整个数组的最大长度即为题目所求。另外题目限制了时间复杂度，这个时间复杂度是超的，为了通过测试，利用了 <code>set()</code> 集合的属性进行去重后求解。</p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">class Solution:
-</span></span><span class="line"><span class="cl">    def longestConsecutive(self, nums: List[int]) -&gt; int:
-</span></span><span class="line"><span class="cl">        result = 0
-</span></span><span class="line"><span class="cl">        nums = set(nums)
-</span></span><span class="line"><span class="cl">        if len(nums) == 1:
-</span></span><span class="line"><span class="cl">            return 1
-</span></span><span class="line"><span class="cl">        for num in nums:
-</span></span><span class="line"><span class="cl">            if num-1 in nums:
-</span></span><span class="line"><span class="cl">                continue
-</span></span><span class="line"><span class="cl">            for i in range(1,len(nums)):
-</span></span><span class="line"><span class="cl">                if num+i not in nums:
-</span></span><span class="line"><span class="cl">                    if i&gt;result:
-</span></span><span class="line"><span class="cl">                        result = i
-</span></span><span class="line"><span class="cl">                    break
-</span></span><span class="line"><span class="cl">                else: 
-</span></span><span class="line"><span class="cl">                    if i+1&gt;result:
-</span></span><span class="line"><span class="cl">                        result = i+1
-</span></span><span class="line"><span class="cl">        return result
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">longestConsecutive</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">nums</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">num</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">num</span><span class="o">-</span><span class="mi">1</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">num</span><span class="o">+</span><span class="n">i</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">i</span><span class="o">&gt;</span><span class="n">result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">result</span> <span class="o">=</span> <span class="n">i</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">break</span>
+</span></span><span class="line"><span class="cl">                <span class="k">else</span><span class="p">:</span> 
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">&gt;</span><span class="n">result</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">result</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
 </span></span></code></pre></div><p>在Python中，set是一种无序且不重复的元素集合。它内部使用哈希表（hash table）实现，因此通常被称为哈希集合。所以虽然我用了两次循环，但是由于判断了<code>num-1 not in nums</code> 加上<code>set()</code> 的使用，相当于在第一次循环我跳过了非开头数据，第二次循环使用了 <em><code>O(1)</code></em> 的复杂度去寻找跳过的非开头数据，整体的时间复杂度在 <em><code>O(N)</code></em> ，满足了题目的要求。</p>
+<hr>
 <h3 id="知识点回顾">知识点回顾：</h3>
 <p><strong>关于字典：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">if target in my_dict
-</span></span><span class="line"><span class="cl"># 这行代码判断的是target是否在dict字典的Key上，那么如何判断字典的value当中是否存在某个值，用以下代码：
-</span></span><span class="line"><span class="cl">if target in my_dict.values():
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">if</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">my_dict</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 这行代码判断的是target是否在dict字典的Key上，那么如何判断字典的value当中是否存在某个值，用以下代码：</span>
+</span></span><span class="line"><span class="cl"><span class="k">if</span> <span class="n">target</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 如果需要同时知道该值对应的键，可以遍历字典的项（items）：
-</span></span><span class="line"><span class="cl">for key, value in my_dict.items():
-</span></span><span class="line"><span class="cl">    if value == target:
-</span></span><span class="line"><span class="cl">        # 找到对应的key和value
+</span></span><span class="line"><span class="cl"><span class="c1"># 如果需要同时知道该值对应的键，可以遍历字典的项（items）：</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_dict</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">value</span> <span class="o">==</span> <span class="n">target</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 找到对应的key和value</span>
 </span></span></code></pre></div><p><strong>关于其他：</strong></p>
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># sorted函数是直接可以对字符串进行排序的
-</span></span><span class="line"><span class="cl">key = &#34;&#34;.join(sorted(st))
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="c1"># sorted函数是直接可以对字符串进行排序的</span>
+</span></span><span class="line"><span class="cl"><span class="n">key</span> <span class="o">=</span> <span class="s2">&#34;&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">st</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 同样能够对List列表进行排序</span>
+</span></span><span class="line"><span class="cl"><span class="n">nums</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 这里有一个map的用法，在这里进行总结
-</span></span><span class="line"><span class="cl"># 将字符串列表转换为整数列表
-</span></span><span class="line"><span class="cl">str_numbers = [&#39;1&#39;, &#39;2&#39;, &#39;3&#39;]
-</span></span><span class="line"><span class="cl">int_numbers = map(int, str_numbers)
-</span></span><span class="line"><span class="cl">print(list(int_numbers))  # 输出: [1, 2, 3]
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 将列表中的每个元素平方
-</span></span><span class="line"><span class="cl">numbers = [1, 2, 3, 4]
-</span></span><span class="line"><span class="cl">squared = map(lambda x: x**2, numbers)
-</span></span><span class="line"><span class="cl">print(list(squared))  # 输出: [1, 4, 9, 16]
+</span></span><span class="line"><span class="cl"><span class="c1"># 这里有一个map的用法，在这里进行总结</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 将字符串列表转换为整数列表</span>
+</span></span><span class="line"><span class="cl"><span class="n">str_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">int_numbers</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="n">str_numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">int_numbers</span><span class="p">))</span>  <span class="c1"># 输出: [1, 2, 3]</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 将两个列表的对应元素相加
-</span></span><span class="line"><span class="cl">a = [1, 2, 3]
-</span></span><span class="line"><span class="cl">b = [4, 5, 6]
-</span></span><span class="line"><span class="cl">result = map(lambda x, y: x + y, a, b)
-</span></span><span class="line"><span class="cl">print(list(result))  # 输出: [5, 7, 9]
+</span></span><span class="line"><span class="cl"><span class="c1"># 将列表中的每个元素平方</span>
+</span></span><span class="line"><span class="cl"><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">squared</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span> <span class="n">numbers</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">squared</span><span class="p">))</span>  <span class="c1"># 输出: [1, 4, 9, 16]</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl"># 使用自定义函数
-</span></span><span class="line"><span class="cl">def multiply(x, y):
-</span></span><span class="line"><span class="cl">    return x * y
+</span></span><span class="line"><span class="cl"><span class="c1"># 将两个列表的对应元素相加</span>
+</span></span><span class="line"><span class="cl"><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># 输出: [5, 7, 9]</span>
 </span></span><span class="line"><span class="cl">
-</span></span><span class="line"><span class="cl">nums1 = [1, 2, 3]
-</span></span><span class="line"><span class="cl">nums2 = [4, 5, 6]
-</span></span><span class="line"><span class="cl">result = map(multiply, nums1, nums2)
-</span></span><span class="line"><span class="cl">print(list(result))  # 输出: [4, 10, 18]
+</span></span><span class="line"><span class="cl"><span class="c1"># 使用自定义函数</span>
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">nums1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">nums2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="nb">map</span><span class="p">(</span><span class="n">multiply</span><span class="p">,</span> <span class="n">nums1</span><span class="p">,</span> <span class="n">nums2</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>  <span class="c1"># 输出: [4, 10, 18]</span>
 </span></span></code></pre></div></div>
     <div class="post__footer">
       
