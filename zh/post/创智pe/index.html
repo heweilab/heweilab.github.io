@@ -1,0 +1,969 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        创智|PE |
+      何为
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.155.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="何为" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.86b1f7f8e46fb7f9432e28081186d24eb6cd881e4d058e84aef93462f1e41337.css" integrity="sha256-hrH3&#43;ORvt/lDLigIEYbSTrbNiB5NBY6Ervk0YvHkEzc=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/%E5%88%9B%E6%99%BApe/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="创智|PE">
+  <meta name="twitter:description" content="import json import re def construct_prompt(d): &#34;&#34;&#34; 构造用于大语言模型的提示词 参数: d (dict): jsonl数据文件的一行，解析成字典后的变量。 注意：传入的 &#39;d&#39; 已经过处理，其 &#39;test&#39; 字段列表 只包含 &#39;input&#39;，不包含 &#39;output&#39; 答案。 返回: list: OpenAI API的message格式列表，允许设计多轮对话式的prompt 示例: [{&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: &#34;系统提示内容&#34;}, {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;用户提示内容&#34;}] &#34;&#34;&#34; system_prompt = ( &#34;你是一位逻辑推理专家，擅长从少量训练样本中抽象出变换规律并应用到新案例。&#34; &#34;每个任务包含若干训练样本（输入→输出）示例，以及一个测试输入。&#34; &#34;你的目标是分析训练样本中的规律，并预测测试输入的正确输出网格。&#34; &#34;\n\n&#34; &#34;要求与约束：\n&#34; &#34;1. 仔细比较输入与输出网格，推理出其中的逻辑或变换规则。\n&#34; &#34;2. 你的推理过程可以使用文字说明，但最终必须输出一个二维整数数组。\n&#34; &#34;3. 数组格式必须是Python标准格式，如: [[0,1,2],[3,4,5],[6,7,8]]。\n&#34; &#34;4. 不要输出任何除数组之外的额外内容。\n&#34; &#34;5. 输出必须是完整的数组，长度和宽度与输入一致或根据规律变化。&#34; ) user_content = &#34;# ARC推理任务\n&#34; user_content &#43;= &#34;请根据以下训练样本分析规律并推理测试输入对应的输出。识别从输入到输出的变换规律&#34; \ &#34;（例如：图案复制、旋转、延伸、填充、对称等）,将识别出的规律应用到测试样本的输入上，生成对应的输出\n&#34; user_content &#43;= &#34;&#34;&#34;注意事项：\n - 网格用二维数组表示，0通常代表背景/空白\n - 非零数字代表不同的颜色或图案元素\n - 变换可能涉及：几何变换、图案扩展、元素关系、空间填充等\n - 仔细对比训练样本的输入输出差异\n - 寻找所有训练样本共同遵循的规律\n&#34;&#34;&#34; for idx, ex in enumerate(d[&#34;train&#34;], 1): user_content &#43;= f&#34;训练样本{idx} 输入：\n&#34; &#43; json.dumps(ex[&#34;input&#34;], ensure_ascii=False) &#43; &#34;\n&#34; user_content &#43;= f&#34;训练样本{idx} 输出：\n&#34; &#43; json.dumps(ex[&#34;output&#34;], ensure_ascii=False) &#43; &#34;\n&#34; test_input = d[&#34;test&#34;][0][&#34;input&#34;] user_content &#43;= &#34;测试输入：\n&#34; &#43; json.dumps(test_input, ensure_ascii=False) &#43; &#34;\n&#34; user_content &#43;= &#34;请结合所有训练样本，总结规律后，直接输出二维数组答案，不要额外解释。&#34; print(&#34;system_prompt:&#34;,system_prompt) print(&#34;user_content:&#34;,user_content) return [ {&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: system_prompt}, {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: user_content} ] def parse_output(text): &#34;&#34;&#34; 解析大语言模型的输出文本，提取预测的网格 参数: text (str): 大语言模型在设计prompt下的输出文本 返回: list: 从输出文本解析出的二维数组 (Python列表，元素为整数) 示例: [[0, 1, 2], [3, 4, 5], [6, 7, 8]] &#34;&#34;&#34; pat = r&#34;\[\s*\[(?:.|\n)*\]\s*\]&#34; found = re.findall(pat, text) for match in reversed(found): try: arr = json.loads(match) if isinstance(arr, list) and all(isinstance(r, list) for r in arr): return [[int(x) for x in row] for row in arr] except Exception: continue return [] 正确率：40%；2、5、9、13、14、15、16、19">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/%E5%88%9B%E6%99%BApe/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="创智|PE">
+  <meta property="og:description" content="import json import re def construct_prompt(d): &#34;&#34;&#34; 构造用于大语言模型的提示词 参数: d (dict): jsonl数据文件的一行，解析成字典后的变量。 注意：传入的 &#39;d&#39; 已经过处理，其 &#39;test&#39; 字段列表 只包含 &#39;input&#39;，不包含 &#39;output&#39; 答案。 返回: list: OpenAI API的message格式列表，允许设计多轮对话式的prompt 示例: [{&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: &#34;系统提示内容&#34;}, {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;用户提示内容&#34;}] &#34;&#34;&#34; system_prompt = ( &#34;你是一位逻辑推理专家，擅长从少量训练样本中抽象出变换规律并应用到新案例。&#34; &#34;每个任务包含若干训练样本（输入→输出）示例，以及一个测试输入。&#34; &#34;你的目标是分析训练样本中的规律，并预测测试输入的正确输出网格。&#34; &#34;\n\n&#34; &#34;要求与约束：\n&#34; &#34;1. 仔细比较输入与输出网格，推理出其中的逻辑或变换规则。\n&#34; &#34;2. 你的推理过程可以使用文字说明，但最终必须输出一个二维整数数组。\n&#34; &#34;3. 数组格式必须是Python标准格式，如: [[0,1,2],[3,4,5],[6,7,8]]。\n&#34; &#34;4. 不要输出任何除数组之外的额外内容。\n&#34; &#34;5. 输出必须是完整的数组，长度和宽度与输入一致或根据规律变化。&#34; ) user_content = &#34;# ARC推理任务\n&#34; user_content &#43;= &#34;请根据以下训练样本分析规律并推理测试输入对应的输出。识别从输入到输出的变换规律&#34; \ &#34;（例如：图案复制、旋转、延伸、填充、对称等）,将识别出的规律应用到测试样本的输入上，生成对应的输出\n&#34; user_content &#43;= &#34;&#34;&#34;注意事项：\n - 网格用二维数组表示，0通常代表背景/空白\n - 非零数字代表不同的颜色或图案元素\n - 变换可能涉及：几何变换、图案扩展、元素关系、空间填充等\n - 仔细对比训练样本的输入输出差异\n - 寻找所有训练样本共同遵循的规律\n&#34;&#34;&#34; for idx, ex in enumerate(d[&#34;train&#34;], 1): user_content &#43;= f&#34;训练样本{idx} 输入：\n&#34; &#43; json.dumps(ex[&#34;input&#34;], ensure_ascii=False) &#43; &#34;\n&#34; user_content &#43;= f&#34;训练样本{idx} 输出：\n&#34; &#43; json.dumps(ex[&#34;output&#34;], ensure_ascii=False) &#43; &#34;\n&#34; test_input = d[&#34;test&#34;][0][&#34;input&#34;] user_content &#43;= &#34;测试输入：\n&#34; &#43; json.dumps(test_input, ensure_ascii=False) &#43; &#34;\n&#34; user_content &#43;= &#34;请结合所有训练样本，总结规律后，直接输出二维数组答案，不要额外解释。&#34; print(&#34;system_prompt:&#34;,system_prompt) print(&#34;user_content:&#34;,user_content) return [ {&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: system_prompt}, {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: user_content} ] def parse_output(text): &#34;&#34;&#34; 解析大语言模型的输出文本，提取预测的网格 参数: text (str): 大语言模型在设计prompt下的输出文本 返回: list: 从输出文本解析出的二维数组 (Python列表，元素为整数) 示例: [[0, 1, 2], [3, 4, 5], [6, 7, 8]] &#34;&#34;&#34; pat = r&#34;\[\s*\[(?:.|\n)*\]\s*\]&#34; found = re.findall(pat, text) for match in reversed(found): try: arr = json.loads(match) if isinstance(arr, list) and all(isinstance(r, list) for r in arr): return [[int(x) for x in row] for row in arr] except Exception: continue return [] 正确率：40%；2、5、9、13、14、15、16、19">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-10-23T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "创智|PE",
+        "headline": "创智|PE",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 class=\u0022chroma\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022kn\u0022\u003eimport\u003c\/span\u003e \u003cspan class=\u0022nn\u0022\u003ejson\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022kn\u0022\u003eimport\u003c\/span\u003e \u003cspan class=\u0022nn\u0022\u003ere\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022nf\u0022\u003econstruct_prompt\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ed\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u0026#34;\u0026#34;\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    构造用于大语言模型的提示词\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    参数:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    d (dict): jsonl数据文件的一行，解析成字典后的变量。\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e              注意：传入的 \u0026#39;d\u0026#39; 已经过处理，其 \u0026#39;test\u0026#39; 字段列表\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e              只包含 \u0026#39;input\u0026#39;，不包含 \u0026#39;output\u0026#39; 答案。\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    返回:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    list: OpenAI API的message格式列表，允许设计多轮对话式的prompt\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    示例: [{\u0026#34;role\u0026#34;: \u0026#34;system\u0026#34;, \u0026#34;content\u0026#34;: \u0026#34;系统提示内容\u0026#34;}, \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e           {\u0026#34;role\u0026#34;: \u0026#34;user\u0026#34;, \u0026#34;content\u0026#34;: \u0026#34;用户提示内容\u0026#34;}]\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \u0026#34;\u0026#34;\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003esystem_prompt\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;你是一位逻辑推理专家，擅长从少量训练样本中抽象出变换规律并应用到新案例。\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;每个任务包含若干训练样本（输入→输出）示例，以及一个测试输入。\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;你的目标是分析训练样本中的规律，并预测测试输入的正确输出网格。\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;要求与约束：\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;1. 仔细比较输入与输出网格，推理出其中的逻辑或变换规则。\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;2. 你的推理过程可以使用文字说明，但最终必须输出一个二维整数数组。\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;3. 数组格式必须是Python标准格式，如: [[0,1,2],[3,4,5],[6,7,8]]。\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;4. 不要输出任何除数组之外的额外内容。\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022s2\u0022\u003e\u0026#34;5. 输出必须是完整的数组，长度和宽度与输入一致或根据规律变化。\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;# ARC推理任务\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;请根据以下训练样本分析规律并推理测试输入对应的输出。识别从输入到输出的变换规律\u0026#34;\u003c\/span\u003e \\\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e                    \u003cspan class=\u0022s2\u0022\u003e\u0026#34;（例如：图案复制、旋转、延伸、填充、对称等）,将识别出的规律应用到测试样本的输入上，生成对应的输出\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u0026#34;\u0026#34;注意事项：\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e                    - 网格用二维数组表示，0通常代表背景\/空白\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e                    - 非零数字代表不同的颜色或图案元素\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e                    - 变换可能涉及：几何变换、图案扩展、元素关系、空间填充等\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e                    - 仔细对比训练样本的输入输出差异\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e                    - 寻找所有训练样本共同遵循的规律\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u0026#34;\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eidx\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eex\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eenumerate\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ed\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e[\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;train\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e],\u003c\/span\u003e \u003cspan class=\u0022mi\u0022\u003e1\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022sa\u0022\u003ef\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;训练样本\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e{\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eidx\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e}\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e 输入：\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ejson\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003edumps\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eex\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e[\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;input\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e],\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eensure_ascii\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003eFalse\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022sa\u0022\u003ef\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;训练样本\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e{\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eidx\u003c\/span\u003e\u003cspan class=\u0022si\u0022\u003e}\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e 输出：\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ejson\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003edumps\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eex\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e[\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;output\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e],\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eensure_ascii\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003eFalse\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003etest_input\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ed\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e[\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;test\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e][\u003c\/span\u003e\u003cspan class=\u0022mi\u0022\u003e0\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e][\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;input\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;测试输入：\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ejson\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003edumps\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etest_input\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003eensure_ascii\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e\u003cspan class=\u0022kc\u0022\u003eFalse\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022se\u0022\u003e\\n\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e\u002b=\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;请结合所有训练样本，总结规律后，直接输出二维数组答案，不要额外解释。\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022nb\u0022\u003eprint\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;system_prompt:\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003esystem_prompt\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022nb\u0022\u003eprint\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;user_content:\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e[\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;role\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;system\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;content\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003esystem_prompt\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e},\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022p\u0022\u003e{\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;role\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;user\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022s2\u0022\u003e\u0026#34;content\u0026#34;\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003euser_content\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e}\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022p\u0022\u003e]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022k\u0022\u003edef\u003c\/span\u003e \u003cspan class=\u0022nf\u0022\u003eparse_output\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003etext\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022s2\u0022\u003e\u0026#34;\u0026#34;\u0026#34;\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    解析大语言模型的输出文本，提取预测的网格\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    参数:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    text (str): 大语言模型在设计prompt下的输出文本\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    返回:\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    list: 从输出文本解析出的二维数组 (Python列表，元素为整数)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    示例: [[0, 1, 2], [3, 4, 5], [6, 7, 8]]\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \n\u003c\/span\u003e\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\u003cspan class=\u0022s2\u0022\u003e    \u0026#34;\u0026#34;\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003epat\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022sa\u0022\u003er\u003c\/span\u003e\u003cspan class=\u0022s2\u0022\u003e\u0026#34;\\[\\s*\\[(?:.|\\n)*\\]\\s*\\]\u0026#34;\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022n\u0022\u003efound\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ere\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003efindall\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003epat\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003etext\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022k\u0022\u003ematch\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003ereversed\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003efound\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003etry\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022n\u0022\u003earr\u003c\/span\u003e \u003cspan class=\u0022o\u0022\u003e=\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ejson\u003c\/span\u003e\u003cspan class=\u0022o\u0022\u003e.\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003eloads\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022k\u0022\u003ematch\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003eif\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eisinstance\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003earr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003elist\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003eand\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003eall\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022nb\u0022\u003eisinstance\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003er\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e,\u003c\/span\u003e \u003cspan class=\u0022nb\u0022\u003elist\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003er\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003earr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e):\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e                \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e[[\u003c\/span\u003e\u003cspan class=\u0022nb\u0022\u003eint\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e(\u003c\/span\u003e\u003cspan class=\u0022n\u0022\u003ex\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e)\u003c\/span\u003e \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003ex\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003erow\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e]\u003c\/span\u003e \u003cspan class=\u0022k\u0022\u003efor\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003erow\u003c\/span\u003e \u003cspan class=\u0022ow\u0022\u003ein\u003c\/span\u003e \u003cspan class=\u0022n\u0022\u003earr\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e        \u003cspan class=\u0022k\u0022\u003eexcept\u003c\/span\u003e \u003cspan class=\u0022ne\u0022\u003eException\u003c\/span\u003e\u003cspan class=\u0022p\u0022\u003e:\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e            \u003cspan class=\u0022k\u0022\u003econtinue\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan class=\u0022line\u0022\u003e\u003cspan class=\u0022cl\u0022\u003e    \u003cspan class=\u0022k\u0022\u003ereturn\u003c\/span\u003e \u003cspan class=\u0022p\u0022\u003e[]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003e正确率：40%；2、5、9、13、14、15、16、19\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/%E5%88%9B%E6%99%BApe\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-10-23T00:00:00.00Z",
+        "datePublished": "2025-10-23T00:00:00.00Z",
+        "dateModified": "2025-10-23T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%88%9B%E6%99%BApe\/",
+        "wordCount" : "1256",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2026
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>创智|PE</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  23/10/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">construct_prompt</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    构造用于大语言模型的提示词
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    参数:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    d (dict): jsonl数据文件的一行，解析成字典后的变量。
+</span></span></span><span class="line"><span class="cl"><span class="s2">              注意：传入的 &#39;d&#39; 已经过处理，其 &#39;test&#39; 字段列表
+</span></span></span><span class="line"><span class="cl"><span class="s2">              只包含 &#39;input&#39;，不包含 &#39;output&#39; 答案。
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    返回:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    list: OpenAI API的message格式列表，允许设计多轮对话式的prompt
+</span></span></span><span class="line"><span class="cl"><span class="s2">    示例: [{&#34;role&#34;: &#34;system&#34;, &#34;content&#34;: &#34;系统提示内容&#34;}, 
+</span></span></span><span class="line"><span class="cl"><span class="s2">           {&#34;role&#34;: &#34;user&#34;, &#34;content&#34;: &#34;用户提示内容&#34;}]
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;你是一位逻辑推理专家，擅长从少量训练样本中抽象出变换规律并应用到新案例。&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;每个任务包含若干训练样本（输入→输出）示例，以及一个测试输入。&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;你的目标是分析训练样本中的规律，并预测测试输入的正确输出网格。&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;要求与约束：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;1. 仔细比较输入与输出网格，推理出其中的逻辑或变换规则。</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;2. 你的推理过程可以使用文字说明，但最终必须输出一个二维整数数组。</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;3. 数组格式必须是Python标准格式，如: [[0,1,2],[3,4,5],[6,7,8]]。</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;4. 不要输出任何除数组之外的额外内容。</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;5. 输出必须是完整的数组，长度和宽度与输入一致或根据规律变化。&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">=</span> <span class="s2">&#34;# ARC推理任务</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="s2">&#34;请根据以下训练样本分析规律并推理测试输入对应的输出。识别从输入到输出的变换规律&#34;</span> \
+</span></span><span class="line"><span class="cl">                    <span class="s2">&#34;（例如：图案复制、旋转、延伸、填充、对称等）,将识别出的规律应用到测试样本的输入上，生成对应的输出</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="s2">&#34;&#34;&#34;注意事项：</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    - 网格用二维数组表示，0通常代表背景/空白</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    - 非零数字代表不同的颜色或图案元素</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    - 变换可能涉及：几何变换、图案扩展、元素关系、空间填充等</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    - 仔细对比训练样本的输入输出差异</span><span class="se">\n</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">                    - 寻找所有训练样本共同遵循的规律</span><span class="se">\n</span><span class="s2">&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&#34;train&#34;</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&#34;训练样本</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2"> 输入：</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s2">&#34;input&#34;</span><span class="p">],</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&#34;训练样本</span><span class="si">{</span><span class="n">idx</span><span class="si">}</span><span class="s2"> 输出：</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s2">&#34;output&#34;</span><span class="p">],</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">test_input</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;test&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;input&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="s2">&#34;测试输入：</span><span class="se">\n</span><span class="s2">&#34;</span> <span class="o">+</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">test_input</span><span class="p">,</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="s2">&#34;请结合所有训练样本，总结规律后，直接输出二维数组答案，不要额外解释。&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;system_prompt:&#34;</span><span class="p">,</span><span class="n">system_prompt</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">print</span><span class="p">(</span><span class="s2">&#34;user_content:&#34;</span><span class="p">,</span><span class="n">user_content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">user_content</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_output</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    解析大语言模型的输出文本，提取预测的网格
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    参数:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    text (str): 大语言模型在设计prompt下的输出文本
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    返回:
+</span></span></span><span class="line"><span class="cl"><span class="s2">    list: 从输出文本解析出的二维数组 (Python列表，元素为整数)
+</span></span></span><span class="line"><span class="cl"><span class="s2">    示例: [[0, 1, 2], [3, 4, 5], [6, 7, 8]]
+</span></span></span><span class="line"><span class="cl"><span class="s2">    
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\[\s*\[(?:.|\n)*\]\s*\]&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">found</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="n">pat</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="k">match</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">found</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">arr</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="k">match</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="p">[[</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[]</span>
+</span></span></code></pre></div><p>正确率：40%；2、5、9、13、14、15、16、19</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">json</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">construct_prompt</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    改进版ARC推理prompt：多维度模式识别 + 结构化思维链
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">sz</span><span class="p">(</span><span class="n">g</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">)</span><span class="si">}</span><span class="s2">行×</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">g</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="si">}</span><span class="s2">列&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 收集训练样例的颜色</span>
+</span></span><span class="line"><span class="cl">    <span class="n">train_colors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;train&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">ex</span><span class="p">[</span><span class="s2">&#34;input&#34;</span><span class="p">]</span> <span class="o">+</span> <span class="n">ex</span><span class="p">[</span><span class="s2">&#34;output&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">train_colors</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">c</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">row</span> <span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">color_str</span> <span class="o">=</span> <span class="s2">&#34;{&#34;</span> <span class="o">+</span> <span class="s2">&#34;, &#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">train_colors</span><span class="p">))</span> <span class="o">+</span> <span class="s2">&#34;}&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">system_prompt</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;你是ARC-AGI抽象推理专家。请严格按照以下步骤解决问题：</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;【第一步：观察与分类】</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;仔细观察所有训练样例的输入→输出变换，识别以下模式类别（可能同时存在多种）：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;1. 几何变换：旋转(90°/180°/270°)、镜像(水平/垂直/对角)、转置</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;2. 尺寸变换：裁剪、扩展、缩放、填充</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;3. 对象操作：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 提取特定颜色/形状的对象</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 复制/移动对象到指定位置（边、角、中心）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 按行/列/对角线投影</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 对齐、排序、堆叠</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;4. 颜色规则：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 替换映射（如3→4，背景0保持）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 条件着色（基于位置、邻居、计数）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 保留/过滤特定颜色</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;5. 空间关系：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 对称性（中心对称、轴对称）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 重力/下落（对象向下堆叠）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 填充空洞/连接断裂</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 边界检测与延伸</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;6. 算术/逻辑：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 周期性重复（横向/纵向）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 计数驱动（出现次数→输出）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;   - 条件判断（if-then规则）</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;【第二步：规则验证】</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;提取的规则必须在所有训练样例上100%一致，包括：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 输入输出的尺寸关系（相同/转置/固定/函数关系）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 颜色使用（输出颜色 ⊆ 训练输出颜色集合 ∪ </span><span class="si">{0}</span><span class="s2">）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 对象的处理顺序（从上到下/从左到右/特定优先级）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 边界条件与特殊情况处理</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;【第三步：应用与自检】</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;将规则应用到测试输入，然后执行以下检查：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;输出尺寸是否符合训练规律？</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;使用的颜色是否都在训练输出中出现过？</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;对象位置/顺序是否与训练一致？</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;是否存在遗漏的元素或错误的重复？</span><span class="se">\n\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;【输出协议】</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="sa">f</span><span class="s2">&#34;- 训练输出颜色集合：</span><span class="si">{</span><span class="n">color_str</span><span class="si">}</span><span class="s2"> （背景色0始终可用）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 最终答案必须放在&lt;ans&gt;[[...],[...],...]&lt;/ans&gt;标签内</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 格式为二维整数数组，每个元素0-9</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;- 不要输出解释、代码或其他文本</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 构建用户输入</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_lines</span> <span class="o">=</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;## ARC推理任务</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;### 训练样例（请从中抽象出唯一变换规则）</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&#34;train&#34;</span><span class="p">],</span> <span class="mi">1</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;样例</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">：&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- 输入尺寸：</span><span class="si">{</span><span class="n">sz</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- 输出尺寸：</span><span class="si">{</span><span class="n">sz</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- 输入：</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">])</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&#34;- 输出：</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">])</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">test_input</span> <span class="o">=</span> <span class="n">d</span><span class="p">[</span><span class="s2">&#34;test&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&#34;input&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_lines</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;### 测试输入（请应用上述规则）</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="sa">f</span><span class="s2">&#34;- 尺寸：</span><span class="si">{</span><span class="n">sz</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span><span class="si">}</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="sa">f</span><span class="s2">&#34;- 网格：</span><span class="si">{</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">test_input</span><span class="p">)</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;---</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;要求：</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;1. 先在内部分析规则（不输出），识别属于上述哪几类模式</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;2. 验证规则在所有训练样例上的一致性</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;3. 应用到测试输入并自检</span><span class="se">\n</span><span class="s2">&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;4. 仅输出最终答案：&lt;ans&gt;[[...],[...],...]&lt;/ans&gt;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="s2">&#34;</span><span class="se">\n</span><span class="s2">&#34;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">user_lines</span><span class="p">)}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_output</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="s2">&#34;&#34;&#34;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    解析大模型输出，提取二维整型矩阵（更稳健的实现）
+</span></span></span><span class="line"><span class="cl"><span class="s2">    处理顺序：
+</span></span></span><span class="line"><span class="cl"><span class="s2">    1) 先抓取 &lt;ans&gt;...&lt;/ans&gt;
+</span></span></span><span class="line"><span class="cl"><span class="s2">    2) 再尝试 ```json / ``` 包裹
+</span></span></span><span class="line"><span class="cl"><span class="s2">    3) 最后用严格的“仅数字/逗号/方括号”的非贪婪正则
+</span></span></span><span class="line"><span class="cl"><span class="s2">    4) 清理尾逗号、全角逗号、中文括号；校验矩形性与0-9整数
+</span></span></span><span class="line"><span class="cl"><span class="s2">    &#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># ---------- 常用清洗 ----------</span>
+</span></span><span class="line"><span class="cl">    <span class="n">s</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 优先：&lt;ans&gt;...&lt;/ans&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">m</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;&lt;ans&gt;(.*?)&lt;/ans&gt;&#34;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 次优先：```json ... ``` 或 ``` ... ```</span>
+</span></span><span class="line"><span class="cl">    <span class="n">fence</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;```(?:json)?\s*(.*?)\s*```&#34;</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">fence</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">fence</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 兜底：严格二维数组（仅数字/逗号/方括号/空白），非贪婪</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 至少两行（两个方括号块）以避免一维数组误判</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strict_pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\[\s*\[\s*[0-9](?:\s*,\s*[0-9])*\s*\](?:\s*,\s*\[\s*[0-9](?:\s*,\s*[0-9])*\s*\])+\s*\]&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">m2</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">strict_pat</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m2</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 再兜底：你的原始宽松正则，但放在最后（风险最大）</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loose_pat</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\[\s*\[(?:.|\n)*?\]\s*\]&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">m3</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">loose_pat</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">flags</span><span class="o">=</span><span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">m3</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 去重但保持顺序</span>
+</span></span><span class="line"><span class="cl">    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ordered</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">c</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">ordered</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 逐个候选尝试解析与校验</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">try_parse_array</span><span class="p">(</span><span class="n">block</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 通用清洗：全角逗号→半角，中文括号→英文</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">block</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;，&#34;</span><span class="p">,</span> <span class="s2">&#34;,&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;【&#34;</span><span class="p">,</span> <span class="s2">&#34;[&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;】&#34;</span><span class="p">,</span> <span class="s2">&#34;]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;（&#34;</span><span class="p">,</span> <span class="s2">&#34;(&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                 <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;）&#34;</span><span class="p">,</span> <span class="s2">&#34;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 去可能的多余结尾逗号</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;,\s*\]&#34;</span><span class="p">,</span> <span class="s2">&#34;]&#34;</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;,\s*\}&#34;</span><span class="p">,</span> <span class="s2">&#34;}&#34;</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">arr</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 必须是二维列表</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">arr</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 行长一致（矩形）</span>
+</span></span><span class="line"><span class="cl">        <span class="n">row_len</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">arr</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">row_len</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">any</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="o">!=</span> <span class="n">row_len</span> <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 元素必须可转为 0–9 的整数</span>
+</span></span><span class="line"><span class="cl">        <span class="n">out</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">arr</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">row</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">r</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 避免浮点/字符串</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">xi</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">xi</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">xi</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">                <span class="n">row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">xi</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">out</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">out</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 依次返回第一个合法矩阵</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">ordered</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parsed</span> <span class="o">=</span> <span class="n">try_parse_array</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">parsed</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[]</span>
+</span></span></code></pre></div><p>45%-50%</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">re</span><span class="o">,</span><span class="nn">json</span><span class="o">,</span><span class="nn">ast</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">construct_prompt</span><span class="p">(</span><span class="n">d</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">classify_task_type</span><span class="p">(</span><span class="n">train_examples</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;基于启发式规则分类任务类型&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 分析输入输出特征</span>
+</span></span><span class="line"><span class="cl">        <span class="n">features</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;size_change&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;color_change&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;object_movement&#34;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">            <span class="s2">&#34;pattern_replication&#34;</span><span class="p">:</span> <span class="kc">False</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">ex</span> <span class="ow">in</span> <span class="n">train_examples</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inp</span><span class="p">,</span> <span class="n">out</span> <span class="o">=</span> <span class="n">ex</span><span class="p">[</span><span class="s2">&#34;input&#34;</span><span class="p">],</span> <span class="n">ex</span><span class="p">[</span><span class="s2">&#34;output&#34;</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 尺寸变化</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">len</span><span class="p">(</span><span class="n">inp</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">out</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">features</span><span class="p">[</span><span class="s2">&#34;size_change&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 颜色变化</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inp_colors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">inp</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">out_colors</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="n">x</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">out</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">inp_colors</span> <span class="o">!=</span> <span class="n">out_colors</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">features</span><span class="p">[</span><span class="s2">&#34;color_change&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 对象移动</span>
+</span></span><span class="line"><span class="cl">            <span class="n">inp_objects</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">inp</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">out_objects</span> <span class="o">=</span> <span class="p">[(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">row</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">out</span><span class="p">)</span> <span class="k">for</span> <span class="n">j</span><span class="p">,</span> <span class="n">val</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">set</span><span class="p">(</span><span class="n">inp_objects</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">set</span><span class="p">(</span><span class="n">out_objects</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">features</span><span class="p">[</span><span class="s2">&#34;object_movement&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 模式复制</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="nb">sum</span><span class="p">(</span><span class="mi">1</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">out</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">row</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">sum</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">                    <span class="mi">1</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">inp</span> <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">row</span> <span class="k">if</span> <span class="n">val</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">)</span> <span class="o">*</span> <span class="mf">1.5</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">features</span><span class="p">[</span><span class="s2">&#34;pattern_replication&#34;</span><span class="p">]</span> <span class="o">=</span> <span class="kc">True</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 确定主要类型</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;pattern_replication&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;扩展复制型&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;object_movement&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;对象移动型&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;size_change&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;尺寸变换型&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">elif</span> <span class="n">features</span><span class="p">[</span><span class="s2">&#34;color_change&#34;</span><span class="p">]:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;颜色映射型&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="s2">&#34;复杂变换型&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">task_type</span> <span class="o">=</span> <span class="n">classify_task_type</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&#34;train&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 基于类型的针对性提示</span>
+</span></span><span class="line"><span class="cl">    <span class="n">type_specific_guidance</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;扩展复制型&#34;</span><span class="p">:</span> <span class="s2">&#34;重点关注对象的复制和扩展模式，注意重复的规律，以及其他变换&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;对象移动型&#34;</span><span class="p">:</span> <span class="s2">&#34;精确追踪每个对象的位置变化，注意移动的方向和距离，以及其他变换&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;尺寸变换型&#34;</span><span class="p">:</span> <span class="s2">&#34;仔细分析尺寸变化的规律，可能是裁剪、填充或缩放，以及其他变换&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;颜色映射型&#34;</span><span class="p">:</span> <span class="s2">&#34;建立颜色之间的映射关系，注意条件着色，以及其他变换&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;复杂变换型&#34;</span><span class="p">:</span> <span class="s2">&#34;需要综合分析多个维度的变化规律&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">system_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&#34;&#34;&#34;ARC推理专家 - 任务类型：</span><span class="si">{</span><span class="n">task_type</span><span class="si">}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="si">{</span><span class="n">type_specific_guidance</span><span class="p">[</span><span class="n">task_type</span><span class="p">]</span><span class="si">}</span><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">推理步骤：
+</span></span></span><span class="line"><span class="cl"><span class="s2">1. 识别输入中的关键对象和模式
+</span></span></span><span class="line"><span class="cl"><span class="s2">2. 从训练样例提取变换规则  
+</span></span></span><span class="line"><span class="cl"><span class="s2">3. 应用到测试输入
+</span></span></span><span class="line"><span class="cl"><span class="s2">4. 验证规则一致性
+</span></span></span><span class="line"><span class="cl"><span class="s2">
+</span></span></span><span class="line"><span class="cl"><span class="s2">输出格式：&lt;ans&gt;二维数组&lt;/ans&gt;&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 简明的用户提示</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">=</span> <span class="s2">&#34;ARC推理任务</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="s2">&#34;训练样例：</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">ex</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">d</span><span class="p">[</span><span class="s2">&#34;train&#34;</span><span class="p">]):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">user_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&#34;样例</span><span class="si">{</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="si">}</span><span class="s2">: 输入</span><span class="si">{</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;input&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> → 输出</span><span class="si">{</span><span class="n">ex</span><span class="p">[</span><span class="s1">&#39;output&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">user_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&#34;</span><span class="se">\n</span><span class="s2">测试输入: </span><span class="si">{</span><span class="n">d</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;input&#39;</span><span class="p">]</span><span class="si">}</span><span class="se">\n</span><span class="s2">输出：&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#34;system_prompt:&#34;,system_prompt)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># print(&#34;user_content:&#34;,user_content)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;system&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">system_prompt</span><span class="p">},</span>
+</span></span><span class="line"><span class="cl">        <span class="p">{</span><span class="s2">&#34;role&#34;</span><span class="p">:</span> <span class="s2">&#34;user&#34;</span><span class="p">,</span> <span class="s2">&#34;content&#34;</span><span class="p">:</span> <span class="n">user_content</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="k">def</span> <span class="nf">parse_output</span><span class="p">(</span><span class="n">text</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">text</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">text</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="ow">not</span> <span class="n">text</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 多层次提取策略</span>
+</span></span><span class="line"><span class="cl">    <span class="n">candidates</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 1. 优先：&lt;ans&gt;标签</span>
+</span></span><span class="line"><span class="cl">    <span class="n">ans_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;&lt;ans&gt;\s*(\[.*?\])\s*&lt;/ans&gt;&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span> <span class="o">|</span> <span class="n">re</span><span class="o">.</span><span class="n">IGNORECASE</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">ans_match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ans_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 2. 代码块</span>
+</span></span><span class="line"><span class="cl">    <span class="n">code_match</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;```(?:json)?\s*(\[.*?\])\s*```&#34;</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="n">code_match</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">code_match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 3. 严格的二维数组模式（改进版）</span>
+</span></span><span class="line"><span class="cl">    <span class="c1"># 匹配 [[1,2],[3,4]] 格式，允许内部空格</span>
+</span></span><span class="line"><span class="cl">    <span class="n">strict_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\[\s*\[\s*\d+(?:\s*,\s*\d+)*\s*\](?:\s*,\s*\[\s*\d+(?:\s*,\s*\d+)*\s*\])*\s*\]&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="k">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">strict_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 4. 宽松模式：包含数字、逗号、方括号的文本块</span>
+</span></span><span class="line"><span class="cl">    <span class="n">loose_pattern</span> <span class="o">=</span> <span class="sa">r</span><span class="s2">&#34;\[(?:\s*\d+(?:\s*,\s*\d+)*\s*,?\s*)+\]&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="k">match</span> <span class="ow">in</span> <span class="n">re</span><span class="o">.</span><span class="n">finditer</span><span class="p">(</span><span class="n">loose_pattern</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">re</span><span class="o">.</span><span class="n">DOTALL</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="n">content</span> <span class="o">=</span> <span class="k">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 粗略验证至少看起来像二维数组</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">content</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;[&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span> <span class="ow">and</span> <span class="n">content</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s1">&#39;]&#39;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 去重</span>
+</span></span><span class="line"><span class="cl">    <span class="n">unique_candidates</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">seen</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">cand</span> <span class="ow">in</span> <span class="n">candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">cand</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">seen</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">seen</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">cand</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="n">unique_candidates</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">cand</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 解析候选</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">safe_parse</span><span class="p">(</span><span class="n">candidate</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;&#34;&#34;安全解析候选文本&#34;&#34;&#34;</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 预处理</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">            <span class="n">candidate</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;，&#34;</span><span class="p">,</span> <span class="s2">&#34;,&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;【&#34;</span><span class="p">,</span> <span class="s2">&#34;[&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;】&#34;</span><span class="p">,</span> <span class="s2">&#34;]&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;（&#34;</span><span class="p">,</span> <span class="s2">&#34;(&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;）&#34;</span><span class="p">,</span> <span class="s2">&#34;)&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&#34;&#39;&#34;</span><span class="p">,</span> <span class="s1">&#39;&#34;&#39;</span><span class="p">)</span>  <span class="c1"># 单引号转双引号</span>
+</span></span><span class="line"><span class="cl">        <span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 修复常见的格式问题</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;,\s*]&#34;</span><span class="p">,</span> <span class="s2">&#34;]&#34;</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>  <span class="c1"># 尾部逗号</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;,\s*}&#34;</span><span class="p">,</span> <span class="s2">&#34;}&#34;</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">cleaned</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s2">&#34;(\d)\s+(\d)&#34;</span><span class="p">,</span> <span class="sa">r</span><span class="s2">&#34;\1,\2&#34;</span><span class="p">,</span> <span class="n">cleaned</span><span class="p">)</span>  <span class="c1"># 空格分隔转逗号</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="c1"># 尝试JSON解析</span>
+</span></span><span class="line"><span class="cl">            <span class="n">parsed</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="c1"># 尝试ast安全解析</span>
+</span></span><span class="line"><span class="cl">                <span class="n">parsed</span> <span class="o">=</span> <span class="n">ast</span><span class="o">.</span><span class="n">literal_eval</span><span class="p">(</span><span class="n">cleaned</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 验证二维数组结构</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parsed</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">parsed</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 检查所有行都是列表</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">row</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">parsed</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 检查矩形性和数值范围</span>
+</span></span><span class="line"><span class="cl">        <span class="n">row_lengths</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">parsed</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">row_lengths</span><span class="p">))</span> <span class="o">!=</span> <span class="mi">1</span> <span class="ow">or</span> <span class="n">row_lengths</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="c1"># 转换和验证每个元素</span>
+</span></span><span class="line"><span class="cl">        <span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">parsed</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">new_row</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="c1"># 处理各种数字类型</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                        <span class="c1"># 处理字符串数字</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">num</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">item</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                        <span class="n">num</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="n">item</span> <span class="k">else</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">else</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">                    <span class="c1"># 限制范围</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">if</span> <span class="n">num</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">num</span> <span class="o">&gt;</span> <span class="mi">9</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                        <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">new_row</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">num</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="k">return</span> <span class="kc">None</span>
+</span></span><span class="line"><span class="cl">            <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_row</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">result</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 按优先级尝试解析候选</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">candidate</span> <span class="ow">in</span> <span class="n">unique_candidates</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">parsed</span> <span class="o">=</span> <span class="n">safe_parse</span><span class="p">(</span><span class="n">candidate</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">parsed</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="n">parsed</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 最终兜底：逐行解析</span>
+</span></span><span class="line"><span class="cl">    <span class="n">lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">text</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">()]</span>
+</span></span><span class="line"><span class="cl">    <span class="n">array_lines</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">lines</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="c1"># 提取看起来像数组的行</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="k">match</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^\[[\d\s,\[\]]+\]$&#39;</span><span class="p">,</span> <span class="n">line</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">            <span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">row_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">row_data</span><span class="p">,</span> <span class="nb">list</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">all</span><span class="p">(</span><span class="nb">isinstance</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row_data</span><span class="p">):</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">array_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">row_data</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">            <span class="k">except</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="k">continue</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1"># 如果收集到多行且长度一致，返回</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">array_lines</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">2</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lengths</span> <span class="o">=</span> <span class="nb">set</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">array_lines</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lengths</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="k">return</span> <span class="p">[[</span><span class="nb">min</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">x</span><span class="p">))</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">row</span><span class="p">]</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">array_lines</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="p">[]</span>
+</span></span></code></pre></div><p>70%</p>
+</div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2026
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>

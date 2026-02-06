@@ -1,0 +1,606 @@
+<!doctype html>
+<html
+  dir="ltr"
+  lang="zh"
+  data-theme=""
+  
+    class="html theme--light"
+  
+><head>
+  <meta charset="utf-8" />
+  <title>
+    
+      
+        LeetCode 热题 | 子串 |
+      何为
+
+  </title>
+
+  <meta name="generator" content="Hugo 0.155.2"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+  <meta name="author" content="何为" />
+  <meta
+    name="description"
+    content="中国石油大学（华东）"
+  />
+  
+  
+        <link rel="stylesheet" href="/css/anatole.min.86b1f7f8e46fb7f9432e28081186d24eb6cd881e4d058e84aef93462f1e41337.css" integrity="sha256-hrH3&#43;ORvt/lDLigIEYbSTrbNiB5NBY6Ervk0YvHkEzc=" crossorigin="anonymous" />
+      
+  <link
+    rel="stylesheet"
+    href="/css/markupHighlight.min.73ccfdf28df555e11009c13c20ced067af3cb021504cba43644c705930428b00.css"
+    integrity="sha256-c8z98o31VeEQCcE8IM7QZ688sCFQTLpDZExwWTBCiwA="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+    
+    
+    <link
+      rel="stylesheet"
+      href="/css/custom.min.9dbabbf9ac7efeff5e017d49cd0e09d4f995b3532048533b8f44341911a0c2f2.css"
+      integrity="sha256-nbq7&#43;ax&#43;/v9eAX1JzQ4J1PmVs1MgSFM7j0Q0GRGgwvI="
+      crossorigin="anonymous"
+      media="screen"
+    />
+  
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/fontawesome.min.137b1cf3cea9a8adb7884343a9a5ddddf4280f59153f74dc782fb7f7bf0d0519.css"
+    integrity="sha256-E3sc886pqK23iENDqaXd3fQoD1kVP3TceC&#43;3978NBRk="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/solid.min.e65dc5b48fb5f39b142360c57c3a215744c94e56c755c929cc3e88fe12aab4d3.css"
+    integrity="sha256-5l3FtI&#43;185sUI2DFfDohV0TJTlbHVckpzD6I/hKqtNM="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/regular.min.6f4f16d58da1c82c0c3a3436e021a3d39b4742f741192c546e73e947eacfd92f.css"
+    integrity="sha256-b08W1Y2hyCwMOjQ24CGj05tHQvdBGSxUbnPpR&#43;rP2S8="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link
+    rel="stylesheet"
+    href="/fontawesome/css/brands.min.e10425ad768bc98ff1fb272a0ac8420f9d1ba22f0612c08ff1010c95080ffe7e.css"
+    integrity="sha256-4QQlrXaLyY/x&#43;ycqCshCD50boi8GEsCP8QEMlQgP/n4="
+    crossorigin="anonymous"
+    type="text/css"
+  />
+  
+  <link rel="shortcut icon" href="/favicons/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
+
+  <link rel="canonical" href="https://www.heweilab.com/zh/post/%E5%AD%90%E4%B8%B2/" />
+  
+  
+  
+  
+  <script
+    type="text/javascript"
+    src="/js/anatole-header.min.f9132794301a01ff16550ed66763482bd848f62243d278f5e550229a158bfd32.js"
+    integrity="sha256-&#43;RMnlDAaAf8WVQ7WZ2NIK9hI9iJD0nj15VAimhWL/TI="
+    crossorigin="anonymous"
+  ></script>
+
+  
+    
+    
+    <script
+      type="text/javascript"
+      src="/js/anatole-theme-switcher.min.8724ddf9268dee451060f191961647573c7f592fbccc6d858746236b3f915813.js"
+      integrity="sha256-hyTd&#43;SaN7kUQYPGRlhZHVzx/WS&#43;8zG2Fh0Yjaz&#43;RWBM="
+      crossorigin="anonymous"
+    ></script>
+  
+
+  
+
+  
+
+  
+
+
+  
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://www.heweilab.com/images/site-feature-image.png">
+  <meta name="twitter:title" content="LeetCode 热题 | 子串">
+  <meta name="twitter:description" content="子串 子串问题。
+这类问题通常涉及对一个给定的字符串进行操作或分析，核心在于寻找满足特定条件的连续子串。
+首先，明确一个关键概念：
+子串：必须是原字符串中连续的一段字符序列。 子序列：则不要求连续，只需保持相对顺序即可。 例如，字符串 &#34;abc&#34;：
+子串有：&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;ab&#34;, &#34;bc&#34;, &#34;abc&#34;。 子序列除了包含所有子串，还有 &#34;ac&#34;。 核心思路与技巧 解决子串问题的核心方法论几乎都围绕一个关键技术：滑动窗口。">
+
+
+
+  
+  <meta property="og:url" content="https://www.heweilab.com/zh/post/%E5%AD%90%E4%B8%B2/">
+  <meta property="og:site_name" content="我的博客">
+  <meta property="og:title" content="LeetCode 热题 | 子串">
+  <meta property="og:description" content="子串 子串问题。
+这类问题通常涉及对一个给定的字符串进行操作或分析，核心在于寻找满足特定条件的连续子串。
+首先，明确一个关键概念：
+子串：必须是原字符串中连续的一段字符序列。 子序列：则不要求连续，只需保持相对顺序即可。 例如，字符串 &#34;abc&#34;：
+子串有：&#34;a&#34;, &#34;b&#34;, &#34;c&#34;, &#34;ab&#34;, &#34;bc&#34;, &#34;abc&#34;。 子序列除了包含所有子串，还有 &#34;ac&#34;。 核心思路与技巧 解决子串问题的核心方法论几乎都围绕一个关键技术：滑动窗口。">
+  <meta property="og:locale" content="zh">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="post">
+    <meta property="article:published_time" content="2025-09-17T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-09-17T00:00:00+00:00">
+    <meta property="og:image" content="https://www.heweilab.com/images/site-feature-image.png">
+
+
+
+  
+  
+  
+  
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "articleSection": "post",
+        "name": "LeetCode 热题 | 子串",
+        "headline": "LeetCode 热题 | 子串",
+        "alternativeHeadline": "",
+        "description": "
+      
+        \u003ch2 id=\u0022子串\u0022\u003e子串\u003c\/h2\u003e\n\u003cp\u003e\u003cstrong\u003e子串问题\u003c\/strong\u003e。\u003c\/p\u003e\n\u003cp\u003e这类问题通常涉及对一个给定的字符串进行操作或分析，核心在于寻找满足特定条件的\u003cstrong\u003e连续子串\u003c\/strong\u003e。\u003c\/p\u003e\n\u003cp\u003e首先，明确一个关键概念：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e子串\u003c\/strong\u003e：必须是原字符串中\u003cstrong\u003e连续\u003c\/strong\u003e的一段字符序列。\u003c\/li\u003e\n\u003cli\u003e\u003cstrong\u003e子序列\u003c\/strong\u003e：则不要求连续，只需保持相对顺序即可。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003e例如，字符串 \u003ccode\u003e\u0026quot;abc\u0026quot;\u003c\/code\u003e：\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003e子串有：\u003ccode\u003e\u0026quot;a\u0026quot;\u003c\/code\u003e, \u003ccode\u003e\u0026quot;b\u0026quot;\u003c\/code\u003e, \u003ccode\u003e\u0026quot;c\u0026quot;\u003c\/code\u003e, \u003ccode\u003e\u0026quot;ab\u0026quot;\u003c\/code\u003e, \u003ccode\u003e\u0026quot;bc\u0026quot;\u003c\/code\u003e, \u003ccode\u003e\u0026quot;abc\u0026quot;\u003c\/code\u003e。\u003c\/li\u003e\n\u003cli\u003e子序列除了包含所有子串，还有 \u003ccode\u003e\u0026quot;ac\u0026quot;\u003c\/code\u003e。\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003chr\u003e\n\u003ch3 id=\u0022核心思路与技巧\u0022\u003e核心思路与技巧\u003c\/h3\u003e\n\u003cp\u003e解决子串问题的核心方法论几乎都围绕一个关键技术：\u003cstrong\u003e滑动窗口\u003c\/strong\u003e。\u003c\/p\u003e
+
+
+      
+
+
+    ",
+        "license": "",
+        
+        "inLanguage": "zh",
+        "isFamilyFriendly": "true",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/www.heweilab.com\/zh\/post\/%E5%AD%90%E4%B8%B2\/"
+        },
+        "author" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "creator" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "accountablePerson" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "copyrightHolder" : {
+            "@type": "Person",
+            "name": "何为"
+        },
+        "dateCreated": "2025-09-17T00:00:00.00Z",
+        "datePublished": "2025-09-17T00:00:00.00Z",
+        "dateModified": "2025-09-17T00:00:00.00Z",
+        "publisher":{
+            "@type":"Organization",
+            "name": "何为",
+            "url": "https://www.heweilab.com/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https:\/\/www.heweilab.com\/favicons\/favicon-32x32.png",
+                "width":"32",
+                "height":"32"
+            }
+        },
+        "image": 
+      [
+        
+        "https://www.heweilab.com/images/site-feature-image.png"
+
+
+      
+      ]
+
+    ,
+        "url" : "https:\/\/www.heweilab.com\/zh\/post\/%E5%AD%90%E4%B8%B2\/",
+        "wordCount" : "294",
+        "genre" : [ ],
+        "keywords" : [ ]
+    }
+  </script>
+
+
+
+
+  
+  
+  
+</head>
+<body class="body">
+    <div class="wrapper">
+      <aside
+        
+          class="wrapper__sidebar"
+        
+      ><div
+  class="sidebar
+    animated fadeInDown
+  "
+>
+  <div class="sidebar__content">
+    <div class="sidebar__introduction">
+      <img
+        class="sidebar__introduction-profileimage"
+        src="/images/profile.jpg"
+        alt="profile picture"
+      />
+      
+        <div class="sidebar__introduction-title">
+          <a href="/zh">何为</a>
+        </div>
+      
+      <div class="sidebar__introduction-description">
+        <p>中国石油大学（华东）</p>
+      </div>
+    </div>
+    <ul class="sidebar__list">
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://scholar.google.com/citations?view_op=list_works&amp;hl=zh-CN&amp;authuser=1&amp;user=X_5m9FoAAAAJ"
+            target="_blank"
+            rel="noopener me"
+            aria-label="Google Scholar"
+            title="Google Scholar"
+          >
+            <i class="fa-solid fa-graduation-cap fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://github.com/heweilab"
+            target="_blank"
+            rel="noopener me"
+            aria-label="GitHub"
+            title="GitHub"
+          >
+            <i class="fa-brands fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="mailto:heweilab@gmail.com"
+            target="_blank"
+            rel="noopener me"
+            aria-label="E-mail"
+            title="E-mail"
+          >
+            <i class="fa-solid fa-envelope fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href=""
+            target="_blank"
+            rel="noopener me"
+            aria-label="WeChat"
+            title="WeChat"
+          >
+            <i class="fa-brands fa-weixin fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+        <li class="sidebar__list-item">
+          <a
+            href="https://qm.qq.com/q/xwBIUieW8U"
+            target="_blank"
+            rel="noopener me"
+            aria-label="QQ"
+            title="QQ"
+          >
+            <i class="fa-brands fa-qq fa-2x" aria-hidden="true"></i>
+          </a>
+        </li>
+      
+    </ul>
+
+  </div>
+  <div class="sidebar__footer">
+    
+
+
+
+
+
+  </div><footer class="footer footer__sidebar">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2026
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></div>
+</aside>
+      <main
+        
+          class="wrapper__main"
+        
+      >
+        <header class="header"><div
+  class="
+    animated fadeInDown
+  "
+>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+    <span aria-hidden="true" class="navbar-burger__line"></span>
+  </a>
+  <nav class="nav">
+    <ul class="nav__list" id="navMenu">
+      
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/"
+              
+              title=""
+              >首页</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/post/"
+              
+              title=""
+              >文章</a
+            >
+          </li>
+        
+
+      
+        
+        
+          <li class="nav__list-item">
+            
+            <a
+              
+              href="/zh/cv/"
+              
+              title=""
+              >简历</a
+            >
+          </li>
+        
+
+      
+    </ul>
+    <ul class="nav__list nav__list--end">
+      
+      
+        <li class="nav__list-item">
+          <div class="themeswitch">
+            <a title="Switch Theme">
+              <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a>
+          </div>
+        </li>
+      
+    </ul>
+  </nav>
+</div>
+</header>
+  <div
+    class="post 
+      animated fadeInDown
+    "
+  >
+    
+    <div class="post__content">
+      
+        <h1>LeetCode 热题 | 子串</h1>
+      
+      
+        <ul class="post__meta">
+          <li class="post__meta-item">
+            <em class="fas fa-calendar-day post__meta-icon"></em>
+            <span class="post__meta-text"
+              >
+                
+                  17/9/2025
+                
+
+              
+            </span>
+          </li>
+        </ul>
+      <h2 id="子串">子串</h2>
+<p><strong>子串问题</strong>。</p>
+<p>这类问题通常涉及对一个给定的字符串进行操作或分析，核心在于寻找满足特定条件的<strong>连续子串</strong>。</p>
+<p>首先，明确一个关键概念：</p>
+<ul>
+<li><strong>子串</strong>：必须是原字符串中<strong>连续</strong>的一段字符序列。</li>
+<li><strong>子序列</strong>：则不要求连续，只需保持相对顺序即可。</li>
+</ul>
+<p>例如，字符串 <code>&quot;abc&quot;</code>：</p>
+<ul>
+<li>子串有：<code>&quot;a&quot;</code>, <code>&quot;b&quot;</code>, <code>&quot;c&quot;</code>, <code>&quot;ab&quot;</code>, <code>&quot;bc&quot;</code>, <code>&quot;abc&quot;</code>。</li>
+<li>子序列除了包含所有子串，还有 <code>&quot;ac&quot;</code>。</li>
+</ul>
+<hr>
+<h3 id="核心思路与技巧">核心思路与技巧</h3>
+<p>解决子串问题的核心方法论几乎都围绕一个关键技术：<strong>滑动窗口</strong>。</p>
+<h4 id="滑动窗口">滑动窗口</h4>
+<p><strong>1. 什么是滑动窗口？</strong>
+它使用两个指针（通常命名为 <code>left</code> 和 <code>right</code>）来维护一个窗口（一个连续的子串），通过动态地调整 <code>left</code> 和 <code>right</code> 指针，在字符串上滑动，从而高效地检查所有可能的候选子串。</p>
+<p><strong>2. 为什么有效？</strong>
+它避免了暴力解法（检查所有子串，O(n²) 时间复杂度）的重复计算，通常能将时间复杂度优化到 O(n)。</p>
+<p><strong>3. 两种主要类型：</strong></p>
+<ul>
+<li><strong>固定大小的窗口</strong>：窗口长度是固定的。先初始化一个窗口，然后每次同时将 <code>left</code> 和 <code>right</code> 向右移动一位。
+<ul>
+<li><strong>适用场景</strong>：求长度为 k 的子串的最大和、包含所有字符的最短子串等问题的变体。</li>
+</ul>
+</li>
+<li><strong>动态大小的窗口</strong>：这是更常见的形式。窗口大小不固定。
+<ul>
+<li><strong>扩张</strong>：<code>right</code> 指针向右移动，扩大窗口，直到窗口内的子串满足题目要求。</li>
+<li><strong>收缩</strong>：一旦满足要求，<code>left</code> 指针向右移动，收缩窗口，试图找到更优的解或为下一次扩张做准备。</li>
+<li><strong>适用场景</strong>：绝大多数求“最长”或“最短”满足条件的子串问题。</li>
+</ul>
+</li>
+</ul>
+<p><strong>4. 辅助数据结构：哈希表</strong>
+滑动窗口常常需要快速判断窗口内字符的频率或是否存在某个字符。这时通常会配合使用<strong>哈希表</strong>（在 Python 中是 <code>dict</code> 或 <code>defaultdict</code>，在 Java 中是 <code>HashMap</code>）来记录窗口内的字符及其出现次数。</p>
+<hr>
+<h3 id="常见子串题型及解题策略">常见子串题型及解题策略</h3>
+<p>以下是几类最经典的子串问题：</p>
+<h4 id="1-最长无重复字符子串">1. 最长无重复字符子串</h4>
+<ul>
+<li><strong>问题描述</strong>：给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</li>
+<li><strong>示例</strong>：<code>&quot;abcabcbb&quot;</code> 的答案是 <code>3</code>（<code>&quot;abc&quot;</code>）。</li>
+<li><strong>解法</strong>：
+<ol>
+<li>使用滑动窗口 <code>[left, right]</code> 和哈希表 <code>seen</code> 记录字符<strong>最后一次出现的位置</strong>。</li>
+<li><code>right</code> 向右移动，遍历每个字符。</li>
+<li>如果当前字符 <code>s[right]</code> 已经在 <code>seen</code> 中<strong>且其位置 &gt;= <code>left</code></strong>（说明它在当前窗口内），则将 <code>left</code> 指针移动到 <code>seen[s[right]] + 1</code>，从而将重复字符排除出窗口。</li>
+<li>更新 <code>seen[s[right]]</code> 的值为当前 <code>right</code>。</li>
+<li>记录当前窗口长度 <code>(right - left + 1)</code> 并更新最大值。</li>
+</ol>
+</li>
+</ul>
+<h4 id="2-最小覆盖子串">2. 最小覆盖子串</h4>
+<ul>
+<li><strong>问题描述</strong>：给定一个字符串 <code>S</code> 和一个字符串 <code>T</code>，找出 <code>S</code> 中涵盖 <code>T</code> 所有字符的<strong>最短子串</strong>。</li>
+<li><strong>示例</strong>：<code>S = &quot;ADOBECODEBANC&quot;</code>, <code>T = &quot;ABC&quot;</code>，答案是 <code>&quot;BANC&quot;</code>。</li>
+<li><strong>解法</strong>：
+<ol>
+<li>使用滑动窗口和<strong>两个哈希表</strong>：<code>need</code> 记录 <code>T</code> 中每个字符需要的次数，<code>window</code> 记录当前窗口内相关字符的数量。</li>
+<li>用 <code>valid</code> 变量记录当前窗口中满足 <code>need</code> 要求的字符种类数。</li>
+<li><code>right</code> 向右移动<strong>扩张</strong>窗口，将新字符加入 <code>window</code>。如果该字符在 <code>need</code> 中且数量达标，则 <code>valid++</code>。</li>
+<li>当 <code>valid == len(need)</code>（即窗口已覆盖 <code>T</code>），<strong>收缩</strong> <code>left</code> 指针。</li>
+<li>在收缩过程中，记录最短子串的起始位置和长度。</li>
+<li>将 <code>left</code> 指向的字符移出窗口，并更新 <code>window</code> 和 <code>valid</code>。</li>
+</ol>
+</li>
+</ul>
+<h4 id="3-找到字符串中所有字母异位词">3. 找到字符串中所有字母异位词</h4>
+<ul>
+<li><strong>问题描述</strong>：给定一个字符串 <code>s</code> 和一个非空字符串 <code>p</code>，找到 <code>s</code> 中所有是 <code>p</code> 的<strong>字母异位词（排列）</strong> 的子串的起始索引。</li>
+<li><strong>示例</strong>：<code>s = &quot;cbaebabacd&quot;</code>, <code>p = &quot;abc&quot;</code>，答案是 <code>[0, 6]</code>（<code>&quot;cba&quot;</code> 和 <code>&quot;bac&quot;</code>）。</li>
+<li><strong>解法</strong>：
+<ol>
+<li>这道题可以看作是<strong>固定大小窗口</strong>的问题，因为目标的异位词长度固定为 <code>len(p)</code>。</li>
+<li>同样使用两个哈希表：<code>need</code> 记录 <code>p</code> 的字符频次，<code>window</code> 记录当前窗口的字符频次。</li>
+<li>先初始化一个长度为 <code>len(p)</code> 的窗口。</li>
+<li>比较 <code>window</code> 和 <code>need</code> 是否相等。如果相等，则记录起始索引 <code>left</code>。</li>
+<li>然后窗口整体向右滑动一位：<code>right++</code>, <code>left++</code>，同时更新 <code>window</code> 哈希表，并再次比较。</li>
+</ol>
+</li>
+</ul>
+<h4 id="4-含有所有字符的最短最长子串">4. 含有所有字符的最短/最长子串</h4>
+<ul>
+<li>这是上述“最小覆盖子串”问题的泛化，模式完全一致。核心依然是<strong>扩张找可行解，收缩优化解</strong>。</li>
+</ul>
+<h4 id="5-最大连续字符数字子串">5. 最大连续字符/数字子串</h4>
+<ul>
+<li>这类问题有时可以不用哈希表，而是用滑动窗口模拟。</li>
+<li><strong>示例</strong>：求最大连续 <code>1</code> 的个数（可能允许翻转 <code>k</code> 个 <code>0</code>）。
+<ul>
+<li>窗口内允许最多有 <code>k</code> 个 <code>0</code>。当 <code>0</code> 的数量超过 <code>k</code> 时，收缩 <code>left</code> 指针，直到 <code>0</code> 的数量恢复 &lt;= <code>k</code>。</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">subarraySum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">left</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">            <span class="n">summ</span> <span class="o">=</span> <span class="n">nums</span><span class="p">[</span><span class="n">left</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="k">if</span> <span class="n">summ</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">            <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">left</span><span class="o">+</span><span class="mi">1</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)):</span>
+</span></span><span class="line"><span class="cl">                <span class="n">summ</span><span class="o">+=</span><span class="n">nums</span><span class="p">[</span><span class="n">right</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">                <span class="k">if</span> <span class="n">summ</span> <span class="o">==</span> <span class="n">k</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">                    <span class="n">num</span><span class="o">+=</span><span class="mi">1</span>            
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">    <span class="k">def</span> <span class="nf">subarraySum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nums</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">k</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">        <span class="n">dic</span> <span class="o">=</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lis</span> <span class="o">=</span> <span class="p">[]</span>
+</span></span><span class="line"><span class="cl">        <span class="n">lis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1">#真乃点睛之笔，求和的列表加了一项0，则前零项和为0，这样可以解决下面right-left，left可以为0的情况</span>
+</span></span><span class="line"><span class="cl">        <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="n">summ</span> <span class="o">=</span> <span class="mi">0</span>
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">nums</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">summ</span><span class="o">+=</span><span class="n">i</span>
+</span></span><span class="line"><span class="cl">            <span class="n">lis</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">summ</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="n">lis</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">            <span class="n">num</span><span class="o">+=</span><span class="n">dic</span><span class="p">[</span><span class="n">right</span><span class="o">-</span><span class="n">k</span><span class="p">]</span>
+</span></span><span class="line"><span class="cl">            <span class="n">dic</span><span class="p">[</span><span class="n">right</span><span class="p">]</span><span class="o">+=</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="n">num</span>       
+</span></span></code></pre></div></div>
+    <div class="post__footer">
+      
+
+      
+    </div>
+
+    
+  </div>
+
+      </main>
+    </div><footer class="footer footer__base">
+  <ul class="footer__list">
+    <li class="footer__item">
+      &copy;
+      
+        何为
+        2026
+      
+    </li>
+    
+  </ul>
+</footer>
+  
+  <script
+    type="text/javascript"
+    src="/js/medium-zoom.min.9531b4a2217a70c5a1fce89c1f81c9ebbdd586708fcd4130b417320c7230c8d6.js"
+    integrity="sha256-lTG0oiF6cMWh/OicH4HJ673VhnCPzUEwtBcyDHIwyNY="
+    crossorigin="anonymous"
+  ></script></body>
+</html>
